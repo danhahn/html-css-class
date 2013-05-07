@@ -1,9 +1,9 @@
 {
   "locals": {
     "url": "http://localhost:8080",
-    "name": "The Wintersmith's blog",
+    "name": "SVA HTML",
     "owner": "The Wintersmith",
-    "description": "-32°C ain't no problems!",
+    "description": "Summer 2013",
     "index_articles": 3
   }
 }
