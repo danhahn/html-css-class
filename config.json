@@ -2,7 +2,7 @@
   "locals": {
     "url": "http://localhost:8080",
     "name": "SVA HTML",
-    "owner": "The Wintersmith",
+    "owner": "Daniel Hahn",
     "description": "Summer 2013",
     "index_articles": 3
   }
