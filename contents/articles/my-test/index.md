@@ -61,6 +61,12 @@ Don't be fooled with all the *free stuff* they are giving you.  Everyone gives b
 		<li>Item 3</li>
 	</ul>
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 ### Control Panels
 Most hosting site will give you some web control panel that will allow you to change some simple settings on the site.  As you get more comfortable you can do lots of cool things.  Each hosts control panel will be a little different.
 Be sure to
