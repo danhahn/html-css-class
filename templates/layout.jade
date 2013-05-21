@@ -11,6 +11,8 @@ html(lang='en')
       link(rel='stylesheet', href='/css/bootstrap.css')
       link(rel='stylesheet', href='/css/flat-ui.css')
       link(rel='stylesheet', href='/css/main.css')
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+      script(src='/js/bootstrap.min.js')
   body
 
     div.container
@@ -29,6 +31,9 @@ html(lang='en')
           h1
             a(href=locals.url)= locals.name
           p= locals.description
+          ul.date
+            li= locals.start_date
+            li= locals.end_date
     div.container
       block content
         h2 Welcome to zombocom!

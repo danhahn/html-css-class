@@ -4,6 +4,8 @@
     "name": "SVA HTML",
     "owner": "Daniel Hahn",
     "description": "Summer 2013",
-    "index_articles": 3
+    "index_articles": 3,
+	"start_date": "June 1, 2013",
+	  "end_date": "July 22, 2013"
   }
 }

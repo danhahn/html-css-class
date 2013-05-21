@@ -8,17 +8,16 @@ block content
   -   return item.index
   - }).compact().sortBy(function(item) { // compact removes any directories w/o an index
   -   // sort them by date
-  -   return -item.date
-  - }).first(5).value() // and finally take the first 5
+  -   return item.date
+  - }).first(8).value() // and finally take the first 5
   each article in articles
-    article.post
+    article.post.well
       header
         h2
           a(href=article.url)= article.title
-        p
-          mixin author(article.metadata.author)
+
       section.content!= article.intro
       if article.hasMore
         p.read-more
-          a(href=article.url) read more
+          a.btn(href=article.url) See Lesson
   a(href='archive.html')#archive Visit the archives!
