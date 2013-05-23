@@ -12,6 +12,7 @@ This lesson we talk about borders, padding and margin as well as how to include 
 * [Borders](#Borders)
 * [Padding](#Padding)
 * [Margin](#Margin)
+* [Include File](include.html)
 
 #Border, Padding and Margin
 
