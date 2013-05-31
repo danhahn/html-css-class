@@ -43,5 +43,3 @@ var offset = $subMenu.offset();
 $subMenu.affix({
 	offset: offset.top
 });
-
-$subMenu.scrollspy();

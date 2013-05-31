@@ -2,7 +2,7 @@
   "locals": {
     "url": "http://localhost:8080",
     "name": "SVA CSS",
-    "owner": "Someone",
+    "owner": "Daniel Hahn",
     "description": "Summer 2013"
   },
   "plugins": [

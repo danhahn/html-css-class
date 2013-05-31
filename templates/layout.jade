@@ -11,7 +11,6 @@ html(lang='en')
         block title
           = locals.name
       link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
-      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300')
       link(rel='stylesheet', href='/css/github.css')
       link(rel='stylesheet', href='/css/bootstrap.css')
       link(rel='stylesheet', href='/css/flat-ui.css')
@@ -19,18 +18,18 @@ html(lang='en')
       link(rel="icon", type="image/png", href="/images/favicon.png")
       script(src='/js/jquery.min.js')
       script(src='/js/bootstrap.min.js')
+      script(src='/js/global.js')
   body(class=bodyclass)
 
     div.container
       div.navbar.navbar-inverse
         div.navbar-inner
           a.brand= locals.name
-          div.nav-collapse.collapse
+          div
             ul.nav
               li
                 a(href="/") Home
-              li
-                a(href="/") Lessons
+
     header
       div.container
         block header
@@ -38,15 +37,10 @@ html(lang='en')
             a(href=locals.url)= locals.name
           p= locals.description
     div.container
-      div.row
+      div.row-fluid
         block content
           h2 Welcome to zombocom!
     footer.container
       div.content-wrap
-        block footer
-          section.about
-            !=contents['about.md'].html
-          section.copy
-            p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
-              a(href='https://github.com/jnordberg/wintersmith') Wintersmith
-              //- please leave the "powered by" if you use the design
+        section.copy
+          p &copy; #{ new Date().getFullYear() } #{ locals.owner }

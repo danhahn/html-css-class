@@ -19,7 +19,7 @@ module.exports = (env, callback) ->
     # helper that returns a list of articles found in *contents*
     # note that each article is assumed to have its own directory in the articles directory
     articles = contents[options.articles]._.directories.map (item) -> item.index
-    # articles.sort (a, b) -> b.date - a.date
+    articles.sort (a, b) -> a.date - b.date
     return articles
 
   class PaginatorPage extends env.plugins.Page
