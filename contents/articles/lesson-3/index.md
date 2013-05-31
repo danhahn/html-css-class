@@ -1,7 +1,7 @@
 ---
 title: Lesson 3
 author: Dan Hahn
-date: 2013-06-12 18:00
+date: 2013-06-19 18:00
 template: article.jade
 ---
 
@@ -11,6 +11,8 @@ This week we will talk about the **CSS Box Model** and how to float elements.
 
 * [Box Model](#)
 * [Floats](floats.html)
+
+## Box Model
 
 The box model is how we get the size of an element.
 

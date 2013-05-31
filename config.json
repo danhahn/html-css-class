@@ -1,11 +1,26 @@
 {
   "locals": {
     "url": "http://localhost:8080",
-    "name": "SVA HTML",
-    "owner": "Daniel Hahn",
-    "description": "Summer 2013",
-    "index_articles": 3,
-	"start_date": "June 1, 2013",
-	  "end_date": "July 22, 2013"
+    "name": "SVA CSS",
+    "owner": "Someone",
+    "description": "Summer 2013"
+  },
+  "plugins": [
+    "./plugins/paginator.coffee"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "paginator": {
+    "perPage": 8
   }
 }

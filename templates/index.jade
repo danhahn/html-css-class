@@ -2,22 +2,27 @@ extends layout
 
 block content
   include author
-  //- underscore helps us filter and sort our articles
-  - var articles = _.chain(contents.articles._.directories).map(function(item) {
-  -   // map articles to index pages of subdirectories of 'articles'
-  -   return item.index
-  - }).compact().sortBy(function(item) { // compact removes any directories w/o an index
-  -   // sort them by date
-  -   return item.date
-  - }).first(8).value() // and finally take the first 5
   each article in articles
-    article.post.well
+    article.article.intro.well.span3
       header
+        p.date
+          span= moment(article.date).format('DD. MMMM YYYY')
         h2
           a(href=article.url)= article.title
+      section.content
+        !{ typogr(article.intro).typogrify() }
+        if article.hasMore
+          p.more.btn
+            a(href=article.url) See Lesson
 
-      section.content!= article.intro
-      if article.hasMore
-        p.read-more
-          a.btn(href=article.url) See Lesson
-  a(href='archive.html')#archive Visit the archives!
+block prepend footer
+  div.nav
+    if prevPage
+      a(href=prevPage.url) « Newer
+    else
+      a(href='/archive.html') « Archives
+    if nextPage
+      a(href=nextPage.url) Next page »
+
+
+
