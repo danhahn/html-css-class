@@ -1,6 +1,8 @@
 $(function() {
 	$("table").addClass("table table-bordered");
 
+	var showNav = false;
+
 	var $ul = $("<div id='localNav' class='navbar'><div class='navbar-inner'><ul class='nav'></ul></div></div>");
 
 	$(".content h2").each(function(){
@@ -22,9 +24,11 @@ $(function() {
 			}, 500);
 		});
 		top.appendTo(el);
+		showNav = true;
 	});
 
-	$ul.prependTo(".content");
+	if(showNav)
+		$ul.prependTo(".main-content");
 
 	$("strong").each(function() {
 		var el = $(this);
@@ -37,8 +41,10 @@ $(function() {
 	$("a").each(function() {
 		var el = $(this);
 		var url = el.attr("href");
-		if(url == "example.html") {
+		if(url.indexOf("example.html") > -1) {
 			el.attr("target", "_blank");
+		}else if (url.indexOf("homework.html") > -1) {
+			el.addClass("btn");
 		}
 	});
 
