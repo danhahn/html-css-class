@@ -3,19 +3,19 @@ $(function() {
 
 	var showNav = false;
 
-	var $ul = $("<div id='localNav' class='navbar'><div class='navbar-inner'><ul class='nav'></ul></div></div>");
+	var $ul = $("<div id='localNav'><ul class='btn-group'></ul></div>");
 
 	$(".content h2").each(function(){
 		var el =$(this);
 		var addID = el.html().toLowerCase().replace(/\&nbsp;/g, "_").replace(/\s+/g, "_");
-		var $li = $("<li><a></a></li>").click(function(event) {
+		var $li = $("<li class='btn'><a></a></li>").click(function(event) {
 			event.stopPropagation();
 			$('html, body').animate({
 				scrollTop: $("#"+addID).offset().top
 			}, 500);
 		});
 		$li.find("a").attr("href", "#"+addID).html(el.html());
-		var addItem = $ul.find(".nav");
+		var addItem = $ul.find(".btn-group");
 		$li.appendTo(addItem);
 		el.attr("id", addID);
 		var top = $("<span class='scroll-top'>&uarr;Top</span>").click(function() {
@@ -41,9 +41,19 @@ $(function() {
 	$("a").each(function() {
 		var el = $(this);
 		var url = el.attr("href");
+		console.log(url)
 		if(url.indexOf("example.html") > -1) {
 			el.attr("target", "_blank");
-		}else if (url.indexOf("homework.html") > -1) {
+		}
+		else if(url.indexOf(".txt") > -1) {
+			el.attr("target", "_blank");
+			el.addClass("btn");
+		}
+		else if(url.indexOf(".zip") > -1) {
+			el.attr("target", "_blank");
+			el.addClass("btn");
+		}
+		else if (url.indexOf("homework.html") > -1) {
 			el.addClass("btn");
 		}
 	});

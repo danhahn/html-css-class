@@ -10,6 +10,12 @@ In this lesson we will talk about how CSS works, basic selectors and basic forma
 
 <span class="more"></span>
 
+* [Introductin](#)
+* [Selectors](selectors.html)
+* [Comments](comments.html)
+
+[Download Notes <i class="icon-download-alt icon-white"></i>](week1-notes.zip) [Download Stater File <i class="icon-download-alt icon-white"></i>](week1.zip)
+
 ##Introduction
 
 ###What is CSS

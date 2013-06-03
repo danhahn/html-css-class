@@ -1,14 +1,17 @@
 extends layout
 
+block header
+  h1= locals.description
+
 block content
   include author
   each article in articles
     article.article.intro.well.span3
       header
-        p.date
-          span= moment(article.date).format('DD. MMMM YYYY')
         h2
           a(href=article.url)= article.title
+        p.date
+          span= moment(article.date).format('MMMM D, YYYY')
       section.content
         !{ typogr(article.intro).typogrify() }
         if article.hasMore
