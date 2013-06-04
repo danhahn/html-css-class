@@ -46,8 +46,8 @@ Time|Task
 
 ###Lesson 1
 
-1. [What is CSS]
-2. CSS Syntax
+1. [What is CSS](/lessons/lesson-1/index.html)
+2. [CSS Syntax](/lessons/lesson-1/selectors.html)
 3. Type of Selectors
 4. Tag
 5. Class

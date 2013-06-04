@@ -1,14 +1,17 @@
 ---
-title: Comments
+title: Lesson 1
 author: Dan Hahn
 date: 2013-06-05 18:00
 template: article.jade
 subject: TEST
 ---
 
-* [Introductin](index.html)
+# Comments
+
+* [Introductin]()
 * [Selectors](selectors.html)
-* [Comments](#)
+* [Comments](comments.html)
+* [Include File](include.html)
 
 Comments are a way to give notes within the code that is not rendered by the broswer at thet time of load. Both HTML and CSS Have commetns.
 

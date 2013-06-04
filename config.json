@@ -6,7 +6,8 @@
     "description": "Summer 2013"
   },
   "plugins": [
-    "./plugins/paginator.coffee"
+    "./plugins/paginator.coffee",
+	"wintersmith-less"
   ],
   "require": {
     "moment": "moment",

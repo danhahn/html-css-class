@@ -16,34 +16,39 @@ html(lang='en')
       link(rel='stylesheet', href='/css/flat-ui.css')
       link(rel='stylesheet', href='/css/main.css')
       link(rel="icon", type="image/png", href="/images/favicon.png")
+      script(src='/js/highlight.pack.js')
       script(src='/js/jquery.min.js')
       script(src='/js/bootstrap.min.js')
       script(src='/js/global.js')
   body(class=bodyclass)
 
-    div.container
-      div.navbar.navbar-inverse
-        div.navbar-inner
-          a.brand(href="/")= locals.name
-          div
-            ul.nav
-              li
-                a(href="/") Home
-              li
-                a(href="/syllabus.html") Syllabus
-              li
-                a(href="/notes/guide/index.html") CSS Referance
+    div.main-nav
+      div.container
+        div.navbar.navbar-inverse
+          div.navbar-inner
+            a.brand(href="/")= locals.name
+            div
+              ul.nav
+                li
+                  a(href="/") Home
+                li
+                  a(href="/syllabus.html") Syllabus
+                li
+                  a(href="/notes/guide/index.html") CSS Referance
 
-    header
+    header.main-header
       div.container
         block header
           h1
             a(href=locals.url)= locals.name
           p= locals.description
-    div.container.main-content
+    div.container
       div.row-fluid
-        block content
-          h2 Welcome to zombocom!
+        div.span3.side-nav
+          div.side-nav-inner
+        div.span9.main-content
+          block content
+            h2 Welcome to zombocom!
     footer.container
       div.content-wrap
         section.copy

@@ -41,7 +41,7 @@ $(function() {
 	$("a").each(function() {
 		var el = $(this);
 		var url = el.attr("href");
-		console.log(url)
+		//console.log(url)
 		if(url.indexOf("example.html") > -1) {
 			el.attr("target", "_blank");
 		}
@@ -51,14 +51,37 @@ $(function() {
 		}
 		else if(url.indexOf(".zip") > -1) {
 			el.attr("target", "_blank");
-			el.addClass("btn");
+			el.addClass("btn move-item");
 		}
 		else if (url.indexOf("homework.html") > -1) {
 			el.addClass("btn");
 		}
 	});
 
-	var localNav = $("#localNav");
+	var sideNav = $(".main-content h1 + ul");
+	var newSide = sideNav.clone();
+	var currentPage = window.location.pathname;
+	newSide.find("li").each(function(){
+		var el = $(this);
+		var item = el.find("a");
+		if(item.attr("href").indexOf(currentPage) > -1) {
+			el.addClass("active");
+			return false;
+		}
+	});
+
+	$(".move-item").each(function(){
+		var el = $(this);
+		var item = el.clone();
+		item.prependTo(".side-nav-inner");
+		el.remove();
+	});
+
+	newSide.addClass("nav nav-tabs nav-stacked main-side-nav").prependTo(".side-nav-inner");
+	sideNav.remove();
+
+	var localNav = $(".side-nav-inner");
+	localNav.css("width",localNav.outerWidth());
 
 	var offset = localNav.offset();
 
@@ -66,5 +89,8 @@ $(function() {
 		offset: offset.top
 	});
 
+
+
+	hljs.initHighlightingOnLoad();
 
 });

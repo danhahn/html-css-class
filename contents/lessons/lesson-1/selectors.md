@@ -1,16 +1,17 @@
 ---
-title: Selectors
+title: Lesson
 author: Dan Hahn
 date: 2013-06-05 18:00
 template: article.jade
 subject: TEST
 ---
 
-* [Introductin](index.html)
-* [Selectors](#)
-* [Comments](comments.html)
-
 #CSS Selectors
+
+* [Introductin]()
+* [Selectors](selectors.html)
+* [Comments](comments.html)
+* [Include File](include.html)
 
 Selectors are the way that the HTML and CSS connect to each other.   There are 3 basic types of selectors, tag, class and id.
 
