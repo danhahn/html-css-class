@@ -46,7 +46,7 @@ Time|Task
 
 ###Lesson 1
 
-1. What is CSS
+1. [What is CSS]
 2. CSS Syntax
 3. Type of Selectors
 4. Tag
