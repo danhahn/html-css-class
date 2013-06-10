@@ -1,16 +1,16 @@
 ---
-title: Floats
+title: Lesson 3
 author: Dan Hahn
 date: 2013-06-08 18:00
 template: article.jade
 ---
 
-* [Box Model](#)
+#CSS Floats
+
+* [Box Model]()
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
 
-
-#CSS Floats
 Float is CSS property that is used to display content.  Floats where originally intended to get the magazine feel on the web by allowing images or other content to wrap around text within an article.  Over time floats have been used for other reason like layouts. CSS floats can be applied to any elements, both *inline* and *block*.
 
 When an element is floated they go into a state that is not inline or block.  A floated element is alot like `display: inline-block` but the content will wrap around it..  A floated element differs from all other elements because it is not part of the *flow of the document* so the container is not able to use a floated element to determine its height.

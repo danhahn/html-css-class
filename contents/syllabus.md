@@ -2,7 +2,7 @@
 title: Syllabus
 author: Dan Hahn
 date: 2013-06-05 18:00
-template: article.jade
+template: single.jade
 subject: TEST
 ---
 #Continued Techniques with HTML and CSS
@@ -11,7 +11,7 @@ subject: TEST
 * Mondays 6:00-10:00 pm
 * June 3 - July 22 (8 Weeks)
 
-Daniel Hahn - dan@svahtml.com
+Daniel Hahn - [dan@svahtml.com](mailto:dan@gmail.com)
 
 
 ##Class web site

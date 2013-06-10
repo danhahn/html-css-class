@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Box Model</title>
+	<style type="text/css">
+		.box-container {
+			height: 400px;
+			position: relative;
+		}
+
+		.box-container:before {
+			content: "";
+			background: #d3d3d3;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 400px;
+			z-index: 0;
+		}
+
+		.box-container:after {
+			position: absolute;
+			left: 400px;
+			width: 1px;
+			top: 0;
+			bottom: 0;
+			content: "";
+			background: #000000;
+			z-index: 0;
+		}
+		
+		.box-model {
+			position: relative;
+			z-index: 100;
+			background-color: #1e90ff;
+		}
+	</style>
+</head>
+<body>
+
+<script>
+
+</script>
+
+<ul class="btn-group">
+	<li class="btn">width: 400px;</li>
+	<li class="btn">padding: 20px;</li>
+	<li class="btn">border: 10px solid green;</li>
+	<li class="btn">margin: 30px;</li>
+</ul>
+
+	<div class="box-container">
+		<div class="box-model">
+			Box Model Element.
+		</div>
+	</div>
+
+
+</body>
+</html>

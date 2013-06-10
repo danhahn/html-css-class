@@ -10,7 +10,9 @@ template: article.jade
 * [Borders]()
 * [Padding](padding.html)
 * [Margin](margin.html)
-* [Box Model](box-model.html)
+* [Pseudo](pseudo.html)
+* [overflow](overflow.html)
+* [Homework](homework.html)
 
 Margin is the space from one element `border` to another element `border`. What this means that that you are note setting the space from the edge of margin but the element itself.  Margins can overlap.
 

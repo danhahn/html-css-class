@@ -5,11 +5,11 @@ date: 2013-06-08 18:00
 template: article.jade
 ---
 
-* [Box Model](#)
+# Clear fix
+
+* [Box Model]()
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
-
-# Clear fix
 
 There are a number of way to fix the issue when all the content with in a element are floated.
 

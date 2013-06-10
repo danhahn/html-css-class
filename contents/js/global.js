@@ -54,7 +54,7 @@ $(function() {
 			el.addClass("btn move-item");
 		}
 		else if (url.indexOf("homework.html") > -1) {
-			el.addClass("btn");
+			//el.addClass("btn");
 		}
 	});
 
@@ -80,15 +80,26 @@ $(function() {
 	newSide.addClass("nav nav-tabs nav-stacked main-side-nav").prependTo(".side-nav-inner");
 	sideNav.remove();
 
-	var localNav = $(".side-nav-inner");
+	var sideNav = $(".side-nav-inner");
+	sideNav.css("width",sideNav.outerWidth());
+
+	var offset
+
+	offset = sideNav.offset();
+
+	sideNav.affix({
+		offset: offset.top
+	});
+
+
+	var localNav = $("#localNav");
 	localNav.css("width",localNav.outerWidth());
 
-	var offset = localNav.offset();
+	offset = localNav.offset();
 
 	localNav.affix({
 		offset: offset.top
 	});
-
 
 
 	hljs.initHighlightingOnLoad();

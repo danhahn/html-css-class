@@ -57,3 +57,39 @@ _$clear.html(basisClear.mp);
 
 var _$stack = $("#stacking_content");
 _$stack.html(basicFloat.mp);
+
+function resetButton() {
+	$("#fixWidth").removeClass("active");
+}
+
+$("#cntrBoxModel .btn").click(function(){
+	var el = $(this);
+	el.toggleClass("active");
+	resetButton();
+
+	var props = "";
+
+	$("#cntrBoxModel .btn.active").each(function(){
+		props = props + " " + $(this).html().replace("&nbsp;", " ");
+	});
+	$("#displayBoxModel .box-model").attr("style", props);
+});
+
+$("#fixWidth").click(function(){
+	var el = $(this);
+	el.toggleClass("active");
+
+	var fix = $("#total").data("total");
+	console.log(fix);
+	$("#cntrBoxModel .btn.active").each(function(){
+		var size = $(this).data("size");
+		if(size)
+			fix = fix - (size*2);
+	});
+	if(el.attr("class").indexOf("active") > -1 ) {
+		$("#displayBoxModel .box-model").css("width", fix);
+	}
+	else {
+		$("#displayBoxModel .box-model").css("width", "100%");
+	}
+});

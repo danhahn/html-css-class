@@ -10,7 +10,9 @@ template: article.jade
 * [Borders]()
 * [Padding](padding.html)
 * [Margin](margin.html)
-* [Box Model](box-model.html)
+* [Pseudo](pseudo.html)
+* [overflow](overflow.html)
+* [Homework](homework.html)
 
 Padding is the space from the `border` in to the content. Even if a border is not defined there is still an edge of the element, this is the `border`.
 

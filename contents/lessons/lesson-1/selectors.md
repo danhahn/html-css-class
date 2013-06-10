@@ -12,6 +12,7 @@ subject: TEST
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Include File](include.html)
+* [Homework](homework.html)
 
 Selectors are the way that the HTML and CSS connect to each other.   There are 3 basic types of selectors, tag, class and id.
 

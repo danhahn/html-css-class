@@ -44,12 +44,11 @@ html(lang='en')
           p= locals.description
     div.container
       div.row-fluid
-        div.span3.side-nav
-          div.side-nav-inner
-        div.span9.main-content
-          block content
+        block content
+          div.span9.main-content
             h2 Welcome to zombocom!
-    footer.container
-      div.content-wrap
-        section.copy
-          p &copy; #{ new Date().getFullYear() } #{ locals.owner }
+    footer
+      div.container
+        div.content-wrap
+          section.copy
+            p &copy; #{ new Date().getFullYear() } #{ locals.owner }

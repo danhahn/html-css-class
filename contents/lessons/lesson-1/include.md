@@ -11,6 +11,7 @@ template: article.jade
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Include File](include.html)
+* [Homework](homework.html)
 
 To include a css **file in an HTML** the first thing you need is a `.css` file.  You can create a .css file the same way you create a .html.  Go to file save as and give the file a name and add .css as the extension.
 

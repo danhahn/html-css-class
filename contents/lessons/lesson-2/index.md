@@ -14,7 +14,13 @@ This lesson we talk about borders, padding and margin as well as how to include 
 * [Borders]()
 * [Padding](padding.html)
 * [Margin](margin.html)
-* [Box Model](box-model.html)
+* [Pseudo](pseudo.html)
+* [overflow](overflow.html)
+* [Homework](homework.html)
+
+[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week2-notes.zip)
+[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week2.zip)
+
 
 Borders can be added to most every element and are made up of three parts.
 
