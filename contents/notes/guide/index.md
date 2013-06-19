@@ -2,7 +2,7 @@
 title: CSS2 Reference
 author: Dan Hahn
 date: 2013-06-08 18:00
-template: article.jade
+template: single.jade
 ---
 
 CSS2 Reference
