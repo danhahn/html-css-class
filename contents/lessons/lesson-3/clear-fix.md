@@ -10,12 +10,13 @@ template: article.jade
 * [Box Model]()
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
+* [Layouts](layouts.html)
 
-There are a number of way to fix the issue when all the content with in a element are floated.
+There are a number of way to fix the issue when all the content within a element are floated.
 
 ## Adding Height
 
-The most basic way to fix the issue is to add a height to the pareent element.
+The most basic way to fix the issue is to add a height to the parent element.
 
 	<style>
 		ul {
@@ -40,7 +41,7 @@ The most basic way to fix the issue is to add a height to the pareent element.
 
 ## Overflow
 
-Adding `overflow: hidden` or `overflow: auto` will a adjust the way the content is dissplayed.  This will force a height.
+Adding `overflow: hidden` or `overflow: auto` will a adjust the way the content is displayed.  This will force a height.
 
 	<style>
 		ul {
@@ -64,7 +65,7 @@ Adding `overflow: hidden` or `overflow: auto` will a adjust the way the content 
 
 ## Extra Div
 
-Since we know that adding a `clear: both;` to am element will stop to clear.  We can add a new element after the last floated element and add a clear to it.  Since the element is after and cleared it will "pin" the background down.
+Since we know that adding a `clear: both;` to an element will stop to clear. We can add a new element after the last floated element and add a clear to it. Since the element is after and cleared it will "pin" the background down.
 
 	<style>
         li {
@@ -91,7 +92,7 @@ Since we know that adding a `clear: both;` to am element will stop to clear.  We
 
 ## Clear Fix
 
-The idea of the extra `<div></div>` is a good one the only problem is we do not like to add extra markup that has no content need.   CSS3 gives all elements an extra element before and after.  By using the `:after` pseudo element you can add a "element" can clear that.
+The idea of the extra `<div></div>` is a good one the only problem is we do not like to add extra markup that has no content need. CSS3 gives all elements an extra element before and after. By using the `:after` pseudo element you can add an "element" can clear that.
 
 	<style>
 		ul:after {

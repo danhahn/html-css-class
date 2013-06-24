@@ -14,10 +14,14 @@ This week we will talk about the **CSS Box Model** and how to float elements.
 * [Box Model]()
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
+* [Layouts](layouts.html)
+
+[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week3-notes.zip)
+[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week3.zip)
 
 Since Everything on in web design is a rectangular box we need to know how to size that box.  The way that CSS calculates the size of a box is not what you expect.  Rather than set the size of the box based on the outter most elements `border` or `padding` the widht is set baed on the content.
 
-## Setting a width
+### Setting a width
 
 To set the width of an element you take the desired width and subtract the `padding-left`, `padding-right`, `border-left-width` and `border-right-width`.  If you need to maintain the `margin` you will need to subtract the `margin-left` and `margin-right`.
 
@@ -43,7 +47,5 @@ If we have an element that needs to fit in to a space that is `400px` and it has
 		Box Model Element.
 	</div>
 </div>
-
-
 
 <script src="lesson-3.js"></script>
