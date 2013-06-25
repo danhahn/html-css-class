@@ -30,4 +30,17 @@ Just like padding the number of values you place effects different sides.
 	margin: (top) (left and right) (bottom);
 	margin: (top) (right) (bottom) (left);
 
+## Center Container
+
+The problem with centering `#container` on the page is there is no real property that does this. Your first thought might be `text-align: center;` but that will just center the text within the elements.
+
+By setting the `margin` on the left and right to `auto` the element will be centered on the page. Because we set the left and right to auto it take the space left over after the and divide it by 2 and set it equal to each other. This will make the element center on the page.
+
+	<style>
+		#container {
+			width: 800px;
+			margin: 0 auto;
+		}
+	</style>
+
 <script src="lesson-2.js"></script>

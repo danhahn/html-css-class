@@ -14,7 +14,6 @@ This week we will talk about the **CSS Box Model** and how to float elements.
 * [Box Model]()
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
-* [Layouts](layouts.html)
 
 [Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week3-notes.zip)
 [Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week3.zip)
