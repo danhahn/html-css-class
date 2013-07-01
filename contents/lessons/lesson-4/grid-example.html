@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Grid
+	</title>
+
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+	<script>
+		$(function(){
+			var buildGrid = function(options) {
+				options.column= (options.width/options.columns) - (options.gutter);
+
+				var el = $("<style type='text/css'></style>");
+				var className = "row";
+				var um = "px";
+
+				if(options.flex){
+					el.attr("class", "flex");
+					className = "row-flex";
+					um = "%";
+				}
+
+				var styles = "";
+
+				for(var i=0;i<options.columns;i++) {
+					var state = i+1;
+					var crt = state * options.column + ((state-1) * options.gutter);
+					var cssElement = "."+ className+" .grid" + state + "{width:"+ crt + um +";}\n";
+					//var row = $("<div/>").html(cssElement);
+					styles = styles + cssElement;
+				}
+
+
+				if(!options.flex){
+					$(".container").css({
+						"background-size": (options.width/options.columns) + "px",
+						"width": options.width
+					});
+				}
+				else {
+					$(".row-flex > *").css({
+						"margin-right" : options.gutter
+					});
+				}
+
+
+				el.text(styles);
+				el.appendTo("head");
+			};
+
+			buildGrid(
+			{
+				columns: 12,
+				width: 960,
+				gutter: 10,
+				flex: false
+			});
+
+			buildGrid(
+			{
+				columns: 12,
+				width: 100,
+				gutter:8,
+				flex: true
+			});
+
+
+		});
+
+	</script>
+
+	<style type="text/css">
+
+		.container {
+			width: 960px;
+			margin: 0 auto;
+			background: linear-gradient(to left, rgba(255,0,0,.3) 0%,rgba(255,0,0,.3) 10px,rgba(255,255,255,1) 10px,rgba(255,255,255,1) 100%);
+			background-size: 80px 80px;
+
+		}
+
+		[class*="grid"] {
+			background: green;
+			width: 70px;
+			margin-right: 10px;
+			float: left;
+			min-height: 100px;
+		}
+
+		.row [class*="grid"]:last-of-type {
+			margin-right: 0;
+		}
+
+
+		.row {
+			margin-bottom: 10px;
+		}
+		.row-flex {
+			margin-bottom: 20px;
+		}
+
+		[class *=row]:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	</style>
+
+</head>
+<body>
+
+<div class="container-flex">
+	<div class="row-flex">
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+		<div class="grid1">grid 1</div>
+	</div>
+
+	<div class="row">
+		<div class="grid2">grid2</div>
+		<div class="grid2">grid2</div>
+		<div class="grid2">grid2</div>
+		<div class="grid2">grid2</div>
+		<div class="grid2">grid2</div>
+		<div class="grid2">grid2</div>
+	</div>
+
+	<div class="row">
+		<div class="grid3">grid3</div>
+		<div class="grid3">grid3</div>
+		<div class="grid3">grid3</div>
+		<div class="grid3">grid3</div>
+	</div>
+
+	<div class="row">
+		<div class="grid4">grid4</div>
+		<div class="grid4">grid4</div>
+		<div class="grid4">grid4</div>
+	</div>
+
+	<div class="row">
+		<div class="grid6">grid6</div>
+		<div class="grid6">grid6</div>
+	</div>
+
+	<div class="row">
+		<div class="grid7">grid7</div>
+		<div class="grid5">grid5</div>
+	</div>
+
+	<div class="row">
+		<div class="grid8">grid8</div>
+		<div class="grid4">grid4</div>
+	</div>
+
+	<div class="row">
+		<div class="grid9">grid9</div>
+		<div class="grid3">grid3</div>
+	</div>
+
+	<div class="row">
+		<div class="grid10">grid10</div>
+		<div class="grid2">grid2</div>
+	</div>
+
+	<div class="row">
+		<div class="grid11">grid11</div>
+		<div class="grid1">grid1</div>
+	</div>
+
+	<div class="row">
+		<div class="grid12">grid12</div>
+	</div>
+
+
+
+
+
+
+	<div class="row">
+		<div class="grid1">Grid 1</div>
+		<div class="grid2">Grid 2</div>
+		<div class="grid3">Grid 3</div>
+		<div class="grid4">Grid 4</div>
+		<div class="grid5">Grid 5</div>
+		<div class="grid6">Grid 6</div>
+		<div class="grid7">Grid 7</div>
+		<div class="grid8">Grid 8</div>
+		<div class="grid9">Grid 9</div>
+		<div class="grid10">Grid 10</div>
+		<div class="grid11">Grid 11</div>
+		<div class="grid12">Grid 12</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -8,9 +8,10 @@ template: article.jade
 # Variable Width
 
 * [Basic Layouts]()
-* [Flexable Width](flexable.html)
-* [Varable Width](varable.html)
-* [Grid Stystem](grid.html)
+* [Flexible Width](flexable.html)
+* [Variable Width](varable.html)
+* [Grid System](grid.html)
+* [Position](position.html)
 
 In the examples above we had a fixed width of the container. In one example it was `800px` the other fit the width of the screen. In this example we will limit the width to be variable width of anything from `700px` to `1200px`.
 

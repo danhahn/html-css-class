@@ -8,9 +8,10 @@ template: article.jade
 # Flex Width
 
 * [Basic Layouts]()
-* [Flexable Width](flexable.html)
-* [Varable Width](varable.html)
-* [Grid Stystem](grid.html)
+* [Flexible Width](flexable.html)
+* [Variable Width](varable.html)
+* [Grid System](grid.html)
+* [Position](position.html)
 
 There are times where we want the display to be flexible. In this example we will keep the `#globalNav` a fixed width of `width: 200px;`.
 

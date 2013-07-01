@@ -12,9 +12,13 @@ This week we will use the *floats* that we learned last week to build table-free
 # Basic Layouts
 
 * [Basic Layouts]()
-* [Flexable Width](flexable.html)
-* [Varable Width](varable.html)
-* [Grid Stystem](grid.html)
+* [Flexible Width](flexable.html)
+* [Variable Width](varable.html)
+* [Grid System](grid.html)
+* [Position](position.html)
+
+[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week4-notes.zip)
+[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week4.zip)
 
 CSS layouts have changed the way that we are able to design websites. At one time all layouts were done with the `<table>`. This was both slow and hard to manage.
 
