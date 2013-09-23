@@ -3,7 +3,7 @@
     "url": "http://www.svahtml.com/css-site",
     "name": "SVA CSS",
     "owner": "Daniel Hahn",
-    "description": "Summer 2013"
+    "description": "Fall 2013"
   },
   "plugins": [
     "./plugins/paginator.coffee",
@@ -22,6 +22,6 @@
     "smartypants": true
   },
   "paginator": {
-    "perPage": 8
+    "perPage": 12
   }
 }

@@ -7,9 +7,9 @@ subject: TEST
 ---
 #Continued Techniques with HTML and CSS
 
-* 8 weeks
+* 12 weeks
 * Mondays 6:00-10:00 pm
-* June 3 - July 22 (8 Weeks)
+* September 16 - December 9 (12 Weeks)
 
 Daniel Hahn - [dan@svahtml.com](mailto:dan@gmail.com)
 
@@ -53,53 +53,67 @@ Time|Task
 5. Class
 6. ID
 
-###Lesson 2 – Font and Text Properties
+###Lesson 2 - Borders, Padding, Margin
 
-1. Understanding Typography on the Web
-2. Font Properties (family, size, variant, style, and weight)
-3. Shorthand Font Properties
-4. Text Properties
+1. Quick review of Font and Text properties
+2. Overflow
+3. Parts of the border
+4. Padding and Margin
+5. Pseudo Class and elements
 
-###Lesson 3 – Color and Background Properties
-1. Understanding Colors
-2. Setting font Color
-3. Setting Background Color
-4. Setting Background Image
-5. Background Image Properties
-6. Setting Multiple Background Values
-7. Setting Multiple Background Images (nested elements)
-8. Lesson 3 Images
 
-###Lesson 4 – Box Properties
+###Lesson 3 – Box Model and Floats
 
-1. Understanding the Box Model
-2. Setting Borders
-3. Setting Margin
-4. Setting Padding
-5. Setting Height and Width
-6. Classwork - coming soon
+1. Understand the CSS Box Model
+2. Floats
+3. Clear Fix
 
-###Lesson 5 – List Properties
+###Lesson 4 – Layouts
+1. Basic Layouts
+2. Flexible Layout
+3. Variable Layout
+4. Grid Style
+5. Positions
 
-1. Setting Bullets
-2. Setting Numbers
-3. Setting Replace Bullet with Image
-4. Setting Alternative Bullets
-5. Using List as Navigations
-6. Nested Lists
-7. Class Work- coming soon
+###Lesson 5 – Backgrounds and Dropdowns
 
-###Lesson 6 – Table Properties
-1. Setting the Table Layout
-2. Margin and Padding of the table
-3. Tables as Layouts
+1. Backgrounds
+2. Graidents
+3. Dropdowns
 
-###Lesson 7 – Positioning
+###Lesson 6 – CSS3 Selectors, Properties
+1. Sprites
+2. CSS3 Selectors
+3. CSS3 Properties
 
-1. Positioning Type (relative or absolute)
-2. Floating Elements
+###Lesson 7 – CSS Animations 
 
-###Lesson 8 – Layouts
+1. Parts of animations
+2. Examples
 
-1. Two Column Layout
-2. All other layouts
+###Lesson 8 – Media Queries 
+
+1. Media Queries
+2. Intro To Less
+
+### Lesson 9 - Into to Javascripts
+
+1. Intro to Javascript
+2. Intro to Jquery
+
+### Lesson 10 - Development tools
+
+1. Zen Coding 
+2. LESS vs SASS
+3. Other IDEs
+
+### Lesson 11 - Full Site Dev
+
+1.  How to build a full site
+2. Intro to Wordpress
+
+### Lesson 12 -  Final Project
+
+1. Final Project
+
+
