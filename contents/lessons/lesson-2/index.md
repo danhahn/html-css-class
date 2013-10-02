@@ -5,13 +5,16 @@ date: 2013-09-23 18:00
 template: article.jade
 ---
 
-This lesson we talk about borders, padding and margin as well as how to include a file.
+This week we will talk about font, text, border, padding and margins.  We will also talk about colors.
+
 
 <span class="more"></span>
 
-#Border
+#Font Properties
 
-* [Borders]()
+* [Font Properites]()
+* [Text Properties](text.html)
+* [Borders](borders.html)
 * [Padding](padding.html)
 * [Margin](margin.html)
 * [Pseudo](pseudo.html)
@@ -22,36 +25,89 @@ This lesson we talk about borders, padding and margin as well as how to include 
 [Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week2.zip)
 
 
-Borders can be added to most every element and are made up of three parts.
+Property|Values
+-|-
+font:* <br>required|style variant weight size */line-height  family *<br>example: font:bold 10px/12px verdana,"Lithos Regular",sans-serif;
+font-style:|normal, italic
+font-variant:|normal, small-caps
+font-weight:|normal, bold
+font-size: *|length, percent
+line-height:|normal, **number**, **length**, **percent**
+font-family: *|**family-name**, serif (Times), sans-serif (Helvetica), cursive (Zapf-Chancery), fantasy (Western), monospace (Courier)
 
-* `border-width:` defines the width of the border, If no border is defined the default size is 3px.
-* `border-style:` defines how the border will look.  There are a number of options including solid, double, dotted and dashed.
-* `border-color:` defines the color of the border.  If no color is defined the current font color will be used.
+When styling fonts with CSS they are broken into two types.  **Font** properties and **Text** properties. The two are very similar, the **Font** deals more with the character set and the **Text** is more about changing the way the font looks.
 
-A border can’t be defined on an element with out at least the border-style because there is no default value.  If you only define a border-style the border will be 3px thick and have the current font color.
+---
 
-`border-*` will define the border for all sides.  If you need to define a border for only side there are border-[top,right,bottom,left]-[width,style,color] that can be used.
-###For example
+`font` - is a shorthand way to express any font propertiesx on one line.  When using the shorthand the order matters.  There are two required properties, font-size and font-family.
 
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: green;
+	font: italic small-caps bold 12px arial, verdana;
 
-###Using border
-CSS has short hand way to easily define a border.  The border property takes up to three values.
+If you do not define a property within the shorthand it will be set to the default state often normal. It could be the case that in the case of `h1` where the default is for the text to be bold that when using the shorthand and not setting the `font-weight` it will be sent to `normal` and the `h1` will no longer be bold even though we did not set it.
 
-	border: {width} {style} {color};
+---
 
-The only required property is style, the other two are option but recommended.  If the options values are not set the are set to the default value.
+`font-style` will define if something will be italic.  If something is italic by default like the `em` you can also set the `font-style` to be `normal` and it will remove the italics.
 
-Again if you need to target one side of a border you can use border-[top,right,bottom,left].
-###For example
+	font-style: italic;
 
-	border-top: 2px dashed #ff00ff;
+---
 
-Since you can only define one value for each option in the shorthand there is no easy way to set each side to a different value.  In this case you will need to set each with its own property.
+`font-variant` will set the text to be `small-caps` where the “lowercase” letters will be displayed as small uppercase letters.
 
-###For example
+	font-variant: small-caps;
 
-	border-top: 10px dotted blue;
-	border-bottom: 8px solid yellow;
+---
+
+`font-weight`will define text that is bold.  If something is bold by default like `h2` you can remove the bold by setting the value to `normal`.
+
+	font-weight: bold;
+
+---
+
+`font-size` - set the size of the font.
+
+While there are a number of options to define what the size can be we use only three options.  We will use **percent**, **em**, or **pixel**.
+
+Both percent and em calculate the size of the font off of another font size. For example if a font size set to `10px` and wanted to have the text be **twice as large** you could set the size to be `2em` or `200%`,  This will calculate size to be `20px` but if the font size where to change to `12px` it would then calculate the size to `24px`.  The advantage of this is you only need to **change the one font** and all the other fonts will change in relation to that size.
+
+Since we **can’t** measure what an inch is on a computer screen we can’t use it. That also means that we **can’t** use point because `1 points` is defined as `1/72 inch`.  The fact that we do not know what an inch is it we can not calculate what a point is.  Instead you should always define **font sizes in pixels, percent or em**.
+
+	font-size: 12px;
+	font-size: 2em;
+	font-size: 200%;
+
+###CSS Units
+Unit|Description
+-|-
+%|a percentage of something
+in|inch
+cm|centimeter
+mm|millimeter
+em|one em is equal to the font size of the current element
+ex|one ex is the x-height of a font, the x-height is usually about half the font-size
+pt|point (1 pt is the same as 1/72 inch)
+pc|pica (1 pc is the same as 12 points)
+px|pixels (a dot on the computer screen)
+
+---
+
+`font-family` - defines what font is displayed when the page is rendered.  The `font-family` can only load a font that is installed on the **local computer** viewing the page.   This means we are limited in the fonts that installed on both the Mac and Windows computers by default.
+
+	font-family: helvetica, arial, “time new roman”
+
+**Note:** any font name that has a *space* in needs to be quoted(“).
+
+If you want to use a font that may not be fully supported but have a fall back you can put them in a comma separated list.  If the first item in the list is not available it will try the next font in the list.  If no font is available it will display the browser default.
+
+Type|Name
+---|----
+Serif Fonts|Georgia, serif<br>"Palatino Linotype", "Book Antiqua", Palatino, serif<br>"Times New Roman", Times, serif
+Sans-Serif Fonts|Arial, Helvetica, sans-serif	<br>"Arial Black", Gadget, sans-serif<br>"Comic Sans MS", cursive, sans-serif<br>Impact, Charcoal, sans-serif<br>"Lucida Sans Unicode", "Lucida Grande", sans-serif<br>Tahoma, Geneva, sans-serif<br>"Trebuchet MS", Helvetica, sans-serif<br>Verdana, Geneva, sans-serif
+Monospace Fonts|"Courier New", Courier, monospace<br>"Lucida Console", Monaco, monospace
+<style>
+table tr td:nth-child(1){width:20%}
+</style>
+
+
+

@@ -7,7 +7,9 @@ template: article.jade
 
 #Pesedo
 
-* [Borders]()
+* [Font Properites]()
+* [Text Properties](text.html)
+* [Borders](borders.html)
 * [Padding](padding.html)
 * [Margin](margin.html)
 * [Pseudo](pseudo.html)
