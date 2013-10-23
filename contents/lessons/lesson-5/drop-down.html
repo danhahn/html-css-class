@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Dropdown Example</title>
+	<style type="text/css">
+
+		body {
+			font: 12px arial;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		nav {
+			background-color: #34495e;
+		}
+
+		nav:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		nav li {
+			background-color: #34495e;
+		}
+
+		nav li a {
+			display: block;
+			padding: 5px 10px;
+			color: #fffafa;
+			font-weight: bold;
+			text-decoration: none;
+			min-width: 100px;
+		}
+
+		nav li:hover {
+			background-color: #3861C9;
+		}
+
+		nav >  ul > li {
+			float: left;
+		}
+
+		nav > ul > li > ul {
+			position: absolute;
+			display: none;
+		}
+
+		nav > ul > li:hover > ul {
+			display: block;
+		}
+
+		nav > ul > li:hover > ul > li {
+			background-color: #5C646D;
+		}
+
+		nav li a:hover {
+			background: #6790EF;
+		}
+
+	</style>
+</head>
+<body>
+
+<nav>
+	<ul>
+		<li><a href="/lessons/lesson-5/#">News</a><ul>
+			<li><a href="/lessons/lesson-5/#">Top&nbsp;Stories</a></li>
+			<li><a href="/lessons/lesson-5/#">Entertainment</a></li>
+		</ul>
+		</li>
+		<li><a href="/lessons/lesson-5/#">Weather</a><ul>
+			<li><a href="/lessons/lesson-5/#">5&nbsp;Day</a></li>
+			<li><a href="/lessons/lesson-5/#">Weekend</a></li>
+		</ul>
+		</li>
+		<li><a href="/lessons/lesson-5/#">Contact Us</a><ul>
+			<li><a href="/lessons/lesson-5/#">Email</a></li>
+			<li><a href="/lessons/lesson-5/#">Phone</a></li>
+			<li><a href="/lessons/lesson-5/#">Facebook</a></li>
+			<li><a href="/lessons/lesson-5/#">Skype</a></li>
+			<li><a href="/lessons/lesson-5/#">Telegraph</a></li>
+		</ul>
+		</li>
+	</ul>
+</nav>
+
+
+</body>
+</html>
