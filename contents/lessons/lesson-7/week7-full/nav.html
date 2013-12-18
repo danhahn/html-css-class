@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+	<title>Document</title>
+
+	<style>
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		a {
+			color: #999999;
+			text-decoration: none;
+			font: bold 16px verdana;
+			display: block;
+			padding: 15px 20px;
+			min-width: 100px;
+		}
+
+		nav {
+			background: linear-gradient(rgba(255,255,255,.3), transparent);
+			background-color: black;
+			border-radius: 5px;
+			box-shadow: 0 1px 1px #777777, 0 1px 0 #666666 inset;
+			border: 1px solid black;
+			width: 1200px;
+			margin: 0 auto;
+		}
+
+		nav:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		nav ul li:hover a {
+			color: #fff;
+		}
+
+		nav > ul > li {
+			float: left;
+			border-left: 1px solid rgba(255,255,255,.3);
+			border-right: 1px solid black;
+		}
+
+		nav > ul > li:first-child {
+			border-left: none;
+		}
+
+		nav > ul > li:last-child {
+			border-right: none;
+		}
+
+		nav > ul > li:hover > a {
+			background-color: #7e7c7c;
+		}
+		nav > ul > li:hover > ul {
+			margin-top: 2px;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		nav > ul > li > ul {
+			visibility: hidden;
+			position: absolute;
+			background-color: #000000;
+			margin-top: 20px;
+			transition: all .2s;
+			box-shadow: 0 1px 1px #777777, 0 1px 0 #666666 inset;
+			border: 1px solid black;
+			border-radius: 0 0 5px 5px;
+			z-index: 10;
+		}
+
+		nav > ul > li > ul a {
+			font-weight: normal;
+			border-bottom: 1px solid rgba(255,255,255,.3);
+			min-width: 200px;
+		}
+
+		nav > ul > li > ul a:hover {
+			background-color: #262626;
+		}
+
+		nav > ul > li > ul:before {
+			background-color: #b2b2b2;
+			content: "";
+			height: 20px;
+			left: 20px;
+			position: absolute;
+			top: -11px;
+			transform: rotate(45deg);
+			width: 20px;
+			z-index: -1;
+		}
+
+		nav > ul > li > ul:after {
+			background-color: #000;
+			content: "";
+			height: 20px;
+			left: 20px;
+			position: absolute;
+			top: -10px;
+			transform: rotate(45deg);
+			width: 20px;
+			z-index: -1;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<nav>
+	<ul>
+		<li><a href="item1.html">Item 1</a>
+			<ul>
+				<li><a href="item1.html">Sub Item 1</a></li>
+				<li><a href="item2.html">Sub Item 2</a></li>
+				<li><a href="item3.html">Sub Item 3</a></li>
+				<li><a href="item4.html">Sub Item 4</a></li>
+				<li><a href="item5.html">Sub Item 5</a></li>
+			</ul>
+		</li>
+		<li><a href="item2.html">Item 2</a>
+			<ul>
+				<li><a href="item1.html">Sub Item 1</a></li>
+				<li><a href="item2.html">Sub Item 2</a></li>
+				<li><a href="item3.html">Sub Item 3</a></li>
+				<li><a href="item4.html">Sub Item 4</a></li>
+				<li><a href="item5.html">Sub Item 5</a></li>
+			</ul>
+		</li>
+		<li><a href="item3.html">Item 3</a>
+			<ul>
+				<li><a href="item1.html">Sub Item 1</a></li>
+				<li><a href="item2.html">Sub Item 2</a></li>
+				<li><a href="item3.html">Sub Item 3</a></li>
+				<li><a href="item4.html">Sub Item 4</a></li>
+				<li><a href="item5.html">Sub Item 5</a></li>
+			</ul>
+		</li>
+		<li><a href="item4.html">Item 4</a>
+			<ul>
+				<li><a href="item1.html">Sub Item 1</a></li>
+				<li><a href="item2.html">Sub Item 2</a></li>
+				<li><a href="item3.html">Sub Item 3</a></li>
+				<li><a href="item4.html">Sub Item 4</a></li>
+				<li><a href="item5.html">Sub Item 5</a></li>
+			</ul>
+		</li>
+		<li><a href="item5.html">Item 5</a>
+			<ul>
+				<li><a href="item1.html">Sub Item 1</a></li>
+				<li><a href="item2.html">Sub Item 2</a></li>
+				<li><a href="item3.html">Sub Item 3</a></li>
+				<li><a href="item4.html">Sub Item 4</a></li>
+				<li><a href="item5.html">Sub Item 5</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+
+
+</body>
+</html>

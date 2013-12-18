@@ -5,27 +5,27 @@ $(function() {
 
 	var $ul = $("<div id='localNav'><ul class='btn-group'></ul></div>");
 
-	$(".content h2").each(function(){
-		var el =$(this);
-		var addID = el.html().toLowerCase().replace(/\&nbsp;/g, "_").replace(/\s+/g, "_");
-		var $li = $("<li class='btn'><a></a></li>").click(function(event) {
-			event.stopPropagation();
-			$('html, body').animate({
-				scrollTop: $("#"+addID).offset().top
-			}, 500);
-		});
-		$li.find("a").attr("href", "#"+addID).html(el.html());
-		var addItem = $ul.find(".btn-group");
-		$li.appendTo(addItem);
-		el.attr("id", addID);
-		var top = $("<span class='scroll-top'>&uarr;Top</span>").click(function() {
-			$('html, body').animate({
-				scrollTop: 0
-			}, 500);
-		});
-		top.appendTo(el);
-		showNav = true;
-	});
+//	$(".content h2").each(function(){
+//		var el =$(this);
+//		var addID = el.html().toLowerCase().replace(/\&nbsp;/g, "_").replace(/\s+/g, "_");
+//		var $li = $("<li class='btn'><a></a></li>").click(function(event) {
+//			event.stopPropagation();
+//			$('html, body').animate({
+//				scrollTop: $("#"+addID).offset().top
+//			}, 500);
+//		});
+//		$li.find("a").attr("href", "#"+addID).html(el.html());
+//		var addItem = $ul.find(".btn-group");
+//		$li.appendTo(addItem);
+//		el.attr("id", addID);
+//		var top = $("<span class='scroll-top'>&uarr;Top</span>").click(function() {
+//			$('html, body').animate({
+//				scrollTop: 0
+//			}, 500);
+//		});
+//		top.appendTo(el);
+//		showNav = true;
+//	});
 
 	if(showNav)
 		$ul.prependTo(".main-content");

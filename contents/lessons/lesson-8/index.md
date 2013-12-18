@@ -15,8 +15,8 @@ This week we will be talking about resonsive design and media queries.  We will 
 * [Media Querie]()
 * [LESS](less.html)
 
-[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week7-notes.zip)
-[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week7.zip)
+[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week8-notes.zip)
+[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week8.zip)
 
 A *media query* consists of a media type and at least one expression that limits the style sheets' scope by using media features, such as width, height, and color. Media queries, added in CSS3, let the presentation of content be tailored to a specific range of output devices without having to change the content itself.
 

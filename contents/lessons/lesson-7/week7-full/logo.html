@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+
+	<style>
+		.example {
+			background: url(images/logo.png);
+			background-size: 100%;
+			width: 200px;
+			height: 200px;
+			animation: example 10s infinite alternate linear;
+		}
+
+		@keyframes example {
+			from {
+				transform:rotate(0deg);
+				margin-left: -200px;
+			}
+			80% {
+				opacity: 1;						
+			}
+			to {
+				transform:rotate(359deg);
+				margin-left: 100%;
+				opacity: 0;	
+			}
+		}
+	</style>
+
+</head>
+<body>
+
+<div class="example"></div>
+
+	
+</body>
+</html>
