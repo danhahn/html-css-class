@@ -1,6 +1,14 @@
 
 extends layout
 
+block addlocalcss
+  if page.metadata.localcss
+    link(rel='stylesheet', href=page.metadata.localcss)
+
+block addlocaljs
+  if page.metadata.localjs
+    script(src=page.metadata.localjs)
+
 block append vars
   - bodyclass = 'article-detail'
 
@@ -9,14 +17,16 @@ block prepend title
 
 block header
   include author
-  div.well.small
+  div.well.small.page-title
     h1= page.title
-    p= moment(page.date).format('MMMM D, YYYY')
+    div.date
+      div.month= moment(page.date).format('MMM')
+      div.day= moment(page.date).format('D')
 
 block content
-  div.span3.side-nav
+  div.col-md-3.side-nav
     div.side-nav-inner
-  div.span9.main-content
+  div.col-md-9.main-content
     article.article
       section.content!= typogr(page.html).typogrify()
 

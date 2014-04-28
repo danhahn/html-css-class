@@ -3,7 +3,9 @@
     "url": "http://www.svahtml.com/css-site",
     "name": "SVA CSS",
     "owner": "Daniel Hahn",
-    "description": "Fall 2013"
+    "description": "Summer 2014",
+	"dates": "January 29, 2014 to April 23, 2014",
+	"navitems" : [1,2,3,4,5,6,7,8,9,10,11]
   },
   "plugins": [
     "./plugins/paginator.coffee",
