@@ -3,16 +3,24 @@ extends layout
 block header
   div.well.small
     h1= locals.description
+    h2= locals.dates
+
+block notes
+  if locals.note
+    div.container
+      div.alert.alert-danger
+        strong= locals.note
 
 block content
   include author
   each article in articles
-    article.article.intro.well.span3
+    article.article.intro.well.col-md-3
       header
         h2
           a(href=article.url)= article.title
-        p.date
-          span= moment(article.date).format('MMMM D, YYYY')
+        div.date
+          div.month= moment(article.date).format('MMM')
+          div.day= moment(article.date).format('DD')
       section.content
         !{ typogr(article.intro).typogrify() }
         if article.hasMore
