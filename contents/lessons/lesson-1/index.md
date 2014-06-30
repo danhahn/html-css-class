@@ -1,7 +1,7 @@
 ---
 title: Lesson 1
 author: Dan Hahn
-date: 2013-09-16 18:00
+date: 2014-06-09 18:00
 template: article.jade
 subject: TEST
 ---

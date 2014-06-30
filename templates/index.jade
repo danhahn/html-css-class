@@ -11,10 +11,17 @@ block notes
       div.alert.alert-danger
         strong= locals.note
 
+block classnote
+  if locals.classnote
+    div.container
+      div.alert.alert-info
+        p= locals.classnote
+          a.btn.btn-xs(href=locals.classaction, target='_blank') Click Here
+
 block content
   include author
   each article in articles
-    article.article.intro.well.col-md-3
+    article.article.intro.well.col-md-6
       header
         h2
           a(href=article.url)= article.title

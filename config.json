@@ -4,8 +4,10 @@
     "name": "SVA CSS",
     "owner": "Daniel Hahn",
     "description": "Summer 2014",
-	"dates": "January 29, 2014 to April 23, 2014",
-	"navitems" : [1,2,3,4,5,6,7,8,9,10,11]
+	"dates": "June 9, 2014 to July 28, 2014",
+	"navitems" : [1,2,3,4,5,6,7,8],
+	  "classnote" : "Please enter your Name, Email and Phone here -> ",
+	  "classaction" : "https://docs.google.com/forms/d/11cz6hbA64oOwPAOPJvaFXSDalsjb4h_BllrcP3rOAtg/viewform?usp=send_form"
   },
   "plugins": [
     "./plugins/paginator.coffee",
@@ -24,6 +26,6 @@
     "smartypants": true
   },
   "paginator": {
-    "perPage": 12
+    "perPage": 8
   }
 }

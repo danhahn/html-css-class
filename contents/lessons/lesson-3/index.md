@@ -1,7 +1,7 @@
 ---
 title: Lesson 3
 author: Dan Hahn
-date: 2013-09-30 18:00
+date: 2014-06-23 18:00
 template: article.jade
 ---
 
@@ -14,6 +14,7 @@ This week we will talk about the **CSS Box Model** and how to float elements.
 * [Box Model]()
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
+* [Flex Box](flex-box.html)
 * [Homework](homework.html)
 
 [Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week3-notes.zip)

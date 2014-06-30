@@ -229,26 +229,27 @@ p.date {
 	color: #fff;
 }
 
-.col-md-3.well {
+.col-md-6.well {
 	min-height: 250px;
 	position: relative;
 	margin-right: 10px;
-	width: -webkit-calc(~"25% - 10px");
-	&:nth-of-type(4n) {
-		width: 25%;
+	width: -webkit-calc(~"50% - 10px");
+	&:nth-of-type(2n) {
+		width: 50%;
 		margin-right: 0;
+	}
+	.more {
+		position: absolute;
+		bottom: 19px;
+		left: 19px;
+		right: 19px;
+		a {
+			color: @white;
+		}
 	}
 }
 
-.col-md-3.well .more {
-	position: absolute;
-	bottom: 19px;
-	left: 19px;
-	right: 19px;
-	a {
-		color: @white;
-	}
-}
+
 
 .row-fluid [class*="span3"]:nth-child(4n+1) {
 	margin-left: 0;

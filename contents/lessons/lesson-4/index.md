@@ -1,7 +1,7 @@
 ---
 title: Lesson 4
 author: Dan Hahn
-date: 2013-10-07 18:00
+date: 2014-06-30 18:00
 template: article.jade
 ---
 
@@ -16,7 +16,6 @@ This week we will use the *floats* that we learned last week to build table-free
 * [Variable Width](varable.html)
 * [Grid System](grid.html)
 * [Position](position.html)
-* [Homework](homework.html)
 
 [Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week4-notes.zip)
 [Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week4.zip)
