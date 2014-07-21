@@ -5,197 +5,331 @@ date: 2014-07-21 18:00
 template: article.jade
 ---
 
-This week we will talk about CSS Animation
+This week we will be talking about Javascritp and Jquery.
 
 <span class="more"></span>
 
-# CSS3 Animation
 
-* [CSS3 Animations]()
+<h1>What is JavaScript?</h1>
 
-[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week7-notes.zip)
+* [Javascript]()
+
 [Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week7.zip)
 
-**CSS animations** make it possible to animate transitions from one CSS style configuration to another. Animations consist of two components, a style describing the CSS animation and a set of keyframes that indicate the start and end states of the animation's style, as well as possible intermediate waypoints along the way.
-
-There are three key advantages to CSS animations over traditional script-driven animation techniques:
-
-1. They're easy to use for simple animations; you can create them without even having to know JavaScript.
-2. The animations run well, even under moderate system load. Simple animations can often perform poorly in JavaScript (unless they're well made). The rendering engine can use frame-skipping and other techniques to keep the performance as smooth as possible.
-3. Letting the browser control the animation sequence lets the browser optimize performance and efficiency by, for example, reducing the update frequency of animations running in tabs that aren't currently visible.
-
-##Configuring the animation
-
-To create a CSS animation sequence, you style the element you want to animate with the animation property or its sub-properties. This lets you configure the timing and duration of the animation, as well as other details of how the animation sequence should progress. This does not configure the actual appearance of the animation, which is done using the `@keyframes` at-rule as described in Defining the animation sequence using keyframes below.
-
-The sub-properties of the animation property are:
-
-
-Prop|Value
----|---
-[animation-delay](notes/delay.html)|Configures the delay between the time the element is loaded and the beginning of the animation sequence.
-[animation-direction](notes/direction.html)|Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
-[animation-duration](notes/duration.html)|Configures the length of time that an animation should take to complete one cycle.
-[animation-iteration-count](notes/count.html)|Configures the number of times the animation should repeat; you can specify infinite to repeat the animation indefinitely.
-[animation-name](notes/name.html)|Specifies the name of the `@keyframes` at-rule describing the animation's keyframes.
-[animation-play-state](notes/play.html)|Lets you pause and resume the animation sequence.
-[animation-timing-function](notes/timing.html)|Configures the timing of the animation; that is, how the animation transitions through keyframes, by establishing acceleration curves.
-[animation-fill-mode](notes/fill.html)|Configures what values are applied by the animation before and after it is executing.
-
-##Defining the animation sequence using keyframes
-
-Once you've configured the animation's timing, you need to define the appearance of the animation. This is done by establishing two or more keyframes using the `@keyframes` at-rule. Each keyframe describes how the animated element should render at a given time during the animation sequence.
-
-Since the timing of the animation is defined in the CSS style that configures the animation, keyframes use a percentage to indicate the time during the animation sequence at which they take place. 0% indicates the first moment of the animation sequence, while 100% indicates the final state of the animation. Because these two times are so important, they have special aliases: from and to. Both are optional. If from/0% or to/100% is not specified, the browser starts or finishes the animation using the computed values of all attributes.
-
-You can optionally include additional keyframes that describe intermediate steps along the way from the starting point to the ending point of the animation.
-
-##Examples
-
-**Note:** The examples here don't use any prefix on the animation CSS properties. WebKit-based browsers and older version of the other browsers may need prefixes; the live examples you can click to see in your browser also include the -webkit prefixed versions.
-
-Making text slide across the browser window
-
-This simple example styles the `<h1>` element so that the text slides in from off the right edge of the browser window.
-
-	h1 {
-	  animation-duration: 3s;
-	  animation-name: slidein;
-	}
-
-	@keyframes slidein {
-	  from {
-	    margin-left: 100%;
-	    width: 300%
-	  }
-
-	  to {
-	    margin-left: 0%;
-	    width: 100%;
-	  }
-	}
-
-The style for the `<h1>` element here specifies that the animation should take 3 seconds to execute from start to finish, using the animation-duration property, and that the name of the `@keyframes` at-rule defining the keyframes for the animation sequence is named "slidein".
-
-If we wanted any custom styling on the `<h1>` element to appear in browsers that don't support CSS animations, we would include it here as well; however, in this case we don't want any custom styling other than the animation effect.
-
-The keyframes are defined using the `@keyframes` at-rule. In this case, we have just two keyframes. The first occurs at 0% (using the alias from). Here, we configure the left margin of the element to be at 100% (that is, at the far right edge of the containing element), and the width of the element to be 300% (or three times the width of the containing element). This causes the first frame of the animation to have the header drawn off the right edge of the browser window.
-
-The second (and final) keyframe occurs at 100% (using the alias to). The left margin is set to 0% and the width of the element is set to 100%. This causes the header to finish its animation flush against the left edge of the content area.
-
-
-
-##Adding another keyframe
-
-Let's add another keyframe to the previous example's animation. Let's say we want the header's font size to increase as it moves from right to left for a while, then to decrease back to its original size. That's as simple as adding this keyframe:
-
-	75% {
-	  font-size: 300%;
-	  margin-left: 25%;
-	  width: 150%;
-	}
-
-This tells the browser that 75% of the way through the animation sequence, the header should have its left margin at 25% and the width should be 150%.
-
-
-
-##Making it repeat
-
-To make the animation repeat itself, simply use the animation-iteration-count property to indicate how many times to repeat the animation. In this case, let's use infinite to have the animation repeat indefinitely:
-
-	h1 {
-	  animation-duration: 3s;
-	  animation-name: slidein;
-	  animation-iteration-count: infinite;
-	}
-
-
-
-##Making it move back and forth
-
-That made it repeat, but it's very odd having it jump back to the start each time it begins animating. What we really want is for it to move back and forth across the screen. That's easily accomplished by setting animation-direction to alternate:
-
-	h1 {
-	  animation-duration: 3s;
-	  animation-name: slidein;
-	  animation-iteration-count: infinite;
-	  animation-direction: alternate;
-	}
-
-
-
-##Using animation events
-
-You can get additional control over animations -- as well as useful information about them -- by making use of animation events. These events, represented by the AnimationEvent object, can be used to detect when animations start, finish, and begin a new iteration. Each event includes the time at which it occurred as well as the name of the animation that triggered the event.
-
-We'll modify the sliding text example to output some information about each animation event when it occurs, so we can get a look at how they work.
-
-##Adding the animation event listeners
-
-We'll use JavaScript code to listen for all three possible animation events. The setup() function configures our event listeners; we call it when the document is first loaded in order to set things up.
-
-	function setup() {
-	  var e = document.getElementById("watchme");
-	  e.addEventListener("animationstart", listener, false);
-	  e.addEventListener("animationend", listener, false);
-	  e.addEventListener("animationiteration", listener, false);
-
-	  var e = document.getElementById("watchme");
-	  e.className = "slidein";
-	}
-
-This is pretty standard code; you can get details on how it works in the documentation for element.addEventListener(). The last thing the setup() function here does is set the class on the element we'll be animating to "slidein"; we do this to start the animation.
-
-Why? Because the animationstart event fires as soon as the animation starts, and in our case, that happens before our code runs. So we'll start the animation ourselves by setting the class of the element to the style that gets animated after the fact.
-
-Receiving the events
-
-The events get delivered to the listener() function, which is shown below.
-
-	function listener(e) {
-	  var l = document.createElement("li");
-	  switch(e.type) {
-	    case "animationstart":
-	      l.innerHTML = "Started: elapsed time is " + e.elapsedTime;
-	      break;
-	    case "animationend":
-	      l.innerHTML = "Ended: elapsed time is " + e.elapsedTime;
-	      break;
-	    case "animationiteration":
-	      l.innerHTML = "New loop started at time " + e.elapsedTime;
-	      break;
-	  }
-	  document.getElementById("output").appendChild(l);
-	}
-
-This code, too, is very simple. It simply looks at the event.type to determine which kind of animation event occurred, then adds an appropriate note the `<ul>` (unordered list) we're using to log these events.
-
-The output, when all is said and done, looks something like this:
-
-Started: elapsed time is 0
-New loop started at time 3.01200008392334
-New loop started at time 6.00600004196167
-Ended: elapsed time is 9.234000205993652
-
-**Note** that the times are very close to, but not exactly, those expected given the timing established when the animation was configured. Note also that after the final iteration of the animation, the animationiteration event isn't sent; instead, the animationend event is sent.
-
-##The HTML
-
-Just for the sake of completeness, here's the HTML that displays the page content, including the list into which the script inserts information about the received events:
-
-	<body onload="setup()">
-	  <h1 id="watchme">Watch me move</h1>
-	  <p>This example shows how to use CSS animations to make <code>H1</code> elements
-	  move across the page.</p>
-	  <p>In addition, we output some text each time an animation event fires, so you can see them in action.</p>
-	  <ul id="output">
-	  </ul>
-	</body>
-
-
-
-
-&copy; 2005 - 2013 Mozilla Developer Network and individual contributors
-Content is available under these licenses • About MDN • Contribute to the code • Privacy Policy
-
-<style>td{width:50%;}</style>
+[Slide Show](lesson/index.html)
+
+<blockquote class="fragment" cite="http://en.wikipedia.org/wiki/JavaScript#CITEREFFlanaganFerguson2006">
+&ldquo;JavaScript (JS) is an interpreted computer programming language.  It was originally implemented as part of web browsers so that client-side scripts could interact with the user, control the browser, communicate asynchronously, and alter the document content that was displayed. More recently, however, it has become common in both game development and the creation of desktop applications.&rdquo;
+</blockquote>
+<p class="fragment">(From Wikipedia)</p>
+</section>
+
+<h2>What does that mean?</h2>
+<p class="fragment">JavaScript gives life to web pages by way of the interpreter in a web browser.  The JavaScript interpreter translates a given script in order to manipulate elements within the page. </p>
+<p class="fragment">Without it web sites would be fairly static.</p>
+</section>
+</section>
+
+
+<h1>History of JavaScript</h1>
+<ol>
+<li class="fragment">Created by Brendan Eich (Former Mozilla CEO) </li>
+<li class="fragment">Shipped in Netscape Navigator 2.0 in 1995</li>
+<li class="fragment">Originally Called <i>LiveScript</i></li>
+<li class="fragment">Partially inspired by and shares superficial similarities to Java, but intended to appeal to non-programmers, similar to Microsoft's Visual Basic</li>
+<li class="fragment">Microsoft quickly adopted to gain footing with IE 3 in 1996</li>
+<li class="fragment">Netscape submitted it to to The European Computer Manufacturers Association (ECMA) in 1996 for standardization. The standardized spec for this language is ECMAscript</li>
+<li class="fragment">Now the working language of the web, for better or worse</li>
+</ol>
+</section>
+
+
+
+<h1>What is it used for?</h1>
+<ol>
+<li class="fragment">Adding dynamic behavior to web pages</li>
+<li class="fragment">Manipulating and scripting elements on web pages</li>
+<li class="fragment">Requesting data from a different source (we won't cover this)</li>
+<li class="fragment">Processing data outside of the web with frameworks like Node.js (we won't cover this)</li>
+</ol>
+<h2 class="fragment" style="margin-top: 60px;">Examples: </h2>
+</section>
+
+
+
+<h3><b style="color: gray">color</b> a color matching game</h3>
+<div class="fragment">
+<p>Using a markup language called SVG, JavaScript brings interactive graphics to create a rich experience</p>
+<a href="http://color.method.ac/">http://color.method.ac</a>
+</div>
+</section>
+
+<h3>reveal.js</h3>
+<p>This presentation is using a JavaScript library.  Requires no JS knowledge on my part,  but automagically adds razzle & dazzle.
+</p>
+<a href="http://lab.hakim.se/reveal-js/">http://lab.hakim.se/reveal-js/</a>
+</section>
+</section>
+
+
+
+<h2>What does it look like?</h2>
+<pre class="fragment"><code data-trim contenteditable>
+&lt;head&gt;
+&lt;script&gt;
+function sayHello(name) {
+alert("Hello " + name + "!");
+}
+&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+</section>
+
+<p>Similar to stylesheets, to keep your code clean & organized, best practice is to include external script</p>
+<pre class="fragment"><code data-trim contenteditable>
+&lt;head&gt;
+&lt;link href="path/to/mystylesheet.css" rel="stylesheet" type="text/css"&gt;&lt;/link&gt;
+&lt;script src="path/to/myjavascript.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<p class="fragment">In most cases stylesheets should precede script tags so that the browser can immediately render layout as intended, whereas scripts adding interactive behavior can take considerable time to load</p>
+</section>
+</section>
+
+
+<h2>Lets dive in</h2>
+<div class="fragment">
+<p>Variable assignment: numbers, booleans, strings</p>
+<pre><code data-trim contenteditable>
+var myNumber = 5;
+var myBoolean = true;
+var myString = "Hello World!";
+</code></pre>
+</div>
+<div class="fragment">
+<p>Variable assignment: arrays, objects </p>
+<pre><code data-trim contenteditable>
+var myNumberArray = [1,2,3];
+var myCircleObject = { color: "red", radius: 2};
+</code></pre>
+<p class="fragment">Take note how variable declarations begin with the <b>var</b> keyword</p>
+</div>
+</section>
+
+
+<h2>Control Flow</h2>
+<div class="fragment">
+<p><b>if</b> statements are used to control the flow of logic in your script. The expression within the parenthesis following the <b>if</b> keyword must evaluate to a boolean value: <b>true</b> or <b>false</b> in order to evaluate
+</p>
+<pre><code data-trim contenteditable>
+var myGrade = 92;
+
+if (myGrade >= 85) {
+alert('You are doing really well in this class!');
+} else {
+alert('You might want to study up.');
+}
+</code></pre>
+<p class="fragment">The expression in the parenthesis is checking that <b>myGrade</b> is greater than or equal to 85.  &gt, &gt=, &lt, &lt=, == are all logical operators used to compare values.</p>
+</div>
+</section>
+
+
+<h2>Arithmetic Expressions</h2>
+<div class="fragment">
+<p>We can perform arithmetic operations on numbers in JavaScript.  +, -, /, * are standard operators.  Take note on the 8th line that when we add a number to a string (a series of characters), JavaScript coerces the number to a string & appends it.
+</p>
+<pre><code data-trim contenteditable>
+var exam1 = 92;
+var exam2 = 85;
+var exam3 = 90;
+
+var average = (exam1 + exam2 + exam3) / 3;
+
+if (average >= 85) {
+alert('You are doing really well in this class!');
+} else {
+alert('You might want to study up. Your average is ' + average + '.');
+}
+</code></pre>
+<p class="fragment">JavaScript also features a <b>Math</b> namespace of advanced operations including sqrt(), pow() and abs().</p>
+</div>
+</section>
+
+
+<h2>Objects</h2>
+<div class="fragment">
+<p>Objects are a structured set of primitive values.  Let's declare an object named circle with
+a color and radius property.  Then we'll calculate the circumference and update the object with a new property that we can access later.
+<pre><code data-trim contenteditable>
+var pi = 3.14;
+
+var circle = {
+color: "red",
+radius: 5
+};
+
+circle.circumference = 2 * pi * circle.radius;
+</code></pre>
+<p class="fragment">Note that we've declared a variable called pi for convenience and readability.
+</p>
+</div>
+</section>
+
+
+
+<h2>Arrays & Iteration</h2>
+<p>An array is a collection of things.  They could be basic values, such as numbers, or more complex data structures such as objects. </p>
+<div class="fragment">
+<p>Let's declare an array of objects representing report cards. We can access the length of the array. The first element of an array starts at 0 and the last one is at the position of length - 1</p>
+<pre><code data-trim contenteditable>
+var ReportCards = [
+{ name: "Dan", Exam1: 85, Exam2: 90, Exam3: 75 },
+{ name: "Elijah", Exam1: 65, Exam2: 80, Exam3: 75 },
+{ name: "Jennifer", Exam1: 95, Exam2: 80, Exam3: 100 }
+];
+
+//Access the 1st element
+ReportCards[0];
+
+//Access the name of the 2nd element
+ReportCards[1].name;
+</code></pre>
+</div>
+</section>
+
+<p>Now Let's iterate over our ReportCards array and calculate the average final score for each student.</p>
+<p class="fragment">A <b>for</b> loop is composed of multiple statements: the initial position of the iterator (in this case we are using the variable i), the terminating position & finally the incrementor.  In most for loops it is only needed to increment by one using the operator i++.  This is equivalent to i = i + 1.</p>
+<pre class="fragment"><code data-trim contenteditable>
+for (var i = 0; i < ReportCards.length; i++) {
+var card = ReportCards[i];
+card.final = (card.Exam1 + card.Exam2 + card.Exam3) / 3;
+}
+</code></pre>
+</section>
+</section>
+
+
+<h2>Functions</h2>
+<p class="fragment">
+Functions encapsulate a series of statements to represent a particular behavior. Functions become a critical mechanism when working with a large code base because they allow behaviors to be reusable.
+<pre class="fragment"><code data-trim contenteditable>
+function calculateAverage(numbers) {
+var aggregate = 0;
+
+for (var i = 0; i < numbers.length; i++) {
+aggregate = aggregate + numbers[i];
+}
+
+return aggregate / numbers.length;
+}
+
+var set_of_numbers = [5, 10, 15];
+
+calculateAverage(set_of_numbers);
+
+var another_set_of_numbers = [100, 130, 150, 170, 200];
+
+calculateAverage(another_set_of_numbers);
+</code></pre>
+</p>
+</section>
+
+
+
+<h1>jQuery</h1>
+</section>
+
+
+<h2>What is jQuery?</h2>
+<p class="fragment">jQuery is a cross-browser JavaScript library originally developed by John Resig.  It simplifies DOM (Document Object Model) manipulation and standardizes the API between different browser environments. jQuery has gained incredible popularity for its ease of use and expressive syntax. </p>
+
+<p class="fragment">Note: The DOM just means HTML accessible by JavaScript. Its effectively a snooty way of saying HTML when its live and programmable in a web browser. An API just stands for Application Programming Interface.  It means 'The way something can be programmatically accessed.'<p>
+</section>
+
+
+<h2>Selectors</h2>
+<p class="fragment">jQuery offers an especially convenient way to select HTML elements by way of CSS selectors, as well as creating HTML fragments on the fly. </p>
+<pre class="fragment"><code data-trim contenteditable>
+//select all divs with the class button
+$('div.button');
+
+//select all table data cells whose parents are a table row with class even
+$('tr.even > td');
+
+//select by id (should only return one element)
+$('#reportcards');
+</code></pre>
+<p class="fragment">$() is jQuery's magic function.  jQuery sacrifices verbose syntax in favor of short, expressive statements.  One of the jQuery framework's design decisions is to have a magic $() function that is context aware to the arguments being passed in.  In this case we are passing in a string representing a CSS selector, so jQuery knows to look for elements in our web page.</p>
+</section>
+
+
+<h2>DOM Fragments</h2>
+<p class="fragment">Let's create a document fragment composed of an HTML string.  We will then use
+jQuery's append() method to add it to our document body.</p>
+<pre class="fragment"><code data-trim contenteditable>
+var paragraph_fragment = $('<p>Hello World!</p>');
+
+$('#paragraph-container').append(paragraph_fragment);
+</code></pre>
+<p class="fragment">jQuery's magic $() function recognized that our string represents HTML instead of a CSS selector, so it knows to create a document object which we can further manipulate.</p>
+<pre class="fragment"><code data-trim contenteditable>
+paragraph_fragment.addClass('red-border');
+</code></pre>
+<p class="fragment">We added the class 'red-border' to our paragraph tag.</p>
+</section>
+
+
+
+<h2>Interactive Modules</h2>
+<p class="fragment">Let's create a carousel out of a set of images. We'll add the images to our HTML manually and then leverage a jQuery plugin to enhance the page with interactive behavior.</p>
+<pre class="fragment"><code data-trim contenteditable>
+<ul id="photo-carousel" class="jcarousel-skin-name">
+<li>
+<img src="image1.jpg" />
+</li>
+<li>
+<img src="image2.jpg" />
+</li>
+<li>
+<img src="image3.jpg" />
+</li>
+<li>
+<img src="image4.jpg" />
+</li>
+</ul>
+</code></pre>
+</section>
+
+<h3>Adding our jQuery module</h3>
+<p class="fragment">We'll want to reference the jQuery resource in our document and initialize it once the document is ready.</p>
+<pre class="fragment"><code data-trim contenteditable>
+<ul id="photo-carousel" class="jcarousel-skin-name">
+<li>
+<img src="image1.jpg" />
+</li>
+<li>
+<img src="image2.jpg" />
+</li>
+<li>
+<img src="image3.jpg" />
+</li>
+<li>
+<img src="image4.jpg" />
+</li>
+</ul>
+</code></pre>
+</section>
+</section>
+
+
+<h2>Expand your knowledge</h2>
+<ul>
+<li class="fragment">Code Academy: <a href="http://www.codecademy.com/tracks/javascript">http://www.codecademy.com/tracks/javascript</a></li>
+<li class="fragment">JavaScript the Good Parts: <a href="http://shop.oreilly.com/product/9780596517748.do">http://shop.oreilly.com/product/9780596517748.do</a></li>
+<li class="fragment">jQuery Documentation: <a href="http://api.jquery.com/">http://api.jquery.com/</a></li>
+</ul>
+</section>
+
+
+</div>
