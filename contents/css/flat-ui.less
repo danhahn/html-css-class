@@ -1,0 +1,109 @@
+@import "vars";
+
+.navbar {
+	position: relative;
+	box-shadow: 0 5px 10px -6px rgba(0,0,0,.5);
+	z-index: 10;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+	background-color: @primary20;
+}
+
+.navbar-nav {
+	position: relative;
+
+	background-color: @primary;
+
+	a {
+		transition: background-color .4s, color .4s;
+		&:hover {
+			background-color: @primary20;
+		}
+	}
+
+	> li {
+		&:hover {
+			> a {
+				background-color: @primary20;
+			}
+			ul {
+				display: block;
+				opacity: 0;
+				-webkit-animation: fade-main .3s;
+				-webkit-animation-fill-mode: forwards;
+				animation: fade-main .3s;
+				animation-fill-mode: forwards;
+				margin-top: -100px;
+			}
+		}
+	}
+
+	ul {
+		display: none;
+		position: absolute;
+		background-color: lighten(@primary20, 20%);
+		z-index: -1;
+		border: 1px solid @primary;
+		margin-top: -100px;
+		li {
+			list-style: none;
+			border-bottom: 1px solid @primary;
+			a {
+				display: block;
+				padding: 5px 10px;
+				min-width: 170px;
+				&:hover {
+					text-decoration: none;
+					background-color: @primary5;
+					color: @white;
+				}
+			}
+		}
+	}
+}
+
+//Firefox animation
+@keyframes fade-sub {
+	to {
+		opacity: 1;
+	}
+}
+
+
+@keyframes fade-main {
+	to {
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+@keyframes fade-user {
+	to {
+		opacity: 1;
+		margin-top: 10px;
+	}
+}
+
+//Webkit animation
+@-webkit-keyframes fade-sub {
+	to {
+		opacity: 1;
+	}
+}
+
+
+@-webkit-keyframes fade-main {
+	to {
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+@-webkit-keyframes fade-user {
+	to {
+		opacity: 1;
+		margin-top: 10px;
+	}
+}

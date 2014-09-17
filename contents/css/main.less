@@ -1,18 +1,19 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Roboto+Condensed:400,700,300);
 
-@blue: #34495e;
-@green: #1abc9c;
-@white: #fff;
-@gray: #BDC3C7;
-@ltblue: #3498db;
+@import "vars";
+
+body {
+	font-family: 'Droid Sans', sans-serif;
+}
 
 p {
 	line-height: 1.8;
+	text-align: justify;
 }
 
 a {
 	text-decoration: none;
-	color: @green;
+	color: @secondary;
 }
 
 ul, ol {
@@ -25,12 +26,16 @@ ul, ol {
 	}
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
+h1 {
+	font-weight: 300;
+}
+
 a:hover {
-	color: lighten(@green, 15%);
+	color: lighten(@secondary, 15%);
 }
 
 .caps {
@@ -42,17 +47,18 @@ a.btn{
 }
 
 .btn {
-	background-color: @ltblue;
+	background-color: @primary5;
 	&:hover {
-		background-color: darken(@ltblue, 10%);
+		background-color: darken(@primary5, 10%);
 	}
 	&:active, &.active{
-		background-color: darken(@ltblue, 20%);
+		background-color: darken(@primary5, 20%);
 	}
 }
 
 code {
-	color: @green;
+	color: @primary;
+	background-color: lighten(@primary, 43%);
 }
 
 article {
@@ -60,13 +66,43 @@ article {
 }
 
 h2 {
-	color: @green;
-	font-size: 20px;
+	color: @alt;
+	font-size: 1.8em;
 	line-height: 1.8;
+	font-weight: 700;
+
 }
 
 h3 {
 	font-size: 1.5em;
+}
+
+.main-nav {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	right: 0;
+	top: 0;
+
+	.container .navbar {
+		li {
+			transition: all 90ms;
+		}
+
+		svg {
+			transition: all 90ms;
+		}
+	}
+}
+
+.main-header {
+	margin-top: 50px;
+}
+
+.homepage {
+	.main-header {
+		margin-top: 99px;
+	}
 }
 
 .navbar-inverse .navbar-inner {
@@ -74,9 +110,9 @@ h3 {
 }
 
 .main-nav {
-	background-color: lighten(@blue, 10%);
+	background-color: @primary10;
 	.navbar {
-		background-color: @blue;
+		background-color: @primary;
 		margin-bottom: 0;
 		border-radius: 0;
 		border: none;
@@ -84,18 +120,18 @@ h3 {
 }
 
 .main-header {
-	background-color: lighten(@blue, 20%);
+	background-color: @primary20;
 	margin-bottom: 20px;
 	.well {
 		border-radius: 0;
 		border: none;
 		margin-bottom: 0;
-		background-color: @green;
+		background-color: @secondary;
 		padding: 10px 20px;
 
 		h1 {
 			font-family: 'Roboto Condensed', sans-serif;
-			font-weight: 700;
+			font-weight: 300;
 		}
 
 		h1, h2, p {
@@ -121,7 +157,7 @@ h3 {
 			letter-spacing: 1px;
 			&.active {
 				a {
-					background-color: @blue;
+					background-color: @primary;
 					color: @white;
 					font-weight: 700;
 				}
@@ -145,16 +181,83 @@ h3 {
 	}
 }
 
-.navbar .brand {
-	background: url(/images/logo.png) no-repeat;
-	background-size: 100%;
-	display: inline-block;
-	width: 150px;
-	height: 35px;
-	text-indent: -999em;
-	margin: 5px 10px;
-	padding: 0;
+@logo-width: 115px;
+@logo-height: 35px;
+
+.homepage {
+	.navbar {
+		display: flex;
+		> * {
+			float: none;
+		}
+		.navbar-nav {
+			li:first-child {
+				display: none;
+			}
+			li {
+				font-size: 1.3em;
+				margin-top: 24px;
+			}
+		}
+	}
+	.navbar .brand {
+
+
+		svg {
+			width: @logo-width * 2.5;
+			height: @logo-height * 2.5;
+		}
+	}
+
+	&.scroll {
+
+		.navbar-nav {
+
+			li {
+				font-size: 1em;
+				margin-top: 0;
+			}
+		}
+
+		.navbar .brand {
+			svg {
+				width: @logo-width;
+				height: @logo-height;
+			}
+		}
+	}
+
 }
+
+.navbar .brand {
+	display: block;
+	margin-left: 20px;
+	svg {
+		width: @logo-width;
+		height: @logo-height;
+		margin-top: 7px;
+		.tag {
+			fill: @primary20;
+		}
+
+		.bracket {
+			fill: @white;
+		}
+
+		.letter {
+			fill: @alt;
+		}
+
+		.smletter {
+			fill: @primary20;
+		}
+
+		.dot {
+			fill:@white;
+		}
+	}
+}
+
 
 .well h2 {
 	padding: 0;
@@ -196,8 +299,8 @@ p.date {
 }
 
 .table th {
-	background-color: #2c3e50;
-	color: #ffffff;
+	background-color: @gray;
+	color: #000;
 }
 
 .alert-info {
@@ -229,22 +332,29 @@ p.date {
 	color: #fff;
 }
 
-.col-md-3.well {
-	min-height: 250px;
-	position: relative;
-	margin-right: 10px;
-	width: -webkit-calc(~"25% - 10px");
-	&:nth-of-type(4n) {
-		width: 25%;
-		margin-right: 0;
+.lesson-item {
+	.well {
+		min-height: 250px;
+		h2 {
+			font-size: 4em;
+			line-height: 1em;
+			margin-bottom: .2em;
+			a {
+				color: @alt;
+			}
+		}
+		p {
+			text-align: left;
+		}
 	}
+	position: relative;
 }
 
-.col-md-3.well .more {
+.lesson-item .more {
 	position: absolute;
-	bottom: 19px;
-	left: 19px;
-	right: 19px;
+	bottom: 29px;
+	left: 29px;
+	right: 29px;
 	a {
 		color: @white;
 	}
@@ -310,13 +420,13 @@ footer {
 	width: 100%;
 	position: relative;
 	z-index: 100;
-	background-color: @blue;
+	background-color: @primary;
 	color: #ffffff;
 	transition: all .3s;
 }
 
 .overflow {
-	border: 1px solid @green;
+	border: 1px solid @secondary;
 	padding: 10px;
 	height: 100px;
 }
@@ -338,8 +448,9 @@ footer {
 }
 
 .date {
+	z-index: 100;
 	position: absolute;
-	top: -10px;
+	top: 10px;
 	left: -35px;
 	width: 60px;
 	text-align: center;
@@ -359,7 +470,7 @@ footer {
 		border-radius: 3px 3px 0 0;
 		text-transform: uppercase;
 		color: #fff;
-	}	
+	}
 	.day {
 		background-color: #fff;
 		line-height: 1.50;
@@ -434,12 +545,55 @@ footer {
 
 img[src$="homework.png"] {max-width: 100%;}
 
+.homework-view {
+	display: flex;
+	border-top: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	div {
+		margin-right: 20px;
+		&:first-child {
+			max-width: 150px;
+			img {
+				max-width: 100%;
+				border: 2px solid #c0c0c0;
+			}
+		}
+	}
+
+}
+.navbar-default .navbar-toggle {
+	border-color: @secondary;
+	background-color: @primary20;
+	&:hover, &:active, &:focus {
+		background-color: @alt;
+		outline: none;
+	}
+
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: @secondary;
+}
+
+
 //iPhone < 5:
 @media screen and (device-aspect-ratio: 2/3) {}
 
 @media screen and (max-width: 1200px) {
-	article.well h2 {
-		font-size: 2em;
+	.lesson-item {
+		.well h2 {
+			font-size: 3em;
+		}
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -450,10 +604,13 @@ img[src$="homework.png"] {max-width: 100%;}
 		padding-left: 60px;
 	}
 
-	article.well h2 {
-		font-size: 1.5em;
-		margin-left: 60px;
-		margin-bottom: 20px;
+	article
+	{
+		.well h2 {
+			font-size: 1.5em;
+			margin-left: 60px;
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -466,6 +623,55 @@ img[src$="homework.png"] {max-width: 100%;}
 	.col-md-3.well:nth-of-type(4n) {
 		width: calc(~"50% - 10px");
 	}
+
+	.side-nav ul.bs-sidenav {
+		margin: 0 0 20px;
+	}
+
+	.main-level {
+		display: flex;
+		flex-direction: column;
+		.main-side-nav {
+			display: flex;
+		}
+	}
+
+	.homepage .main-level {
+		flex-direction: column;
+	}
+
+
+
+	.homepage {
+		.navbar {
+			.brand {
+				margin-left: 10px;
+				svg {
+					width: @logo-width;
+					height: @logo-height;
+					margin-top: 7px;
+				}
+			}
+			.navbar-nav li {
+				margin-top: 0;
+			}
+		}
+		.main-header {
+			margin-top: 50px;
+			h2 {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.main-level {
+		flex-direction: column-reverse;
+		.main-side-nav {
+			display: block;
+		}
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -474,6 +680,17 @@ img[src$="homework.png"] {max-width: 100%;}
 		max-width: 100%;
 	}
 
+
+	.lesson-item {
+		.well {
+			min-height: 250px;
+			h2 {
+				font-size: 3em;
+				line-height: 1em;
+				margin: 0 0 .2em;
+			}
+		}
+	}
 
 		.col-md-3.well {
 			width: calc(~"50% - 10px");
@@ -521,11 +738,41 @@ img[src$="homework.png"] {max-width: 100%;}
 
 }
 
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+	background-color: @primary;
+}
 
+@media screen and (max-width: 768px) {
+	.homepage .navbar{
+		display: inherit;
+	}
+}
 
 //iPhone 5:
 @media screen and (max-width: 420px) {
 
+	.navbar {
+		.brand {
+			margin-left: 10px;
+		}
+	}
+
+	.page-title h1 {
+		padding-left: 0;
+	}
+
+	.side-nav,
+	.main-content {
+		padding: 0;
+	}
+
+	article {
+		padding: 0;
+	}
+
+	.move-item {
+		display: none;
+	}
 
 	.row-fluid [class*="span"] {
 		float: none;
@@ -556,14 +803,17 @@ img[src$="homework.png"] {max-width: 100%;}
 		    }
 	    }
     }
-
-    .navbar .nav {
-		display: none;
-	}
-
-
 }
 
 //iPad:
-@media screen and (device-aspect-ratio: 3/4) {}
+@media screen and (max-width: 1024lpx) {
+	.lesson-item {
+		.well {
+			h2 {
+				font-size: 3em;
+			}
+		}
+	}
+
+}
 

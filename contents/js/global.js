@@ -1,5 +1,5 @@
 $(function() {
-	$("table").addClass("table table-bordered");
+	$("table").addClass("table table-condensed");
 
 	var showNav = false;
 
@@ -27,6 +27,9 @@ $(function() {
 //		showNav = true;
 //	});
 
+	$(".main-content").find(".more").parent().prev().remove();
+	$(".main-content").find(".more").remove();
+
 	if(showNav)
 		$ul.prependTo(".main-content");
 
@@ -48,6 +51,7 @@ $(function() {
 		else if(url.indexOf(".txt") > -1) {
 			el.attr("target", "_blank");
 			el.addClass("btn");
+			el.append(' <i class="glyphicon glyphicon-download"></i>');
 		}
 		else if(url.indexOf(".zip") > -1) {
 			el.attr("target", "_blank");
@@ -55,6 +59,7 @@ $(function() {
 		}
 		else if (url.indexOf("homework.html") > -1) {
 			//el.addClass("btn");
+			el.append(' <i class="glyphicon glyphicon-tasks"></i>');
 		}
 	});
 
@@ -74,34 +79,64 @@ $(function() {
 		var el = $(this);
 		var item = el.clone();
 		item.prependTo(".side-nav-inner");
+		item.append(' <i class="glyphicon glyphicon-download"></i>');
 		el.remove();
 	});
 
-	newSide.addClass("nav nav-tabs nav-stacked main-side-nav").prependTo(".side-nav-inner");
+	newSide.addClass("nav nav-pills nav-stacked main-side-nav bs-sidenav").prependTo(".side-nav-inner");
 	sideNav.remove();
 
-	var sideNav = $(".side-nav-inner");
-	sideNav.css("width",sideNav.outerWidth());
+	$(window).scroll(function() {
+		var winPos =$(window).scrollTop();
+		if (winPos > 100) {
+			//$("body").removeClass("homepage");
+			$(".homepage").addClass("scroll")
+		}
+		else {
+			$(".homepage").removeClass("scroll")
+		}
 
-	var offset
-
-	offset = sideNav.offset();
-
-	sideNav.affix({
-		offset: offset.top
-	});
-
-
-	var localNav = $("#localNav");
-	localNav.css("width",localNav.outerWidth());
-
-	offset = localNav.offset();
-
-	localNav.affix({
-		offset: offset.top
-	});
-
+	})
 
 	hljs.initHighlightingOnLoad();
+
+	var homework = function(data) {
+		var compiled = _.template('<div><a href="images/<%= imageName %>.png" target="_blank"><img src="images/<%= imageName %>-sm.png" class="img-circle"></a></div>' +
+			'<div>' +
+			'<h2>Example of Homework</h2>' +
+			'<p>Your coded page should look like this when you are done.</p>' +
+			'<a href="<%= fileName %>.html" class="btn" target="_blank">Homework Example</a>'+
+		'</div>');
+		var test = compiled(data);
+
+		$('.homework-view').html(test);
+	}
+
+	$('.homework-view').each(function(){
+		var lesson = $(this).data('lesson');
+		var data = {
+			'fileName' : lesson + '-homework',
+			'imageName': lesson + '-homework'
+		}
+		homework(data);
+	});
+
+	$('h1').each(function(i){
+		var h1 = $(this);
+		h1.find("span").replaceWith(h1.find("span").html());
+		var simpleH1 = h1.html().replace("&nbsp;", " ")
+		var headerText = simpleH1.split(" ");
+		console.log(headerText)
+		var newHeader = "";
+		headerText[0] = "<span class='caps'>"+ headerText[0] +"</span>"
+		for(var i=0;i<headerText.length;i++){
+			newHeader += headerText[i] + " ";
+		}
+		h1.html(newHeader);
+	});
+
+
+
+
 
 });
