@@ -1,0 +1,19 @@
+a {
+	color: orange;
+}
+
+#global-nav a {
+	color: red;
+}
+
+#global-nav a.onstate {
+	font-weight: bold;
+}
+
+#main-content h2 {
+	color: green;
+}
+
+#main-content p {
+	color: silver;
+}
