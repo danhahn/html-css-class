@@ -68,10 +68,6 @@ SELECTOR|PROPERTY|VALUE
 odd|background-color|#f4c300
 even|background-color|#eceae1
 
----
 
-##Example
 
-If you did everything correct it should look like the example below.
-
-[Homework – Week 1](example.html)
+<div class="homework-view" data-lesson="lesson1"></div>

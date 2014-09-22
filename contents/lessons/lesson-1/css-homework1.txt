@@ -7,7 +7,7 @@
 <body>
 <div>
 	
-	<img src="http://css.svahtml.com/images/rings.png" alt=""/>
+	<img src="http://css.svahtml.com/lessons/lesson-1/images/rings.png" alt=""/>
 
 	<h1>Summer Olympic Games</h1>
 
