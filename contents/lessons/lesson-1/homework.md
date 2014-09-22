@@ -8,6 +8,7 @@ template: article.jade
 # Homework 1
 
 * [Introductin]()
+* [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Include File](include.html)

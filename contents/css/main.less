@@ -42,7 +42,7 @@ a:hover {
 	font-weight: bold;
 }
 
-a.btn{
+a.btn, a.btn:hover{
 	color: white;
 }
 
@@ -299,17 +299,13 @@ p.date {
 }
 
 .table th {
-	background-color: @gray;
+	background-color: @alt;
 	color: #000;
 }
 
 .alert-info {
-	background-color: @gray;
-	border-color: darken(@gray, 20%);
-	color: #fff;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-	padding: 5px 10px;
-
+	background-color: lighten(@alt, 50%);
+	border-color: @alt;
 }
 
 .scroll-top {

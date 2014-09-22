@@ -9,10 +9,11 @@ block header
     h2= locals.date
 
 block notes
-  if locals.note
+  if locals.classnote
     div.container
       div.alert.alert-danger
-        strong= locals.note
+        p= locals.classnote + " "
+          a.btn.btn-xs(href=locals.classaction, target='_blank') Click Here
 
 block content
   include author

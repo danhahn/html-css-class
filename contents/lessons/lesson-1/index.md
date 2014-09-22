@@ -13,6 +13,7 @@ In this lesson we will talk about how CSS works, basic selectors and basic forma
 # Introduction
 
 * [Introductin]()
+* [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Include File](include.html)
@@ -184,12 +185,6 @@ More than one property - declarations can have many properties defined
 		property2: value2;
 	}
 
----
 
-##Homework
-
-This weeks homework is due a the start of next week.
-
-[Get Started](homework.html)
 
 
