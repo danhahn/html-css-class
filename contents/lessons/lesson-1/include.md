@@ -7,7 +7,7 @@ template: article.jade
 
 #Include CSS File
 
-* [Introductin]()
+* [Introduction]()
 * [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)

@@ -1,7 +1,7 @@
 ---
 title: Homework 2
 author: Dan Hahn
-date: 2013-06-05 18:00
+date: 2014-09-29 18:00
 template: article.jade
 ---
 
@@ -14,7 +14,8 @@ template: article.jade
 * [overflow](overflow.html)
 * [Homework](homework.html)
 
-**Note:** Due - June 20, 2013
+
+**Note:** the design has the page centered on the page but we have not covered this yet.  We will do it next class.
 
 Use the starter files below.  Be sure to save the image into an `images` folder or it will not display.  When done email a zip file with all the files needed to view your final work.
 
@@ -76,5 +77,5 @@ footer
 
 **Note:** Not all values have been defined here. You need to fill in the missing style by looking at the HTML and coded page below.
 
-[Final Coded Homework Example](example.html)
+<div class="homework-view" data-lesson="lesson2"></div>
 

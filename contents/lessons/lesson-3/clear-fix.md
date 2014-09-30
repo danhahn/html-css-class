@@ -1,7 +1,7 @@
 ---
 title: Clear Fix
 author: Dan Hahn
-date: 2013-06-24 18:00
+date: 2014-10-06 18:00
 template: article.jade
 ---
 
@@ -10,6 +10,7 @@ template: article.jade
 * [Box Model]()
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
+* [Homework](homework.html)
 
 There are a number of way to fix the issue when all the content within a element are floated.
 

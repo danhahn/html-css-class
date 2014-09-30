@@ -7,7 +7,7 @@ template: article.jade
 
 # HTML Editors
 
-* [Introductin]()
+* [Introduction]()
 * [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)

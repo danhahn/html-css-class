@@ -12,7 +12,7 @@ In this lesson we will talk about how CSS works, basic selectors and basic forma
 
 # Introduction
 
-* [Introductin]()
+* [Introduction]()
 * [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)

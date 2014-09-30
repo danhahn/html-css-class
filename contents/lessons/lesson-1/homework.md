@@ -7,14 +7,12 @@ template: article.jade
 
 # Homework 1
 
-* [Introductin]()
+* [Introduction]()
 * [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Include File](include.html)
 * [Homework](homework.html)
-
-**Note:** Due - June 12, 2013
 
 ## Starter File
 
@@ -68,7 +66,5 @@ SELECTOR|PROPERTY|VALUE
 -|-|-
 odd|background-color|#f4c300
 even|background-color|#eceae1
-
-
 
 <div class="homework-view" data-lesson="lesson1"></div>
