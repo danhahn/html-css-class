@@ -30,22 +30,25 @@
 		border: 1px solid gray;
 		padding: 5px 10px;
 		margin: 5px;
+		float: left;
 	}
 
 	.height {
-
+		height: 38px;
 	}
 
 	.overflow {
-
+		overflow: hidden;
 	}
 
 	.add-div {
-
+		clear: both;
 	}
 
-	.clear-fix {
-
+	.clear-fix:after {
+		content: "";
+		display: block;
+		clear: both;
 	}
 	
 	</style>
@@ -95,6 +98,7 @@
 			<li>Item 3</li>
 			<li>Item 4</li>
 		</ul>
+		<div class="add-div"></div>
 	</nav>
 </section>
 

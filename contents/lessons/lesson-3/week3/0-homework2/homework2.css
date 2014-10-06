@@ -4,7 +4,7 @@ body {
 	background-color: #c0c0c0;
 }
 
-h1, h2, p, blockquote, figure{
+h1, h2, p, blockquote, figure {
 	margin: 0;
 }
 
@@ -42,10 +42,15 @@ article p {
 
 figure {
 	border: 2px solid #cccccc;
-	text-align: center;
+	
 	padding: 20px;
 	margin: 10px 0;
 	background-color: #eeeeee;
+}
+
+figure img {
+	display: block;
+	margin: 0 auto;
 }
 
 blockquote {
@@ -55,12 +60,11 @@ blockquote {
 	font-size: 1.5em;
 	font-style: italic;
 	letter-spacing: -1px;
-
 }
 
 blockquote p {
 	margin: 0;
-	line-height: 1em;
+	line-height: 1;
 }
 
 footer {
