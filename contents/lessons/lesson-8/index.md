@@ -16,8 +16,8 @@ This week we will talk about CSS reset, Sprites and Flexbox
 * [Flexbox](flexbox.html)
 * [Media Query](media.html)
 
-[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week8-notes.zip)
-[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week8.zip)
+[Download Notes  <i class="icon-download-alt icon-white"></i>](week8-notes.zip)
+[Download Starter File  <i class="icon-download-alt icon-white"></i>](week8.zip)
 
 <a href="http://www.cssreset.com/" class="btn">Get a Reset</a>
 

@@ -21,8 +21,8 @@ This week we will talk about font, text, border, padding and margins.  We will a
 * [overflow](overflow.html)
 * [Homework](homework.html)
 
-[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week2-notes.zip)
-[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week2.zip)
+[Download Notes  <i class="icon-download-alt icon-white"></i>](week2-notes.zip)
+[Download Starter File  <i class="icon-download-alt icon-white"></i>](week2.zip)
 
 
 Property|Values

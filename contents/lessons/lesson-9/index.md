@@ -14,8 +14,8 @@ This week we will talk about advanced CSS selectors.  We will also be talking ab
 * [Selectors]()
 * [Emmet](emmet.html)
 
-[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week9-notes.zip)
-[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week9.zip)
+[Download Notes  <i class="icon-download-alt icon-white"></i>](week9-notes.zip)
+[Download Starter File  <i class="icon-download-alt icon-white"></i>](week9.zip)
 
 ##Attribute selectors
 

@@ -14,8 +14,8 @@ This week we will talk about CSS Animation
 * [CSS3 Transitions]()
 * [CSS3 Animations](animations.html)
 
-[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week7-notes.zip)
-[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week7.zip)
+[Download Notes  <i class="icon-download-alt icon-white"></i>](week7-notes.zip)
+[Download Starter File  <i class="icon-download-alt icon-white"></i>](week7.zip)
 
 CSS transitions, which are part of the CSS3 set of specifications, provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. For example, if you change the color of an element from white to black, usually the change is instantaneous. With CSS transitions enabled, changes occur at time intervals that follow an acceleration curve, all of which can be customized.
 

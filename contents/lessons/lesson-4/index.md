@@ -18,8 +18,8 @@ This week we will use the *floats* that we learned last week to build table-free
 * [Position](position.html)
 * [Homework](homework.html)
 
-[Downlaod Notes  <i class="icon-download-alt icon-white"></i>](week4-notes.zip)
-[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week4.zip)
+[Download Notes  <i class="icon-download-alt icon-white"></i>](week4-notes.zip)
+[Download Starter File  <i class="icon-download-alt icon-white"></i>](week4.zip)
 
 CSS layouts have changed the way that we are able to design websites. At one time all layouts were done with the `<table>`. This was both slow and hard to manage.
 

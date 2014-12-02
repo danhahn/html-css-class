@@ -1,289 +1,258 @@
 ---
 title: Lesson 10
 author: Dan Hahn
-date: 2014-11-24
+date: 2014-11-24 15:00
 template: article.jade
 ---
-This week week we will be talking about dev took like Emmet and LESS.
+This week we will talk about how to use GULP, LESS/SCSS and GIT.
 
 <span class="more"></span>
 
-#Emmet
+#Getting Gulp installed
 
-* [Emmet]()
+* [Gulp]()
+* [LESS](less.html)
+* [GIT](git.html)
 
-[Downlaod Starter File  <i class="icon-download-alt icon-white"></i>](week10.zip)
+[Download Notes  <i class="icon-download-alt icon-white"></i>](week10-notes.zip)
+[Download Starter File  <i class="icon-download-alt icon-white"></i>](week10.zip)
 
-Emmet uses syntax similar to CSS selectors for describing elements’ positions inside generated tree and elements’ attributes.
+##Step One - Install Node
 
-##Elements
-You can use elements’ names like div or p to generate HTML tags. Emmet doesn’t have a predefined set of available tag names, you can write any word and transform it into a tag: div → <div></div>, foo → <foo></foo> and so on.
+<a href="http://nodejs.org/" class="btn">Download Node</a>
 
-Nesting operators
-Nesting operators are used to position abbreviation elements inside generated tree: whether it should be placed inside or near the context element.
+First - we need our most important requirement, Node. To install Node - simply visit http://nodejs.org and then click that big green “Install” button. Once your download completes, run that application and you should be all ready to go. The Node installer also includes npm, which we will come back to a little later.
 
-##Child: >
-You can use > operator to nest elements inside each other:
+##Step Two - Get To Know Your Command Line
+Now, you may not be very familiar with your command-line interface (Terminal for OSX, Command Prompt for Windows) but you should be! It may seem intimidating at first, but once you get the hang of it you will have the ability to run many different command line applications such as Sass, Yeoman and Git. All of which are very useful tools that your workflow could benefit from!
 
-	div>ul>li
+> If you are familiar with your command-line interface, then feel free to skip to step four.
 
-...will produce
+As a quick example, open up your command line and we will throw a couple commands at it to ensure that Node is properly installed.
 
-	<div>
-	    <ul>
-	        <li></li>
-	    </ul>
-	</div>
+	node -v
 
-##Sibling: +
-Use + operator to place elements near each other, on the same level:
+Type that and then hit enter and you should get a response on the next line with the version number of Node that you have installed.
 
-	div+p+bq
+Now, let’s do the same for npm.
 
-...will output
+	npm -v
 
-	<div></div>
-	<p></p>
-	<blockquote></blockquote>
+Again, this should return the version number on the next line.
 
-##Climb-up: ^
-With > operator you’re descending down the generated tree and positions of all sibling elements will be resolved against the most deepest element:
+If you didn’t get a response, then it may mean that Node didn’t install correctly or you may need to restart your command line application. If this still isn’t working after restarting, then simply jump back up the top and try the first step again.
 
-	div+div>p>span+em
+##Step Three - Navigate To Your Project Directory
+Now that we have met our command-line interface and know how to communicate with it, our next step will be navigating it. Luckily, it only takes two commands to change directories and take a look at what is inside them. These commands are ls (or dir, for Windows) to list what is in a directory and cd to change directories.
 
-...will be expanded to
+> I suggest that you spend some time playing with these commands. Get used to your file system and be aware of where everything lives. Don’t rush through this - it will save you a lot of headache later!
 
-	<div></div>
-	<div>
-	    <p><span></span><em></em></p>
-	</div>
+Once you are comfortable with the ls and cd commands, we need to navigate to our project folder. This will likely be different for each person, but as an example this is what I would type to navigate to my local project:
 
-With ^ operator, you can climb one level up the tree and change context where following elements should appear:
+	cd /Applications/XAMPP/xamppfiles/htdocs/my-project
 
-	div+div>p>span+em^bq
+It is important to note that I am working on OS X. The file system on Windows is much different so, while this example may be similar, it wont translate directly to Windows.
 
-...outputs to
+Once you have made it to your project directory - let's run a quick npm command to initialize our package.json file.
 
-	<div></div>
-	<div>
-	    <p><span></span><em></em></p>
-	    <blockquote></blockquote>
-	</div>
+	npm init
 
-You can use as many ^ operators as you like, each operator will move one level up:
+This will create a file in the root directory of your project called package.json which will provide information about our project and help manage our dependencies. Now we’re ready to install gulp!
 
-	div+div>p>span+em^^^bq
+Step Four - Installing gulp
+You’ve met your command-line and you know how to talk to it - you even know your way around your file system. Now, it’s time to get to the good stuff. Let’s meet npm and install gulp!
 
-...will output to
+NPM stands for Node Package Manager and it is a command line tool that will allow you to install additional Node packages to your projects. It even comes with a nifty site that allows you to browse and search through all of the available packages.
 
-	<div></div>
-	<div>
-	    <p><span></span><em></em></p>
-	</div>
-	<blockquote></blockquote>
+In your command-line application, type:
 
-##Multiplication: *
-With * operator you can define how many times element should be outputted:
+	sudo npm install -g gulp
 
-	ul>li*5
+Let’s quickly break this down.
 
-...outputs to
+1. sudo is the command to grant you administrator access so you can properly install files. It will simply ask you for your computer password. (This may or may not be needed - but it wont hurt. I’ve included it to avoid permissions issues that some folks may run into.)
+2. npm is the application we are using to install our package.
+3. We are running the install command on that application.
+4. The -g is an optional flag used to signify that we want to install this package globally so that any project can use it.
+5. And finally, gulp is the name of the package we would like to install.
 
-	<ul>
-	    <li></li>
-	    <li></li>
-	    <li></li>
-	    <li></li>
-	    <li></li>
-	</ul>
+Once that has run it’s course check your command-line to ensure that there are no error messages. If there are none to be seen, then congratulations! You just installed gulp! Just to double check, let’s refer back to our versioning commands we used above for Node and npm.
 
-##Grouping: ()
-Parenthesises are used by Emmets’ power users for grouping subtrees in complex abbreviations:
+	gulp -v
 
-	div>(header>ul>li*2>a)+footer>p
+Like before, this should return the version number on the next line of your command-line.
 
-...expands to
+Next, we also need to install gulp locally.
 
-	<div>
-	    <header>
-	        <ul>
-	            <li><a href=""></a></li>
-	            <li><a href=""></a></li>
-	        </ul>
-	    </header>
-	    <footer>
-	        <p></p>
-	    </footer>
-	</div>
+	npm install --save-dev gulp
 
-If you’re working with browser’s DOM, you may think of groups as Document Fragments: each group contains abbreviation subtree and all the following elements are inserted at the same level as the first element of group.
+The only thing different here is we used the `--save-dev` flag which instructs npm to add the dependency to our devDependencies list in our package.json file that we created earlier.
 
-You can nest groups inside each other and combine them with multiplication * operator:
+Dependencies help us organize which packages are needed in our development and production environments as others contribute to or use our project. If you would like to read more about dependencies be sure to check out the package.json documentation.
 
-	(div>dl>(dt+dd)*3)+footer>p
+Now that gulp is installed, the next step is setting up our gulpfile. We’re almost done!
 
-...produces
+##Step Five - Setting Up Our Gulpfile & Running Gulp
 
-	<div>
-	    <dl>
-	        <dt></dt>
-	        <dd></dd>
-	        <dt></dt>
-	        <dd></dd>
-	        <dt></dt>
-	        <dd></dd>
-	    </dl>
-	</div>
-	<footer>
-	    <p></p>
-	</footer>
+Once gulp is installed we have to give it some instruction so it knows what tasks for perform for us. But, first, we need to figure out exactly what tasks we need to run in our project. Time for... a SCENARIO.
 
-With groups, you can literally write full page mark-up with a single abbreviation, but please don’t do that.
+In our Exciting Non-Generic Real World Scenario®, our boss has assigned us with the following tasks:
 
-##Attribute operators
-Attribute operators are used to modify attributes of outputted elements. For example, in HTML and XML you can quickly add class attribute to generated element.
+* Lint our JavaScript. (Seriously. Do it.)
+* Compile our Sass files. (Browsers can’t read that stuff...)
+* Concatenate our JavaScript. (Reduce HTTP Requests!)
+* Minify and rename said concatenated files. (Every little bit counts!)
 
-###ID and CLASS
-In CSS, you use elem#id and elem.class notation to reach the elements with specified id or class attributes. In Emmet, you can use the very same syntax to add these attributes to specified element:
+I’m imagining our supervisor as the impatient, somewhat frightening type who eats interns when they don't do what the boss wants. So, let’s get right to it before our lunch companion gets eaten.
 
-	div#header+div.page+div#footer.class1.class2.class3
+##Install Required Plugins
 
-...will output
+	npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
 
-	<div id="header"></div>
-	<div class="page"></div>
-	<div id="footer" class="class1 class2 class3"></div>
+This will install all of the plugins we will need and add them to our devDependencies in our package.json file like we did when we installed gulp.
+
+As a reminder, if you are getting permissions errors installing these plugins you may have to prepend those commands with sudo!
+
+##Create Our gulpfile
+Now that our plugins are available for us to use, we can start writing our gulpfile and instructing gulp to perform the tasks our boss assigned to us.
+
+Before we get right into the code I think it’s very important to mention that gulp only has 5 methods. These methods are as follows: task, run, watch, src, and dest. These are all you will need to write your tasks.
+
+In the root directory of your project create a new file and name it gulpfile.js and paste the following code inside.
+
+##gulpfile.js
+
+	// Include gulp
+	var gulp = require('gulp');
+
+	// Include Our Plugins
+	var jshint = require('gulp-jshint');
+	var sass = require('gulp-sass');
+	var concat = require('gulp-concat');
+	var uglify = require('gulp-uglify');
+	var rename = require('gulp-rename');
+
+	// Lint Task
+	gulp.task('lint', function() {
+	    return gulp.src('js/*.js')
+	        .pipe(jshint())
+	        .pipe(jshint.reporter('default'));
+	});
 
-###Custom attributes
+	// Compile Our Sass
+	gulp.task('sass', function() {
+	    return gulp.src('scss/*.scss')
+	        .pipe(sass())
+	        .pipe(gulp.dest('css'));
+	});
 
-You can use [attr] notation (as in CSS) to add custom attributes to your element:
+	// Concatenate & Minify JS
+	gulp.task('scripts', function() {
+	    return gulp.src('js/*.js')
+	        .pipe(concat('all.js'))
+	        .pipe(gulp.dest('dist'))
+	        .pipe(rename('all.min.js'))
+	        .pipe(uglify())
+	        .pipe(gulp.dest('dist'));
+	});
 
-	td[title="Hello world!" colspan=3]
+	// Watch Files For Changes
+	gulp.task('watch', function() {
+	    gulp.watch('js/*.js', ['lint', 'scripts']);
+	    gulp.watch('scss/*.scss', ['sass']);
+	});
 
-...outputs
+	// Default Task
+	gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
 
-	<td title="Hello world!" colspan="3"></td>
+Now, let’s break this down and review what each part does.
 
-* You can place as many attributes as you like inside square brackets.
-* You don’t have to specify attribute values: `td[colspan title]` will produce `<td colspan="" title="">` with tabstops inside each empty attribute (if your editor supports them).
-* You can use single or double quotes for quoting attribute values.
-* You don’t need to quote values if they don’t contain spaces: `td[title=hello colspan=3]` will work.
+##Core & Plugins
+	// Include gulp
+	var gulp = require('gulp');
 
-###Item numbering: $
-With multiplication * operator you can repeat elements, but with $ you can number them. Place $ operator inside element’s name, attribute’s name or attribute’s value to output current number of repeated element:
+	// Include Our Plugins
+	var jshint = require('gulp-jshint');
+	var sass = require('gulp-sass');
+	var concat = require('gulp-concat');
+	var uglify = require('gulp-uglify');
+	var rename = require('gulp-rename');
 
-	ul>li.item$*5
+This includes the gulp core and plugins associated with the tasks that we will be performing. Next, we setup each of our separate tasks. These tasks are lint, sass, scripts and default.
 
-...outputs to
+##Lint Task
 
-	<ul>
-	    <li class="item1"></li>
-	    <li class="item2"></li>
-	    <li class="item3"></li>
-	    <li class="item4"></li>
-	    <li class="item5"></li>
-	</ul>
+	// Lint Task
+	gulp.task('lint', function() {
+	    return gulp.src('js/*.js')
+	        .pipe(jshint())
+	        .pipe(jshint.reporter('default'));
+	});
 
-You can use multiple $ in a row to pad number with zeroes:
+Our lint task checks any JavaScript file in our js/ directory and makes sure there are no errors in our code.
 
-	ul>li.item$$$*5
+##Sass Task
 
-...outputs to
+	// Compile Our Sass
+	gulp.task('sass', function() {
+	    return gulp.src('scss/*.scss')
+	        .pipe(sass())
+	        .pipe(gulp.dest('css'));
+	});
 
-	<ul>
-	    <li class="item001"></li>
-	    <li class="item002"></li>
-	    <li class="item003"></li>
-	    <li class="item004"></li>
-	    <li class="item005"></li>
-	</ul>
+The sass task compiles any of our Sass files in our scss/ directory into .css and saves the compiled .css file in our css/ directory.
 
-##Changing numbering base and direction
-With @ modifier, you can change numbering direction (ascending or descending) and base (e.g. start value).
+##Scripts Task
+	// Concatenate & Minify JS
+	gulp.task('scripts', function() {
+	    return gulp.src('js/*.js')
+	        .pipe(concat('all.js'))
+	        .pipe(gulp.dest('dist'))
+	        .pipe(rename('all.min.js'))
+	        .pipe(uglify())
+	        .pipe(gulp.dest('dist'));
+	});
 
-For example, to change direction, add @- after $:
+The scripts task concatenates all JavaScript files in our js/ directory and saves the ouput to our dist/ directory. Then gulp takes that concatenated file, minifies it, renames it and saves it to the dist/ directory alongside the concatenated file.
 
-	ul>li.item$@-*5
+##Watch Task
 
-…outputs to
+	// Watch Files For Changes
+	gulp.task('watch', function() {
+	    gulp.watch('js/*.js', ['lint', 'scripts']);
+	    gulp.watch('scss/*.scss', ['sass']);
+	});
 
-	<ul>
-	    <li class="item5"></li>
-	    <li class="item4"></li>
-	    <li class="item3"></li>
-	    <li class="item2"></li>
-	    <li class="item1"></li>
-	</ul>
+The watch task is used to run tasks as we make changes to our files. As you write code and modify your files, the gulp.watch() method will listen for changes and automatically run our tasks again so we don't have to continuously jump back to our command-line and run the gulp command each time.
 
-To change counter base value, add @N modifier to $:
+Default Task
+// Default Task
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+Finally, we have our default task which is basically a wrapper to our other tasks. This will be the task that is ran upon entering gulp into the command line without any additional parameters.
 
-	ul>li.item$@3*5
+Now, all we have left to do is run gulp. Switch back over to your command-line and type:
 
-…transforms to
+	gulp
 
-	<ul>
-	    <li class="item3"></li>
-	    <li class="item4"></li>
-	    <li class="item5"></li>
-	    <li class="item6"></li>
-	    <li class="item7"></li>
-	</ul>
+This will call gulp and run everything we have defined in our default task. So, in other words It’s the same thing as running:
 
-You can use these modifiers together:
+	gulp default
 
-	ul>li.item$@-3*5
-…is transformed to
+Additionally, we don’t have to run the default task. We could run any of the tasks we defined at any time. Simply call gulp and then specify the task you would like to run directly afterward. For example, we can run our sass task manually at any time like so:
 
-	<ul>
-	    <li class="item7"></li>
-	    <li class="item6"></li>
-	    <li class="item5"></li>
-	    <li class="item4"></li>
-	    <li class="item3"></li>
-	</ul>
+	gulp sass
 
-##Text: {}
-You can use curly braces to add text to element:
+Pretty cool, eh?
 
-	a{Click me}
+Wrapping Up
 
-...will produce
+Well, you’ve made it. We have survived our tempermental, intern-eating boss and you have heroically saved your lunch buddy. Take a moment to pat yourself on the back. As a quick recap, let’s review what we have learned.
 
-	<a href="">Click me</a>
+* We learned how to install Node.
+* We got to know our command-line.
+* We learned how to navigate our command-line.
+* We learned how to use npm and install gulp.
+* We learned how to write a gulpfile and run it.
+* It is my hope that this introduction has made understanding task runners much easier and that you can see the real value that gulp adds to your project and your development workflow. If you have any further questions be sure to post them in the comments!
 
-Note that {text} is used and parsed as a separate element (like, div, p etc.) but has a special meaning when written right after element. For example, a{click} and a>{click} will produce the same output, but a{click}+b{here} and a>{click}+b{here} won’t:
-
-	<!-- a{click}+b{here} -->
-	<a href="">click</a><b>here</b>
-
-	<!-- a>{click}+b{here} -->
-	<a href="">click<b>here</b></a>
-
-In second example the `<b>` element is placed inside `<a>` element. And that’s the difference: when {text} is written right after element, it doesn’t change parent context. Here’s more complex example showing why it is important:
-
-	p>{Click }+a{here}+{ to continue}
-
-...produces
-
-	<p>Click <a href="">here</a> to continue</p>
-
-In this example, to write Click here to continue inside `<p>` element we have explicitly move down the tree with `>` operator after p, but in case of a element we don’t have to, since we need `<a>` element with here word only, without changing parent context.
-
-For comparison, here’s the same abbreviation written without child `>` operator:
-
-	p{Click }+a{here}+{ to continue}
-
-...produces
-
-	<p>Click </p>
-	<a href="">here</a> to continue
-
-##Notes on abbreviation formatting
-
-When you get familiar with Emmet’s abbreviations syntax, you may want to use some formatting to make your abbreviations more readable. For example, use spaces between elements and operators, like this:
-
-	(header > ul.nav > li*5) + footer
-
-But it won’t work, because space is a stop symbol where Emmet stops abbreviation parsing.
-
-Many users mistakenly think that each abbreviation should be written in a new line, but they are wrong: you can type and expand abbreviation anywhere in the text:
+**Note:** http://travismaynard.com/writing/getting-started-with-gulp
