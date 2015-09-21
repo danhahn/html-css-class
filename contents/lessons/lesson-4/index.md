@@ -1,7 +1,7 @@
 ---
 title: Lesson 4
 author: Dan Hahn
-date: 2014-10-13 18:00
+date: 10/12/2015 18:00
 template: article.jade
 ---
 
@@ -97,5 +97,3 @@ In this example we are setting up a page that is a fixed width of `800px`.
 	</style>
 
 This will create a fixed two column layout. The width can be adjusted any value just note that the `#globalNav` and `#contentArea` must add up to the width of the `#container`.
-
-

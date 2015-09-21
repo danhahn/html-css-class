@@ -1,7 +1,7 @@
 ---
 title: Lesson 2
 author: Dan Hahn
-date: 2014-09-29 18:00
+date: 9/28/2015 18:00
 template: article.jade
 ---
 
@@ -9,6 +9,7 @@ template: article.jade
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)
 * [Margin](margin.html)
@@ -27,6 +28,3 @@ Pseudo class selectors are CSS selectors with a colon preceding them.
 `:hover` - When the mouse cursor rolls over a link, that link is in it's hover state and this will select it.
 
 `:active` - Selects when the link while it is being activated (being clicked on or otherwise activated). For example, for the "pressed" state of a button-style link or to make all links feel more button-like.
-
-
-

@@ -1,9 +1,9 @@
 $(function() {
-	$("table").addClass("table table-condensed");
+  $("table").addClass("table");
 
-	var showNav = false;
+  var showNav = false;
 
-	var $ul = $("<div id='localNav'><ul class='btn-group'></ul></div>");
+  var $ul = $("<div id='localNav'><ul class='btn-group'></ul></div>");
 
 //	$(".content h2").each(function(){
 //		var el =$(this);
@@ -27,116 +27,161 @@ $(function() {
 //		showNav = true;
 //	});
 
-	$(".main-content").find(".more").parent().prev().remove();
-	$(".main-content").find(".more").remove();
+  $(".main-content").find(".more").parent().prev().remove();
+  $(".main-content").find(".more").parent().prev().remove();
+  $(".main-content").find(".more").parent().prev().remove();
+  $(".main-content").find(".more").remove();
 
-	if(showNav)
-		$ul.prependTo(".main-content");
+  if(showNav)
+    $ul.prependTo(".main-content");
 
-	$("strong").each(function() {
-		var el = $(this);
-		var text = el.html();
-		if(text == "Note:") {
-			el.parent().addClass("alert alert-info");
-		}
-	});
+  $("strong").each(function() {
+    var el = $(this);
+    var text = el.html();
+    if(text == "Note:") {
+      el.parent().addClass("alert alert-info");
+    }
+  });
 
-	$("a").each(function() {
-		var el = $(this);
-		var url = el.attr("href");
-		//console.log(url)
-		if(url.indexOf("example.html") > -1) {
-			el.attr("target", "_blank");
-		}
-		else if(url.indexOf(".txt") > -1) {
-			el.attr("target", "_blank");
-			el.addClass("btn");
-			el.append(' <i class="glyphicon glyphicon-download"></i>');
-		}
-		else if(url.indexOf(".zip") > -1) {
-			el.attr("target", "_blank");
-			el.addClass("btn move-item");
-		}
-		else if (url.indexOf("homework.html") > -1) {
-			//el.addClass("btn");
-			el.append(' <i class="glyphicon glyphicon-tasks"></i>');
-		}
-	});
+  $("a").each(function() {
+    var el = $(this);
+    var url = el.attr("href");
+    //console.log(url)
+    if(url.indexOf("example.html") > -1) {
+      el.attr("target", "_blank");
+    }
+    else if(url.indexOf(".txt") > -1) {
+      el.attr("target", "_blank");
+      el.addClass("btn");
+      el.append(' <i class="fa fa-download"></i>');
+    }
+    else if(url.indexOf(".zip") > -1) {
+      el.attr("target", "_blank");
+      el.addClass("btn move-item");
+    }
+    else if(url.indexOf(".psd") > -1) {
+      el.attr("target", "_blank");
+      el.addClass("btn move-item");
+    }
+    else if (url.indexOf("homework.html") > -1) {
+      //el.addClass("btn");
+      el.append(' <i class="fa fa-download"></i>');
+    }
+  });
 
-	var sideNav = $(".main-content h1 + ul");
-	var newSide = sideNav.clone();
-	var currentPage = window.location.pathname;
-	newSide.find("li").each(function(){
-		var el = $(this);
-		var item = el.find("a");
-		if(item.attr("href").indexOf(currentPage) > -1) {
-			el.addClass("active");
-			return false;
-		}
-	});
+  var sideNav = $(".main-content h1 + ul");
+  var newSide = sideNav.clone();
+  var currentPage = window.location.pathname;
+  newSide.find("li").each(function(){
+    var el = $(this);
+    var item = el.find("a");
+    if(item.attr("href").indexOf(currentPage) > -1) {
+      el.addClass("active");
+      return false;
+    }
+  });
 
-	$(".move-item").each(function(){
-		var el = $(this);
-		var item = el.clone();
-		item.prependTo(".side-nav-inner");
-		item.append(' <i class="glyphicon glyphicon-download"></i>');
-		el.remove();
-	});
+  $(".move-item").each(function(){
+    var el = $(this);
+    var item = el.clone();
+    item.prependTo(".side-nav-inner");
+    item.append(' <i class="fa fa-download"></i>');
+    el.remove();
+  });
 
-	newSide.addClass("nav nav-pills nav-stacked main-side-nav bs-sidenav").prependTo(".side-nav-inner");
-	sideNav.remove();
+  newSide.addClass("nav nav-pills nav-stacked main-side-nav bs-sidenav").prependTo(".side-nav-inner");
+  sideNav.remove();
 
-	$(window).scroll(function() {
-		var winPos =$(window).scrollTop();
-		if (winPos > 100) {
-			//$("body").removeClass("homepage");
-			$(".homepage").addClass("scroll")
-		}
-		else {
-			$(".homepage").removeClass("scroll")
-		}
+  $(window).scroll(function() {
+    var winPos =$(window).scrollTop();
+    if (winPos > 100) {
+      //$("body").removeClass("homepage");
+      $(".homepage").addClass("scroll");
+      $(".article-detail").addClass("scroll");
+    }
+    else {
+      $(".homepage").removeClass("scroll");
+      $(".article-detail").removeClass("scroll");
+    }
 
-	})
+  })
 
-	hljs.initHighlightingOnLoad();
+  hljs.initHighlightingOnLoad();
 
-	var homework = function(data) {
-		var compiled = _.template('<div><a href="images/<%= imageName %>.png" target="_blank"><img src="images/<%= imageName %>-sm.png" class="img-circle"></a></div>' +
-			'<div>' +
-			'<h2>Example of Homework</h2>' +
-			'<p>Your coded page should look like this when you are done.</p>' +
-			'<a href="<%= fileName %>.html" class="btn" target="_blank">Homework Example</a>'+
-		'</div>');
-		var test = compiled(data);
+  var homework = function(data) {
+    var compiled = _.template('<div><a href="images/<%= imageName %>.png" target="_blank"><img src="images/<%= imageName %>-sm.png" class="img-circle"></a></div>' +
+      '<div>' +
+      '<h2>Example of Homework</h2>' +
+      '<p>Your coded page should look like this when you are done.</p>' +
+      '<a href="<%= fileName %>.html" class="btn" target="_blank">Homework Example</a>'+
+    '</div>');
+    var test = compiled(data);
 
-		$('.homework-view').html(test);
-	}
+    $('.homework-view').html(test);
+  }
 
-	$('.homework-view').each(function(){
-		var lesson = $(this).data('lesson');
-		var data = {
-			'fileName' : lesson + '-homework',
-			'imageName': lesson + '-homework'
-		}
-		homework(data);
-	});
+  $('.homework-view').each(function(){
+    var lesson = $(this).data('lesson');
+    var data = {
+      'fileName' : lesson + '-homework',
+      'imageName': lesson + '-homework'
+    }
+    homework(data);
+  });
 
-	$('h1').each(function(i){
-		var h1 = $(this);
-		h1.find("span").replaceWith(h1.find("span").html());
-		var simpleH1 = h1.html().replace("&nbsp;", " ")
-		var headerText = simpleH1.split(" ");
-		console.log(headerText)
-		var newHeader = "";
-		headerText[0] = "<span class='caps'>"+ headerText[0] +"</span>"
-		for(var i=0;i<headerText.length;i++){
-			newHeader += headerText[i] + " ";
-		}
-		h1.html(newHeader);
-	});
-
-
+  $('h1').each(function(i){
+    var h1 = $(this);
+    h1.find("span").replaceWith(h1.find("span").html());
+    var simpleH1 = h1.html().replace("&nbsp;", " ")
+    var headerText = simpleH1.split(" ");
+    console.log(headerText)
+    var newHeader = "";
+    headerText[0] = "<span class='caps'>"+ headerText[0] +"</span>"
+    for(var i=0;i<headerText.length;i++){
+      newHeader += headerText[i] + " ";
+    }
+    h1.html(newHeader);
+  });
 
 
+  $('.side-nav-inner').affix({
+    offset: {
+      top: 60
+    }
+  })
+
+  checkHex = function (string) {
+    return ((string.length == 4 || string.length == 7) && string.substring(0, 1) == '#') ? true : false;
+  }
+
+  buildTemplate = function ($template, hexColor) {
+    $template.find('.swatchColor').css('background-color', hexColor);
+    $template.find('.swatchLabel').text(hexColor);
+    return $template;
+  }
+
+  $lgSwatch = $('<div class="swatchWrapper"><div class="swatch"><div class="swatchColor"></div><p class="swatchLabel"></p></div></div>');
+  $smSwatch = $('<div class="smSwatch"><div class="swatch" data-toggle="tooltip" data-placement="top"><div class="swatchColor"></div></div>')
+
+  var buildSwatch = function($selector, $template, hasTitle) {
+    $($selector).each(function() {
+      $(this).find('li').each(function() {
+        var liText = $(this).text();
+        if(checkHex(liText)) {
+          $(this).parent().addClass('hasSwatches');
+          var $newSwatch = $template.clone();
+          if(hasTitle) {
+            $newSwatch.find('.swatch').attr('title', liText);
+          };
+          $(this).html(buildTemplate($newSwatch, liText));
+        };
+      })
+    });
+  };
+
+  buildSwatch('.content #colors + ul', $lgSwatch, false);
+  buildSwatch('.content h6#swatches + ul', $smSwatch, true);
+
+  $('[data-toggle="tooltip"]').tooltip();
 
 });

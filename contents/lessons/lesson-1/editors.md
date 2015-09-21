@@ -1,7 +1,7 @@
 ---
 title: Lesson 1
 author: the-wintersmith
-date: 2014-01-29 15:00
+date:  9/21/2015 15:00
 template: article.jade
 ---
 
@@ -93,12 +93,12 @@ Developer: Apple Inc.
 
 <style>
 h2 + p {
-	float: left;
-	margin-right: 20px;
+    float: left;
+    margin-right: 20px;
 
 }
 p img,
 p a img {
-	width: 100px;
+    width: 100px;
 }
 </style>

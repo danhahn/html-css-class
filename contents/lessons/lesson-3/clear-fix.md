@@ -1,7 +1,7 @@
 ---
 title: Clear Fix
 author: Dan Hahn
-date: 2014-10-06 18:00
+date: 10/5/2015 18:00
 template: article.jade
 ---
 

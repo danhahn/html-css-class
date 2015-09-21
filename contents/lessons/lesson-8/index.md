@@ -1,7 +1,7 @@
 ---
 title: Lesson 8
 author: Dan Hahn
-date: 2014-11-10 18:00
+date: 11/16/2015 18:00
 template: article.jade
 ---
 
@@ -53,4 +53,3 @@ Hopefully this article has helped answer the whole What is a CSS Reset question 
 Please shoot me a message if there’s anything you think needs to be added to this article and I’ll be happy to add it with credit and a link back!
 
 **Note:** this page is a copy of this http://www.cssreset.com/what-is-a-css-reset/
-

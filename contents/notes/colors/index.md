@@ -1,7 +1,7 @@
 ---
 title: HTML Special Characters
 author: Dan Hahn
-date: 2013-06-05 18:00
+date: 9/21/2015 18:00
 template: single.jade
 subject: TEST
 ---

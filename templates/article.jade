@@ -20,15 +20,34 @@ block header
   div.well.small.page-title
     h1= page.title
     div.date
-      div.month= moment(page.date).format('MMM')
-      div.day= moment(page.date).format('D')
-
+      i.fa.fa-calendar
+      span.month= moment(page.date).format('MMMM')
+      span.day= moment(page.date).format('D') + ","
+      span.year= moment(page.date).format('YYYY')
+      
 block content
-  div.col-md-3.side-nav
-    div.side-nav-inner
   div.col-md-9.main-content
     article.article
+
       section.content!= typogr(page.html).typogrify()
+  div.col-md-3.side-nav
+    div.side-nav-inner
+      if page.metadata.tags
+        each val, index in page.metadata.tags
+          div.tags
+            div.data
+              span(class=val.label).label.label-default
+                i(class=val.icon)
+                = val.label
+            ul
+              each tag in val.data
+                li
+                  if val.label == "html"
+                    code &lt;#{tag}&gt;
+                  if val.label == "css"
+                    code #{tag}:&#123;&#125;
+                  if val.label == "attribute"
+                    code "#{tag}"
 
 block prepend footer
   div.nav

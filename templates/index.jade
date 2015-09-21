@@ -6,9 +6,12 @@ block append vars
 block header
   div.well.small
     h1= locals.description
-    h2= locals.date
+    h2= locals.startDate + " to " + locals.endDate
 
 block notes
+  if locals.note
+    div.container
+      div.alert.alert-danger= locals.note
   if locals.classnote
     div.container
       div.alert.alert-danger
@@ -24,8 +27,10 @@ block content
           h2
             a(href=article.url)= article.title
           div.date
-            div.month= moment(article.date).format('MMM')
-            div.day= moment(article.date).format('DD')
+            i.fa.fa-calendar
+            span.month= moment(article.date).format('MMMM')
+            span.day= moment(article.date).format('D') + ","
+            span.year= moment(article.date).format('YYYY')
         section.content
           !{ typogr(article.intro).typogrify() }
           if article.hasMore
@@ -39,6 +44,3 @@ block prepend footer
       a(href='/archive.html') « Archives
     if nextPage
       a(href=nextPage.url) Next page »
-
-
-

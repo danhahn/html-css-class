@@ -1,7 +1,7 @@
 ---
 title: Lesson 2
 author: Dan Hahn
-date: 2014-09-29 18:00
+date: 9/28/2015 18:00
 template: article.jade
 ---
 
@@ -14,6 +14,7 @@ This week we will talk about font, text, border, padding and margins.  We will a
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)
 * [Margin](margin.html)
@@ -25,15 +26,15 @@ This week we will talk about font, text, border, padding and margins.  We will a
 [Download Starter File  <i class="icon-download-alt icon-white"></i>](week2.zip)
 
 
-Property|Values
--|-
-font:* <br>required|style variant weight size */line-height  family *<br>example: font:bold 10px/12px verdana,"Lithos Regular",sans-serif;
-font-style:|normal, italic
-font-variant:|normal, small-caps
-font-weight:|normal, bold
-font-size: *|length, percent
-line-height:|normal, **number**, **length**, **percent**
-font-family: *|**family-name**, serif (Times), sans-serif (Helvetica), cursive (Zapf-Chancery), fantasy (Western), monospace (Courier)
+Property            | Values                                                                                                                 
+--------------------|------------------------------------------------------------------------------------------------------------------------
+font:* <br>required | style variant weight size */line-height  family *<br>example: font:bold 10px/12px verdana,"Lithos Regular",sans-serif;*
+font-style:         | normal, italic                                                                                                         
+font-variant:       | normal, small-caps                                                                                                     
+font-weight:        | normal, bold                                                                                                           
+font-size: *        | length, percent                                                                                                        
+line-height:        | normal, **number**, **length**, **percent**                                                                            
+font-family: *      | **family-name**, serif (Times), sans-serif (Helvetica), cursive (Zapf-Chancery), fantasy (Western), monospace (Courier)
 
 When styling fonts with CSS they are broken into two types.  **Font** properties and **Text** properties. The two are very similar, the **Font** deals more with the character set and the **Text** is more about changing the way the font looks.
 
@@ -41,7 +42,7 @@ When styling fonts with CSS they are broken into two types.  **Font** properties
 
 `font` - is a shorthand way to express any font propertiesx on one line.  When using the shorthand the order matters.  There are two required properties, font-size and font-family.
 
-	font: italic small-caps bold 12px arial, verdana;
+    font: italic small-caps bold 12px arial, verdana;
 
 If you do not define a property within the shorthand it will be set to the default state often normal. It could be the case that in the case of `h1` where the default is for the text to be bold that when using the shorthand and not setting the `font-weight` it will be sent to `normal` and the `h1` will no longer be bold even though we did not set it.
 
@@ -49,19 +50,19 @@ If you do not define a property within the shorthand it will be set to the defau
 
 `font-style` will define if something will be italic.  If something is italic by default like the `em` you can also set the `font-style` to be `normal` and it will remove the italics.
 
-	font-style: italic;
+    font-style: italic;
 
 ---
 
 `font-variant` will set the text to be `small-caps` where the “lowercase” letters will be displayed as small uppercase letters.
 
-	font-variant: small-caps;
+    font-variant: small-caps;
 
 ---
 
 `font-weight`will define text that is bold.  If something is bold by default like `h2` you can remove the bold by setting the value to `normal`.
 
-	font-weight: bold;
+    font-weight: bold;
 
 ---
 
@@ -73,41 +74,31 @@ Both percent and em calculate the size of the font off of another font size. For
 
 Since we **can’t** measure what an inch is on a computer screen we can’t use it. That also means that we **can’t** use point because `1 points` is defined as `1/72 inch`.  The fact that we do not know what an inch is it we can not calculate what a point is.  Instead you should always define **font sizes in pixels, percent or em**.
 
-	font-size: 12px;
-	font-size: 2em;
-	font-size: 200%;
+    font-size: 12px;
+    font-size: 2em;
+    font-size: 200%;
 
 ###CSS Units
-Unit|Description
--|-
-%|a percentage of something
-in|inch
-cm|centimeter
-mm|millimeter
-em|one em is equal to the font size of the current element
-ex|one ex is the x-height of a font, the x-height is usually about half the font-size
-pt|point (1 pt is the same as 1/72 inch)
-pc|pica (1 pc is the same as 12 points)
-px|pixels (a dot on the computer screen)
+
+[View CSS Units](sizes.html)
 
 ---
 
 `font-family` - defines what font is displayed when the page is rendered.  The `font-family` can only load a font that is installed on the **local computer** viewing the page.   This means we are limited in the fonts that installed on both the Mac and Windows computers by default.
 
-	font-family: helvetica, arial, “time new roman”
+    font-family: helvetica, arial, “time new roman”
 
 **Note:** any font name that has a *space* in needs to be quoted(“).
 
 If you want to use a font that may not be fully supported but have a fall back you can put them in a comma separated list.  If the first item in the list is not available it will try the next font in the list.  If no font is available it will display the browser default.
 
-Type|Name
----|----
-Serif Fonts|Georgia, serif<br>"Palatino Linotype", "Book Antiqua", Palatino, serif<br>"Times New Roman", Times, serif
-Sans-Serif Fonts|Arial, Helvetica, sans-serif	<br>"Arial Black", Gadget, sans-serif<br>"Comic Sans MS", cursive, sans-serif<br>Impact, Charcoal, sans-serif<br>"Lucida Sans Unicode", "Lucida Grande", sans-serif<br>Tahoma, Geneva, sans-serif<br>"Trebuchet MS", Helvetica, sans-serif<br>Verdana, Geneva, sans-serif
-Monospace Fonts|"Courier New", Courier, monospace<br>"Lucida Console", Monaco, monospace
+Type             | Name
+-----------------|-----------------------------------------------------------------
+Serif Fonts      | Georgia, serif<br>"Palatino Linotype", "Book Antiqua", Palatino, serif<br>"Times New Roman", Times, serif
+Sans-Serif Fonts | Arial, Helvetica, sans-serif	<br>"Arial Black", Gadget, sans-serif<br>"Comic Sans MS", cursive, sans-serif<br>Impact, Charcoal, sans-serif<br>"Lucida Sans Unicode", "Lucida Grande", sans-serif<br>Tahoma, Geneva, sans-serif<br>"Trebuchet MS", Helvetica, sans-serif<br>Verdana, Geneva, sans-serif
+Monospace Fonts  | "Courier New", Courier, monospace<br>"Lucida Console", Monaco, monospace                                                                                                                                                                                                                             
+
+
 <style>
 table tr td:nth-child(1){width:20%}
 </style>
-
-
-

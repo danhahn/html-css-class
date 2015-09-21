@@ -1,7 +1,7 @@
 ---
 title: Lesson 2
 author: Dan Hahn
-date: 2014-09-29 18:00
+date: 9/28/2015 18:00
 template: article.jade
 ---
 
@@ -9,6 +9,7 @@ template: article.jade
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)
 * [Margin](margin.html)
@@ -22,15 +23,15 @@ Margin will define all four sides of the box one value is set. If you need to de
 
 ###Example
 
-	margin-top: 20px;
-	margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 Just like padding the number of values you place effects different sides.
 
-	margin: (All Sides);
-	margin: (top and bottom) (left and right);
-	margin: (top) (left and right) (bottom);
-	margin: (top) (right) (bottom) (left);
+    margin: (All Sides);
+    margin: (top and bottom) (left and right);
+    margin: (top) (left and right) (bottom);
+    margin: (top) (right) (bottom) (left);
 
 ## Center Container
 
@@ -38,11 +39,11 @@ The problem with centering `#container` on the page is there is no real property
 
 By setting the `margin` on the left and right to `auto` the element will be centered on the page. Because we set the left and right to auto it take the space left over after the and divide it by 2 and set it equal to each other. This will make the element center on the page.
 
-	<style>
-		#container {
-			width: 800px;
-			margin: 0 auto;
-		}
-	</style>
+    <style>
+        #container {
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
 
 <script src="lesson-2.js"></script>

@@ -1,7 +1,7 @@
 ---
 title: Lesson 2
 author: Dan Hahn
-date: 2014-09-29 18:00
+date: 9/28/2015 18:00
 template: article.jade
 ---
 
@@ -9,6 +9,7 @@ template: article.jade
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)
 * [Margin](margin.html)
@@ -22,8 +23,8 @@ Padding will define all four sides of the box one value is set. If you need to d
 
 ###Example
 
-	padding-top: 20px;
-	padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
 ###Other values for padding
 
@@ -33,10 +34,9 @@ Padding will define all four sides of the box one value is set. If you need to d
 * When Padding has four values `padding: 10px 20px 30px 40px;` it will define 10px for the **top**, 20px for the **right**, 30px for the **bottom**, and 40px for the **left**.
 
 ###Again
-	padding: (All Sides);
-	padding: (top and bottom) (left and right);
-	padding: (top) (left and right) (bottom);
-	padding: (top) (right) (bottom) (left);
+    padding: (All Sides);
+    padding: (top and bottom) (left and right);
+    padding: (top) (left and right) (bottom);
+    padding: (top) (right) (bottom) (left);
 
 **Note:** you will never user a comma only a space.  If you use a comma it will not work.
-

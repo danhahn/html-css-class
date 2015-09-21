@@ -1,7 +1,7 @@
 ---
 title: Lesson 2
 author: Dan Hahn
-date: 2014-09-29 18:00
+date: 9/28/2015 18:00
 template: article.jade
 ---
 
@@ -9,6 +9,7 @@ template: article.jade
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)
 * [Margin](margin.html)
@@ -28,7 +29,7 @@ When the overflow property is set it tells the element how to deal with the extr
 ##Visible
 When visible is set the extra content will overflow the element and is seen in the screen. It may overlap other content below it.
 
-	overflow: visible;
+    overflow: visible;
 
 ###Example
 
@@ -38,7 +39,7 @@ When visible is set the extra content will overflow the element and is seen in t
 
 When hidden is she the extra content will not be seen. The element will just be the size but if the content is greater than the size the user will not be able to see it.
 
-	overflow: hidden;
+    overflow: hidden;
 
 ###Example
 
@@ -49,7 +50,7 @@ When hidden is she the extra content will not be seen. The element will just be 
 
 Like hidden the content that is greater than the element will not be seen but if they are needed scrollbars will appear.
 
-	overflow: auto;
+    overflow: auto;
 
 ###Example
 
@@ -60,7 +61,7 @@ Like hidden the content that is greater than the element will not be seen but if
 
 In this case scroll bars will be present at all times even if they are not needed.
 
-	overflow: scroll;
+    overflow: scroll;
 
 ###Example
 

@@ -1,7 +1,7 @@
 ---
 title: Lesson 1
 author: Dan Hahn
-date: 2014-09-22 18:00
+date: 9/21/2015 18:00
 template: article.jade
 subject: TEST
 ---
@@ -184,7 +184,3 @@ More than one property - declarations can have many properties defined
 		property1: value;
 		property2: value2;
 	}
-
-
-
-

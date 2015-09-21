@@ -1,7 +1,7 @@
 ---
 title: Lesson 6
 author: Dan Hahn
-date: 2014-10-135 18:00
+date: 12/7/2015 18:00
 template: article.jade
 ---
 
@@ -17,7 +17,7 @@ border-radius will add a rounded corner to any element.
 
 ###Example
 
-	border-radius: 10px;
+    border-radius: 10px;
 
 * 1 value - all corners the same.
 * 2 values - top/right and bottom/left the same and top/left and bottom/right the same
@@ -31,15 +31,15 @@ box-shadow add a drop shadow on an element.
 
 Standard
 
-	box-shadow: 1px 2px 10px black;
+    box-shadow: 1px 2px 10px black;
 
 ###Inside shadow
 
-	box-shadow: 1px 2px 10px black inset;
+    box-shadow: 1px 2px 10px black inset;
 
 ###Multiple shadows
 
-	box-shadow: 1px 1px 5px black, -1px -1px 5px red;
+    box-shadow: 1px 1px 5px black, -1px -1px 5px red;
 
 Notice the comma and negative numbers.
 
@@ -61,11 +61,11 @@ text-shadow add a drop shadow to text elements.
 
 ###Standard
 
-	text-shadow: 1px 2px 10px blue;
+    text-shadow: 1px 2px 10px blue;
 
 ###Multiple shadows
 
-	text-shadow: 1px 1px 10px red, -2px -2px 3px green;
+    text-shadow: 1px 1px 10px red, -2px -2px 3px green;
 
 Notice the comma and negative numbers.
 
@@ -88,7 +88,7 @@ Opacity defines opacity of an element.  Opacity is defined for all content withi
 
 ###Example
 
-	opacity: .5;
+    opacity: .5;
 
 *Note:* the value range is 0 to 1.  0 is invisible, 1 is visible.  .5 is 50% opacity.
 
@@ -100,20 +100,20 @@ CSS3 can rotate elements.
 
 Saf3.1+, Chrome
 
-	-webkit-transform: rotate(7.5deg);
+    -webkit-transform: rotate(7.5deg);
 
 FF3.5+
 
-	-moz-transform: rotate(7.5deg);
+    -moz-transform: rotate(7.5deg);
 
 IE9
 
-	-ms-transform: rotate(7.5deg);
+    -ms-transform: rotate(7.5deg);
 
 
 Final Spec
 
-	transform: rotate(7.5deg);
+    transform: rotate(7.5deg);
 
 ##Background Size
 Background size will stretch the background to fit the container
@@ -127,18 +127,18 @@ The basics are pretty simple to implement the @font-face rule, but it is possibl
 
 Initially you define the rule, "font-family" is what you want to call the font, "src" is where it can be found, include a "font-weight" (not needed for normal, but required by everything else, bold, thin etc).
 
-	@font-face {
-	   font-family: DeliciousRoman;
-	   src: url(fonts/delicious-Roman.otf);
-	   font-weight:400;
-	}
+    @font-face {
+       font-family: DeliciousRoman;
+       src: url(fonts/delicious-Roman.otf);
+       font-weight:400;
+    }
 
 
 Then just use it like any other font in any other style rule.
 
-	p {
-	   font-family: DeliciousRoman, Helvetica, Arial, sans-serif;
-	}
+    p {
+       font-family: DeliciousRoman, Helvetica, Arial, sans-serif;
+    }
 
 That's pretty much it for basic implementation.
 
@@ -161,7 +161,7 @@ transition: all 0.3s ease-out;
 2nd value - transition-duration
 3rd value - transition-timing-function
 4th value - transition-delay
-	Transition timing functions
+    Transition timing functions
 Timing functions determine how intermediate values of the transition are calculated. The timing function can be specified by providing the graph of the corresponding function, as defined by four points defining a cubic bezier:
 
 This CSS transition function manipulator is a convenient tool to visually generate CSS transition timing functions.
@@ -216,12 +216,12 @@ For example, if you’d like two bordered boxes side by side, it can be achieved
 
 box-sizing:border-box;
 
-	-moz-box-sizing:border-box; /* Firefox */
-	box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    box-sizing:border-box;
 
 Syntax
 
-	box-sizing: content-box|border-box|inherit:
+    box-sizing: content-box|border-box|inherit:
 
 Value | Description
 ---|---

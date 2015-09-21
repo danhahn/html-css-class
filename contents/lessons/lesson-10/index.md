@@ -1,7 +1,7 @@
 ---
 title: Lesson 10
 author: Dan Hahn
-date: 2014-11-24 15:00
+date: 11/30/2015 15:00
 template: article.jade
 ---
 This week we will talk about how to use GULP, LESS/SCSS and GIT.

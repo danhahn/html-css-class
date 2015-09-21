@@ -1,7 +1,7 @@
 ---
 title: Syllabus
 author: Dan Hahn
-date: 2013-06-05 18:00
+date: 9/21/2015 18:00
 template: single.jade
 subject: TEST
 ---
@@ -9,10 +9,11 @@ subject: TEST
 
 * 12 weeks
 * Mondays 6:00-10:00 pm
-* September 16 - December 9 (12 Weeks)
+* September 21 - December 14 (12 Weeks)
 
-Daniel Hahn - [dan@svahtml.com](mailto:dan@gmail.com)
+Daniel Hahn - [dan@svahtml.com](mailto:dan@svahtml.com)
 
+**Note:** SVA Continuing Education will be closed on Columbus Day 10/12 but we will have class that day.  Due a conference that I will be attending we will not have class on 10/26.  Please let me know if you will not be able to attend the class on 10/12.
 
 ##Class web site
 http://css.svahtml.com
@@ -21,12 +22,12 @@ All class work, materials, and assignments will be given though the class web si
 The site will also provide back lesson and class presentations will be found there for you to review.
 
 
-	Login for lab computers
-	User Name : student
-	Password : bfacad
+    Login for lab computers
+    User Name : smc2429a
+    Password : hahn
 
 
-Attendance:Every class is very important and will build off of the class before; therefore you must attend class every week. If you do miss a class, you are expected to make up the work before the next class. If you know in advance that you will miss a class, please contact me 24 hours before the class. Missing TWO or more classes will result in failure of the course.
+Attendance: Every class is very important and will build off of the class before; therefore you must attend class every week. If you do miss a class, you are expected to make up the work before the next class. If you know in advance that you will miss a class, please contact me 24 hours before the class. 
 
 ---
 
@@ -86,12 +87,12 @@ Time|Task
 2. CSS3 Selectors
 3. CSS3 Properties
 
-###Lesson 7 – CSS Animations 
+###Lesson 7 – CSS Animations
 
 1. Parts of animations
 2. Examples
 
-###Lesson 8 – Media Queries 
+###Lesson 8 – Media Queries
 
 1. Media Queries
 2. Intro To Less
@@ -103,7 +104,7 @@ Time|Task
 
 ### Lesson 10 - Development tools
 
-1. Zen Coding 
+1. Zen Coding
 2. LESS vs SASS
 3. Other IDEs
 
@@ -115,5 +116,3 @@ Time|Task
 ### Lesson 12 -  Final Project
 
 1. Final Project
-
-
