@@ -9,7 +9,7 @@ template: article.jade
 * [Basic Layouts]()
 * [Flexible Width](flexable.html)
 * [Variable Width](varable.html)
-* [Grid System](grid.html)
+* [Flex Box](flex.html)
 * [Position](position.html)
 * [Homework](homework.html)
 

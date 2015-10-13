@@ -14,6 +14,8 @@ This week we will talk about font, text, border, padding and margins.  We will a
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [Include File](include.html)
+* [Define a color](color.html)
 * [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)

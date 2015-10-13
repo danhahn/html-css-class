@@ -9,6 +9,7 @@ template: article.jade
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [Include Files](include.html)
 * [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)
@@ -21,29 +22,31 @@ Text Properties like font properties alter the way fonts display but have more t
 
 ##Text Properties
 
-Property         | Possible Values                                
------------------|------------------------------------------------
-color:           | color                                          
-letter-spacing:  | normal, length                                 
-line-height:     | normal, number, length, percent                
-text-align:      | left, right, center, justify                   
-text-decoration: | none, underline,  overline, line-through, blink
-text-indent:     | length, percent                                
-text-transform:  | none, capitalize, uppercase, lowercase         
-white-space:     | normal, pre, nowrap                            
-word-spacing:    | normal, length                                 
+Property         | Possible Values
+-----------------|-----------------------------------------
+color:           | color
+letter-spacing:  | normal, length
+line-height:     | normal, length, percent
+text-align:      | left, right, center, justify
+text-decoration: | none, underline,  overline, line-through
+text-indent:     | length, percent
+text-transform:  | none, capitalize, uppercase, lowercase
+white-space:     | normal, pre, nowrap
+word-spacing:    | normal, length
+text-shaow:      | offset, offset, spread, color
 
 ---
 
 `color` - defines the color of any element that can take a color like text, bullets or borders.
 
 ###Colors
-Unit|Description
--|-
-color_name|A color name (red)
-rgb(x,x,x)|A rgb value (rgb(255,0,0))
-rgb(y%, y%, y%)|A rgb percentage value (rgb(100%,0%,0%))
-#rrggbb|A hex number ( #ff0000).
+
+Unit            | Description
+----------------|-----------------------------------------
+color_name      | A color name (red)
+rgb(x,x,x)      | A rgb value (rgb(255,0,0))
+rgb(y%, y%, y%) | A rgb percentage value (rgb(100%,0%,0%))
+#rrggbb         | A hex number ( #c0c0c0).
 
 ---
 
@@ -60,14 +63,14 @@ rgb(y%, y%, y%)|A rgb percentage value (rgb(100%,0%,0%))
 
 ---
 
-`text-decoration` - defines whether or not a text element has an underline.  It can also remove an underlying form a link by setting the value to `none`.
+`text-decoration` - defines whether or not a text element has an underline.  It can also remove an underlying form a link by setting the value to `none`.  
 
     text-decoration: underline;
     text-decoration: none;
 
 ---
 
-`text-align` - defines how the text within an element displays. By default text is aligned to the left.
+`text-align` - defines how the text within an element displays. By default text is aligned to the left.  
 
     text-align: right;
     text-align: center;
@@ -81,7 +84,7 @@ rgb(y%, y%, y%)|A rgb percentage value (rgb(100%,0%,0%))
 
 ---
 
-`text-transform` - defines whether the text should be uppercase, lowercase or the first letter of each word should be capital.
+`text-transform` - defines whether the text should be uppercase, lowercase or the first letter of each word should be capital.  
 
     text-transform: uppercase;
     text-transform: lowercase;
@@ -89,16 +92,31 @@ rgb(y%, y%, y%)|A rgb percentage value (rgb(100%,0%,0%))
 
 ---
 
-`white-space` - when the value is `nowrap` it will prevent that element from wrapping.  This is useful when you have a two word branding that needs to be treated as one work.
+`white-space` - when the value is `nowrap` it will prevent that element from wrapping.  This is useful when you have a two word branding that needs to be treated as one work.  
 
     white-space: nowrap;
 
 ---
 
-`word-spacing` - like `letter-spacing` but adds space between the word.  The value can be both positive or negative.
+`word-spacing` - like `letter-spacing` but adds space between the word.  The value can be both positive or negative.  
 
     word-spacing: 10px;
 
+---
+
+`text-shadow` - allows you to define a shadow on text.  There are four parts to the shadow.
+
+1. offset left/right
+2. offset top/bottom
+3. spread of the shadow
+4. color of shadow
+
+
+    text-shadow: 1px 5px 10px blue;
+
+**Note:** you can apply more than one shadow to an element just sperated each shadow with a comma.
+
 <style>
-table tr td:nth-child(1){width:20%}
+table tr td:nth-child(1){width:40%}
+td .label {margin-right: 4px;cursor: pointer;}
 </style>

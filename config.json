@@ -1,14 +1,13 @@
 {
     "locals": {
         "url": "http://localhost:8080",
-        "name": "SVA HTML",
+        "name": "SVA HTML and CSS",
         "owner": "Daniel Hahn",
         "description": "Fall 2015",
         "date": "September 21, 2015 to December 14, 2014",
+        "totalItems" : 12,
         "startDate": "September 21, 2015",
-        "endDate": "December 14, 2015",
-        "classnote" : "Please enter your Name, Email and Phone here ->",
-        "classaction" : "https://docs.google.com/a/svahtml.com/forms/d/1XnXz7fVhf5U34y6d0arDDGJUvKcoF9qgwHO2C3qehTk/viewform?usp=send_form"
+        "endDate": "December 14, 2015"
     },
     "plugins": [
         "./plugins/paginator.coffee",

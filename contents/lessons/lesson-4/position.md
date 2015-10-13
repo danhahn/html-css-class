@@ -10,8 +10,9 @@ template: article.jade
 * [Basic Layouts]()
 * [Flexible Width](flexable.html)
 * [Variable Width](varable.html)
-* [Grid System](grid.html)
+* [Flex Box](flex.html)
 * [Position](position.html)
+* [Homework](homework.html)
 
 ##Document flow
 
@@ -45,11 +46,11 @@ position: absolute will pull the element out of the “normal flow” and layer 
 The nav element was pulled out of the flow of the document and positioned in the top right corner of the document.  Since the nav was pulled out of the normal flow of the document its space is not saved and the elements below move up and fill in the available space.
 
 ###CSS CODE
-	#nav {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
+    #nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 
 
 Fixed
@@ -58,41 +59,41 @@ position: fixed is similar to absolute.  Both pull the element out of the flow o
 
 Notice the nav goes across the bottom of the window.  Since we can’t put a width of 100% on the element if it has padding because of the box model we need to do this in a different way.  If we put both a left and right value the element will stick to both sides of the window. This will make the element fill the whole space.
 ###CSS CODE
-	#nav {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
+    #nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
-Relative 
-position: relative will move the element when a top, right bottom or left is applied but unlike absolute the element will not be removed from the normal flow of the document.  Since the element is still in the flow of the document a space will be kept for it and you may see some white space around the element. 
+Relative
+position: relative will move the element when a top, right bottom or left is applied but unlike absolute the element will not be removed from the normal flow of the document.  Since the element is still in the flow of the document a space will be kept for it and you may see some white space around the element.
 
 
 Notice how the nav element moves but the space is left where it was.  
 ###CSS CODE
-	#nav {
-		position: relative;
-		top: 10px;
-		right: 10px;
-	}
+    #nav {
+        position: relative;
+        top: 10px;
+        right: 10px;
+    }
 
 While this may not seem like it is that useful of a property it has a very valuable side effect.
 
 Relative + Absolute
-When relative and absolute work together something magical happens.  When an element has a position absolute it will go to the extremes of the document.  This is not always the most useful behavior but if its parent element has a position of relative it is like creating a new document with in the main document. When any child element has a position absolute it will define its position based on the parent element with relative position rather than the document. 
+When relative and absolute work together something magical happens.  When an element has a position absolute it will go to the extremes of the document.  This is not always the most useful behavior but if its parent element has a position of relative it is like creating a new document with in the main document. When any child element has a position absolute it will define its position based on the parent element with relative position rather than the document.
 
 
 
 ###CSS CODE
-	#content {
-		position: relative;
-	}
-	#nav {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-	}
+    #content {
+        position: relative;
+    }
+    #nav {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 
 ##Stacking Elements
 There may be times when two or more elements may take up the same space when they are positioned absolutely.  When this happens the elements will stack on top of each other.  The order depends on the “flow order”, meaning the first element written to the page will be the lowest.  The later the element written the higher it is in the stack.
@@ -101,18 +102,18 @@ Z-index controls the stacking order of an element. All elements have a default z
 
 To get around this and have the first or lower element stack on top of the other elements you need to add a z-index. In this example element1 will stack on top of element2 because it has a higher z-index.
 
-	.element1 {
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		z-index: 5;
-	}
-	.element2 {
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		z-index: 4;
-	}
+    .element1 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 5;
+    }
+    .element2 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 4;
+    }
 
 ##Visibility
 
@@ -129,4 +130,3 @@ If collapse is used on other elements, it renders as "hidden"
 
 ##inherit
 Specifies that the value of the visibility property should be inherited from the parent element
-

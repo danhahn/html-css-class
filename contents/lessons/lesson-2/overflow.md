@@ -9,6 +9,8 @@ template: article.jade
 
 * [Font Properites]()
 * [Text Properties](text.html)
+* [Include File](include.html)
+* [Define a color](color.html)
 * [CSS Units](sizes.html)
 * [Borders](borders.html)
 * [Padding](padding.html)

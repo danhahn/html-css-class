@@ -7,7 +7,9 @@ template: article.jade
 
 # Homework 3
 
-* [Box Model]()
+* [Center thing]()
+* [Using Emmet](emmet.html)
+* [Box Model](box-model.html)
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
 * [Homework](homework.html)
@@ -22,17 +24,17 @@ Use the starter zip file
 
 Update the header to say
 
-	Homework 3
+    Homework 3
 
 In the html file add the correct markup for a navigation
 
 the links should be
 
-	Home -> index.html
-	News -> news.html
-	Weather -> weather.html
-	Sports -> sports.html
-	Entertainment -> entertainment.html
+    Home -> index.html
+    News -> news.html
+    Weather -> weather.html
+    Sports -> sports.html
+    Entertainment -> entertainment.html
 
 Remember that we are creating a list of links.
 
@@ -44,23 +46,23 @@ Add to the css file the correct styles to make the markup look like a nav.
 
 Nav Bar
 
-	bg color - #208764
+    bg color - #208764
 
 Nav Item
 
-	border - 2px on rigth (black)
-	Last item should not have a border
-	spacing - top and bottom 5px and left and right 10px;
+    border - 2px on rigth (black)
+    Last item should not have a border
+    spacing - top and bottom 5px and left and right 10px;
 
 nav links
 
-	color - white
-	not underlined
+    color - white
+    not underlined
 
 Hover Color
 
-	bg color - #20E8A5
-	text color - black
+    bg color - #20E8A5
+    text color - black
 
 ## Coded Page
 

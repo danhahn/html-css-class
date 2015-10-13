@@ -14,7 +14,7 @@ This week we will use the *floats* that we learned last week to build table-free
 * [Basic Layouts]()
 * [Flexible Width](flexable.html)
 * [Variable Width](varable.html)
-* [Grid System](grid.html)
+* [Flex Box](flex.html)
 * [Position](position.html)
 * [Homework](homework.html)
 
@@ -29,10 +29,10 @@ CSS layouts have changed the way that we are able to design websites. At one tim
 
 In this example we are looking the the most basic layout. Assume that this page is a standard content page that has a `header`, `navigation`, `content` area and `footer`.
 
-	<header></header>
-	<nav></nav>
-	<article></article>
-	<footer></footer>
+    <header></header>
+    <nav></nav>
+    <article></article>
+    <footer></footer>
 
 The issue now is that we have no way to limit the width of the elements. One option would be with set the width on each element there are some issue that come along with that. The box model kicks in when a width is set.
 
@@ -42,12 +42,12 @@ The issue now is that we have no way to limit the width of the elements. One opt
 
 The other option is to wrap all the element with an other element like a `<div>`. This will allow you to define a `width` on it.
 
-	<div>
-		<header></header>
+    <div>
+        <header></header>
         <nav></nav>
         <article></article>
         <footer></footer>
-	</div>
+    </div>
 
 ---
 
@@ -57,12 +57,12 @@ While the structure is correct at this point we want to add an id or class to he
 
 There are some who say you should never use an id because they are too specific. I disagree with this. I feel that a well place id can help identify which element you are targeting.
 
-	<div id="container">
-		<header id="globalHeader"></header>
+    <div id="container">
+        <header id="globalHeader"></header>
         <nav id="globalNav"></nav>
         <article id="contentArea"></article>
         <footer id="gloablFooter"></footer>
-	</div>
+    </div>
 
 ---
 
@@ -74,26 +74,26 @@ Now that we have the structure in place we need to write the `css` to support th
 
 In this example we are setting up a page that is a fixed width of `800px`.
 
-	<style>
-		#container {
-			width: 800px;
-		}
+    <style>
+        #container {
+            width: 800px;
+        }
 
-		#gloablNav, #contentArea {
-		 	float: left;
-		}
+        #gloablNav, #contentArea {
+             float: left;
+        }
 
-		#gloablNav {
+        #gloablNav {
             width: 200px;
-		}
+        }
 
-		#contentArea {
-		 	width: 600px;
-		}
+        #contentArea {
+             width: 600px;
+        }
 
-		#footer {
-		 	clear: both;
-		}
-	</style>
+        #footer {
+             clear: both;
+        }
+    </style>
 
 This will create a fixed two column layout. The width can be adjusted any value just note that the `#globalNav` and `#contentArea` must add up to the width of the `#container`.

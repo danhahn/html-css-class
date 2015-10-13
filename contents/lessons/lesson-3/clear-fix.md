@@ -7,7 +7,9 @@ template: article.jade
 
 # Clear fix
 
-* [Box Model]()
+* [Center thing]()
+* [Using Emmet](emmet.html)
+* [Box Model](box-model.html)
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
 * [Homework](homework.html)
@@ -18,10 +20,10 @@ There are a number of way to fix the issue when all the content within a element
 
 The most basic way to fix the issue is to add a height to the parent element.
 
-	<style>
-		ul {
-			height: 25px;
-		}
+    <style>
+        ul {
+            height: 25px;
+        }
         li {
             float: left;
             list-style:none;
@@ -43,10 +45,10 @@ The most basic way to fix the issue is to add a height to the parent element.
 
 Adding `overflow: hidden` or `overflow: auto` will a adjust the way the content is displayed.  This will force a height.
 
-	<style>
-		ul {
-			overflow: hidden;
-		}
+    <style>
+        ul {
+            overflow: hidden;
+        }
         li {
             float: left;
             list-style:none;
@@ -67,7 +69,7 @@ Adding `overflow: hidden` or `overflow: auto` will a adjust the way the content 
 
 Since we know that adding a `clear: both;` to an element will stop to clear. We can add a new element after the last floated element and add a clear to it. Since the element is after and cleared it will "pin" the background down.
 
-	<style>
+    <style>
         li {
             float: left;
             list-style:none;
@@ -77,14 +79,14 @@ Since we know that adding a `clear: both;` to an element will stop to clear. We 
         }
     </style>
     <nav>
-	    <ul>
-	        <li>Nav Item 1</li>
-	        <li>Nav Item 2</li>
-	        <li>Nav Item 3</li>
-	        <li>Nav Item 4</li>
-	    </ul>
-	    <div class="clear"></div>
-	</nav>
+        <ul>
+            <li>Nav Item 1</li>
+            <li>Nav Item 2</li>
+            <li>Nav Item 3</li>
+            <li>Nav Item 4</li>
+        </ul>
+        <div class="clear"></div>
+    </nav>
 
 |Good|Bad|
 |----|---|
@@ -94,12 +96,12 @@ Since we know that adding a `clear: both;` to an element will stop to clear. We 
 
 The idea of the extra `<div></div>` is a good one the only problem is we do not like to add extra markup that has no content need. CSS3 gives all elements an extra element before and after. By using the `:after` pseudo element you can add an "element" can clear that.
 
-	<style>
-		ul:after {
-			content: "";
-			display: block;
-			clear: both;
-		}
+    <style>
+        ul:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
         li {
             float: left;
             list-style:none;

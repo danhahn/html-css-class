@@ -11,7 +11,6 @@ template: article.jade
 * [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
-* [Include File](include.html)
 * [Homework](homework.html)
 
 When you are writing HTML you can use a simple text editor to write your HTML but this can be a git of a frustrating experience because it will not show any errors.

@@ -11,7 +11,6 @@ template: article.jade
 * [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
-* [Include File](include.html)
 * [Homework](homework.html)
 
 ## Starter File

@@ -16,7 +16,6 @@ In this lesson we will talk about how CSS works, basic selectors and basic forma
 * [Editors](editors.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
-* [Include File](include.html)
 * [Homework](homework.html)
 
 [Download Notes <i class="icon-download-alt icon-white"></i>](week1-notes.zip) [Download Stater File <i class="icon-download-alt icon-white"></i>](week1.zip)
@@ -119,7 +118,7 @@ Inline style are effect way of applying a style to one element.  The down side i
 ####How to use
 Inline styles are applied to an HTML element with an attribute of style.  The attribute is HTML but the value is CSS.
 
-	<h1 style="property:value;">HTML Text</h1>
+    <h1 style="property:value;">HTML Text</h1>
 
 ####Internal and External Styles
 The more common way to use CSS is to add the style to an external file or internal style block.  This creates a clear separation between the HTML and the CSS.  If the CSS is written in an external file that file can used on many pages with in your site and if a change needs to be made it is made in once place an applied to all pages at the same time.
@@ -128,14 +127,14 @@ The more common way to use CSS is to add the style to an external file or intern
 $$$$HTML
 On each element that a class is applied you need to add the class attribute with a value of the class name.  Note: that class name can be anything you want it it be.  The example below use a generic className but it could be almost anything.  The same thing goes for the ID name.
 
-	<h1 class="className">HTML Text</h1>
-	<p class="className">HTML Text</p>
+    <h1 class="className">HTML Text</h1>
+    <p class="className">HTML Text</p>
 
 *or*
 
-	<div id="idName">
-		<p>HTML Text</p>
-	</div>
+    <div id="idName">
+        <p>HTML Text</p>
+    </div>
 
 ---
 
@@ -146,16 +145,16 @@ To define a class use the class name defined in the HTML and add a period (.) in
 
 To define an id use the id name defined in the HTML and add a number symbol (#) in front of it. #idName
 
-	[--- head tag --]
-	<style type="text/css">
+    [--- head tag --]
+    <style type="text/css">
     .className {
-		property: value;
-	}
-	#idName {
-		property: value;
-	}
-	</style>
-	[--- end  head tag --]
+        property: value;
+    }
+    #idName {
+        property: value;
+    }
+    </style>
+    [--- end  head tag --]
 
 ---
 
@@ -173,14 +172,14 @@ The syntax for css is very different than HTML syntax.
 Inline style - when using an inline style you will only use the property and value.
 Basic format
 
-	selector {
-		property: value;
-	}
+    selector {
+        property: value;
+    }
 
 
 More than one property - declarations can have many properties defined
 
-	selector {
-		property1: value;
-		property2: value2;
-	}
+    selector {
+        property1: value;
+        property2: value2;
+    }
