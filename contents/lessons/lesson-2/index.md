@@ -10,7 +10,7 @@ This week we will talk about font, text, border, padding and margins.  We will a
 
 <span class="more"></span>
 
-#Font Properties
+# Font Properties
 
 * [Font Properites]()
 * [Text Properties](text.html)
@@ -80,7 +80,7 @@ Since we **can’t** measure what an inch is on a computer screen we can’t use
     font-size: 2em;
     font-size: 200%;
 
-###CSS Units
+### CSS Units
 
 [View CSS Units](sizes.html)
 

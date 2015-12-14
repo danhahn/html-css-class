@@ -19,25 +19,25 @@ There are three key advantages to CSS animations over traditional script-driven 
 2. The animations run well, even under moderate system load. Simple animations can often perform poorly in JavaScript (unless they're well made). The rendering engine can use frame-skipping and other techniques to keep the performance as smooth as possible.
 3. Letting the browser control the animation sequence lets the browser optimize performance and efficiency by, for example, reducing the update frequency of animations running in tabs that aren't currently visible.
 
-##Configuring the animation
+## Configuring the animation
 
 To create a CSS animation sequence, you style the element you want to animate with the animation property or its sub-properties. This lets you configure the timing and duration of the animation, as well as other details of how the animation sequence should progress. This does not configure the actual appearance of the animation, which is done using the `@keyframes` at-rule as described in Defining the animation sequence using keyframes below.
 
 The sub-properties of the animation property are:
 
 
-Prop|Value
----|---
-[animation-delay](notes/delay.html)|Configures the delay between the time the element is loaded and the beginning of the animation sequence.
-[animation-direction](notes/direction.html)|Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
-[animation-duration](notes/duration.html)|Configures the length of time that an animation should take to complete one cycle.
-[animation-iteration-count](notes/count.html)|Configures the number of times the animation should repeat; you can specify infinite to repeat the animation indefinitely.
-[animation-name](notes/name.html)|Specifies the name of the `@keyframes` at-rule describing the animation's keyframes.
-[animation-play-state](notes/play.html)|Lets you pause and resume the animation sequence.
-[animation-timing-function](notes/timing.html)|Configures the timing of the animation; that is, how the animation transitions through keyframes, by establishing acceleration curves.
-[animation-fill-mode](notes/fill.html)|Configures what values are applied by the animation before and after it is executing.
+Prop                                           | Value
+-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------
+[animation-delay](notes/delay.html)            | Configures the delay between the time the element is loaded and the beginning of the animation sequence.
+[animation-direction](notes/direction.html)    | Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
+[animation-duration](notes/duration.html)      | Configures the length of time that an animation should take to complete one cycle.
+[animation-iteration-count](notes/count.html)  | Configures the number of times the animation should repeat; you can specify infinite to repeat the animation indefinitely.
+[animation-name](notes/name.html)              | Specifies the name of the `@keyframes` at-rule describing the animation's keyframes.
+[animation-play-state](notes/play.html)        | Lets you pause and resume the animation sequence.
+[animation-timing-function](notes/timing.html) | Configures the timing of the animation; that is, how the animation transitions through keyframes, by establishing acceleration curves.
+[animation-fill-mode](notes/fill.html)         | Configures what values are applied by the animation before and after it is executing.
 
-##Defining the animation sequence using keyframes
+## Defining the animation sequence using keyframes
 
 Once you've configured the animation's timing, you need to define the appearance of the animation. This is done by establishing two or more keyframes using the `@keyframes` at-rule. Each keyframe describes how the animated element should render at a given time during the animation sequence.
 
@@ -45,7 +45,7 @@ Since the timing of the animation is defined in the CSS style that configures th
 
 You can optionally include additional keyframes that describe intermediate steps along the way from the starting point to the ending point of the animation.
 
-##Examples
+## Examples
 
 **Note:** The examples here don't use any prefix on the animation CSS properties. WebKit-based browsers and older version of the other browsers may need prefixes; the live examples you can click to see in your browser also include the -webkit prefixed versions.
 
@@ -80,7 +80,7 @@ The second (and final) keyframe occurs at 100% (using the alias to). The left ma
 
 
 
-##Adding another keyframe
+## Adding another keyframe
 
 Let's add another keyframe to the previous example's animation. Let's say we want the header's font size to increase as it moves from right to left for a while, then to decrease back to its original size. That's as simple as adding this keyframe:
 
@@ -94,7 +94,7 @@ This tells the browser that 75% of the way through the animation sequence, the h
 
 
 
-##Making it repeat
+## Making it repeat
 
 To make the animation repeat itself, simply use the animation-iteration-count property to indicate how many times to repeat the animation. In this case, let's use infinite to have the animation repeat indefinitely:
 
@@ -106,7 +106,7 @@ To make the animation repeat itself, simply use the animation-iteration-count pr
 
 
 
-##Making it move back and forth
+## Making it move back and forth
 
 That made it repeat, but it's very odd having it jump back to the start each time it begins animating. What we really want is for it to move back and forth across the screen. That's easily accomplished by setting animation-direction to alternate:
 
@@ -119,13 +119,13 @@ That made it repeat, but it's very odd having it jump back to the start each tim
 
 
 
-##Using animation events
+## Using animation events
 
 You can get additional control over animations -- as well as useful information about them -- by making use of animation events. These events, represented by the AnimationEvent object, can be used to detect when animations start, finish, and begin a new iteration. Each event includes the time at which it occurred as well as the name of the animation that triggered the event.
 
 We'll modify the sliding text example to output some information about each animation event when it occurs, so we can get a look at how they work.
 
-##Adding the animation event listeners
+## Adding the animation event listeners
 
 We'll use JavaScript code to listen for all three possible animation events. The setup() function configures our event listeners; we call it when the document is first loaded in order to set things up.
 
@@ -174,7 +174,7 @@ Ended: elapsed time is 9.234000205993652
 
 **Note** that the times are very close to, but not exactly, those expected given the timing established when the animation was configured. Note also that after the final iteration of the animation, the animationiteration event isn't sent; instead, the animationend event is sent.
 
-##The HTML
+## The HTML
 
 Just for the sake of completeness, here's the HTML that displays the page content, including the list into which the script inserts information about the received events:
 

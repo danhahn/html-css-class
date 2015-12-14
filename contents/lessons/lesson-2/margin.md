@@ -5,7 +5,7 @@ date: 9/28/2015 18:00
 template: article.jade
 ---
 
-#Margin
+# Margin
 
 * [Font Properites]()
 * [Text Properties](text.html)
@@ -23,7 +23,7 @@ Margin is the space from one element `border` to another element `border`. What 
 
 Margin will define all four sides of the box one value is set. If you need to define the margin of just one side of the box you can use `margin-[top,right,bottom,left]`.
 
-###Example
+### Example
 
     margin-top: 20px;
     margin-bottom: 20px;

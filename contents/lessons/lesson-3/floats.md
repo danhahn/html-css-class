@@ -5,7 +5,7 @@ date: 10/5/2015 18:00
 template: article.jade
 ---
 
-#CSS Floats
+# CSS Floats
 
 * [Center thing]()
 * [Using Emmet](emmet.html)
@@ -20,12 +20,12 @@ When an element is floated they go into a state that is not inline or block.  A 
 
 **Note:** Elements are floated horizontally, this means that an element can only be floated left or right, not up or down.
 
-##Float Basics
+## Float Basics
 
-|prop|value|desc|example|
-|----|-----|----|-------|
-|float|left|float an item to the left and content will wrap around it|`float: left;`|
-|float|right|float an item to the right and content will wrap around it|`float: right;`|
+| prop  | value | desc                                                       | example         |
+|-------|-------|------------------------------------------------------------|-----------------|
+| float | left  | float an item to the left and content will wrap around it  | `float: left;`  |
+| float | right | float an item to the right and content will wrap around it | `float: right;` |
 
     <style>
         img {
@@ -40,7 +40,7 @@ When an element is floated they go into a state that is not inline or block.  A 
         <p>Content. Content. Content. Content. Content. Content. </p>
     </div>
 
-###Example
+### Example
 
 <div id="basic_float"></div>
 
@@ -48,7 +48,7 @@ When an element is floated they go into a state that is not inline or block.  A 
 
 When two elements are floated in the same direction one after another they will "stack" next to each other.
 
-##Clearing A float
+## Clearing A float
 When an element is floated it affects both the element that has the float and the element after it.  To stop an element from being affected by the float you need to add the css property of clear.
 
 Clear has three values, left, right and both.  `clear: left` will clear a `float: left`, `clear: right` will clear a `float right` and `clear: both` will clear either a left or right float.
@@ -63,8 +63,8 @@ The the clear float must be added to an element after the floated element.
 
 In this example the content in the second element is not affected by the the float because it has a clear:left; on it.
 
-###Example
-####HTML
+### Example
+#### HTML
 
     <style>
         img {
@@ -84,19 +84,19 @@ In this example the content in the second element is not affected by the the flo
         <p>Content. Content. Content. Content. Content. Content. </p>
     </div>
 
-####Output
+#### Output
 
  <div id="basic_clear"></div>
 
  **Note:** When the clearing an element it will clear that element and all the elements after.
 
-##Stacking Floats
+## Stacking Floats
 
 When two or more consecutive elements are floated in the same direction they will "stack" horizontally.  This is often used to create navigation or layouts.
 
 **Note:** when all the content with in an element is floated that element will seem to have no height.
 
-###Example
+### Example
 
     <style>
         li {

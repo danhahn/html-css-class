@@ -5,7 +5,7 @@ date: 9/28/2015 18:00
 template: article.jade
 ---
 
-#Include CSS File
+# Include CSS File
 
 * [Font Properites]()
 * [Text Properties](text.html)
@@ -21,7 +21,7 @@ template: article.jade
 
 To include a css **file in an HTML** the first thing you need is a `.css` file.  You can create a .css file the same way you create a .html.  Go to file save as and give the file a name and add .css as the extension.
 
-##Link tag
+## Link tag
 
 The link tag is an HTML tag that is added within the head of a document.  This tag has three attributes.
 
@@ -29,11 +29,11 @@ The link tag is an HTML tag that is added within the head of a document.  This t
 * `rel` – set to stylesheet
 * `type` – set to text/css (*not needed in HTML5*)
 
-###Example
+### Example
 
     <link rel="stylesheet" type="text/css" href="filelocaiton.css">
 
-###Example HTML5
+### Example HTML5
 
     <link rel="stylesheet" href="filelocaiton.css">
 
@@ -43,17 +43,17 @@ The link tag is an HTML tag that is added within the head of a document.  This t
 
 @import includes a .css but does it with in CSS itself.  With @import one css file can include another file.
 
-###EXAMPLE
+### EXAMPLE
 
     <style type="text/css">
         @import url(filename.css);
     </style>
 
-##Print CSS
+## Print CSS
 
 CSS files can be targeted to only the screen or printer.  This allows different styles to be applied to the screen and the printer.
 
-###Example
+### Example
 
     <link rel="stylesheet" href="print.css" media="print">
 
@@ -61,7 +61,7 @@ CSS files can be targeted to only the screen or printer.  This allows different 
         @import url(filename.css) print;
     </style>
 
-###Within a style block
+### Within a style block
 
     <style>
         h2 {

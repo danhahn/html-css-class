@@ -5,7 +5,7 @@ date: 11/16/2015 18:00
 template: article.jade
 ---
 
-This week we will talk about CSS reset, Sprites and Flexbox
+This week we will talk about CSS reset, Sprites, HTML Emails and SVG.
 
 <span class="more"></span>
 
@@ -13,8 +13,8 @@ This week we will talk about CSS reset, Sprites and Flexbox
 
 * [Reset]()
 * [Sprites](sprites.html)
-* [Flexbox](flexbox.html)
-* [Media Query](media.html)
+* [HTML Emails](email.html)
+* [SVG](svg.html)
 
 [Download Notes  <i class="icon-download-alt icon-white"></i>](week8-notes.zip)
 [Download Starter File  <i class="icon-download-alt icon-white"></i>](week8.zip)

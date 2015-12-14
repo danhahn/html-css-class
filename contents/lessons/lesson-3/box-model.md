@@ -64,7 +64,7 @@ Now we can change an element to define its size based on the way we would expect
 You can set all elements to use the `*` selector.
 
     * {
-        box-sizing: border-box;
+        box-sizing: border-box;d
     }
 
 <style>

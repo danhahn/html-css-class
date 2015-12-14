@@ -26,4 +26,3 @@ Wintersmith is a static site generater
 	$ wintersmith build
 
 All files will be built to the `/build` directory
-

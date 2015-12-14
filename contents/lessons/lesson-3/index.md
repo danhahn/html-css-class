@@ -50,7 +50,7 @@ Remember that **margin** is the amount of space from the border out to the next 
 
 When you have a fixed width wrapper the math is easy.  The wrapper is 300px and the section should be 100px.  That leaves 100px on the left and 100px right.
 
-###CSS
+### CSS
 
     .wrapper {
         width: 600px;

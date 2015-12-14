@@ -27,7 +27,7 @@ CSS transitions let you decide which properties to animate (by listing them expl
 
 **Note:** CSS transition properties can be used without any prefix provider, but since the specification has only recently achieved stability, the vendor prefixes can still be necessary for browsers based on WebKit. They are also necessary for compatibility with older browser versions (e.g.: Firefox 15 and earlier, Opera 12 and earlier). A compatibility table is available at the bottom of this page with more information.
 
-##Which CSS properties are animatable?
+## Which CSS properties are animatable?
 The Web author can define which property has to be animated and in which way. This allows the creation of complex transitions. As it doesn't make sense to animate some properties, the list of animatable properties is limited to a finite set.
 
 Note: The set of properties that can be animated is subject to change. Developers should proceed with caution.
@@ -35,7 +35,7 @@ Also the auto value is often a very complex case. The specification asks not to 
 
 Care should also be taken when using a transition immediately after adding the element to the DOM using .appendChild() or removing its display: none; property. This is seen as if the initial state had never occured and the element was always in its final state. The easy way to overcome this limitation is to apply a window.setTimeout() of a handful of milliseconds before changing the CSS property you intend to transition to.
 
-##Multiple animated properties example
+## Multiple animated properties example
 
 HTML Content
 
@@ -66,7 +66,7 @@ CSS Content
 
 
 
-##CSS properties used to define transitions
+## CSS properties used to define transitions
 
 CSS Transitions are controlled using the shorthand transition property. This is the best way to configure transitions, as it makes it easier to avoid that the lengths of the parameter list are out of sync, which can be very frustrating to have to spend lots of time debugging the CSS.
 
@@ -74,11 +74,11 @@ You can control the individual components of the transition with the following s
 
 **Note:** that these transitions loop infinitely only for the purpose of our examples; CSS transitions only visualize a property change from start to finish. If you need visualizations that loop, look into the CSS animation property.
 
-###transition-property
+### transition-property
 
 Specifies the name or names of the CSS properties to which transitions should be applied. Only properties listed here are animated during transitions; changes to all other properties occur instantaneously as usual.
 
-###transition-duration
+### transition-duration
 
 Specifies the duration over which transitions should occur. You can specify a single duration that applies to all properties during the transition, or multiple values to allow each property to transition over a different period of time.
 
@@ -88,7 +88,7 @@ Specifies the duration over which transitions should occur. You can specify a si
 	transition-duration: 4s
 
 
-###transition-timing-function
+### transition-timing-function
 
 Specifies a function to define how intermediate values for properties are computed. Timing functions determine how intermediate values of the transition are calculated. Most timing functions can be specified by providing the graph of the corresponding function, as defined by four points defining a cubic bezier. You can also choose easing from Easing Functions Cheat Sheet.
 
@@ -98,7 +98,7 @@ Specifies a function to define how intermediate values for properties are comput
 	transition-timing-function: steps(4, end)
 
 
-###transition-delay
+### transition-delay
 
 Defines how long to wait between the time a property is changed and the transition actually begins.
 
@@ -113,7 +113,7 @@ The shorthand CSS syntax is written as follows:
 	    transition: <property> <duration> <timing-function> <delay>;
 	}
 
-##Detecting the completion of a transition
+## Detecting the completion of a transition
 
 There is a single event that is fired when transitions complete. In all standard-compliant browser, the event is transitionend, in WebKit it is webkitTransitionEnd. See the compatibility table at the bottom for more. The transitionend event offers two properties:
 
@@ -121,7 +121,7 @@ propertyName
 
 A string indicating the name of the CSS property whose transition completed.
 
-###elapsedTime
+### elapsedTime
 A float indicating the number of seconds the transition had been running at the time the event fired. This value isn't affected by the value of transition-delay.
 As usual, you can use the element.addEventListener() method to monitor for this event:
 
@@ -159,7 +159,7 @@ This gets interpreted as:
 	  transition-duration: 3s, 5s;
 	}
 
-##A simple example
+## A simple example
 
 This example performs a four-second font size transition with a two-second delay between the time the user mouses over the element and the beginning of the animation effect:
 

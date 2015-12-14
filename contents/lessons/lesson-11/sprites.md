@@ -27,16 +27,16 @@ To view the next graphic the background position would need be change to so the 
 
 Here the second graphic is shown.  
 
-###Example
+### Example
 
 	selector {
 		background-image(images/sprites.png);
 		background-position: right -20px;
 	}
 
-Notice the -20px that moves the starting point of the time up 20 pixals.  By doing that the image appears to be a whole new graphic but is still the same image. 
+Notice the -20px that moves the starting point of the time up 20 pixals.  By doing that the image appears to be a whole new graphic but is still the same image.
 
-##Real Example
+## Real Example
 
 ![](images/image04.png)
 
@@ -60,7 +60,7 @@ Notice that DIV has no content in it.  In place of the content we use styles to 
 
 ![](images/image02.png)
 
-In this example we use the same image but expose a new image. 
+In this example we use the same image but expose a new image.
 
 	<style type="text/css">
 	.docExample {

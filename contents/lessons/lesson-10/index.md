@@ -8,7 +8,7 @@ This week we will talk about how to use GULP, LESS/SCSS and GIT.
 
 <span class="more"></span>
 
-#Getting Gulp installed
+# Getting Gulp installed
 
 * [Gulp]()
 * [LESS](less.html)
@@ -17,13 +17,13 @@ This week we will talk about how to use GULP, LESS/SCSS and GIT.
 [Download Notes  <i class="icon-download-alt icon-white"></i>](week10-notes.zip)
 [Download Starter File  <i class="icon-download-alt icon-white"></i>](week10.zip)
 
-##Step One - Install Node
+## Step One - Install Node
 
 <a href="http://nodejs.org/" class="btn">Download Node</a>
 
 First - we need our most important requirement, Node. To install Node - simply visit http://nodejs.org and then click that big green “Install” button. Once your download completes, run that application and you should be all ready to go. The Node installer also includes npm, which we will come back to a little later.
 
-##Step Two - Get To Know Your Command Line
+## Step Two - Get To Know Your Command Line
 Now, you may not be very familiar with your command-line interface (Terminal for OSX, Command Prompt for Windows) but you should be! It may seem intimidating at first, but once you get the hang of it you will have the ability to run many different command line applications such as Sass, Yeoman and Git. All of which are very useful tools that your workflow could benefit from!
 
 > If you are familiar with your command-line interface, then feel free to skip to step four.
@@ -42,7 +42,7 @@ Again, this should return the version number on the next line.
 
 If you didn’t get a response, then it may mean that Node didn’t install correctly or you may need to restart your command line application. If this still isn’t working after restarting, then simply jump back up the top and try the first step again.
 
-##Step Three - Navigate To Your Project Directory
+## Step Three - Navigate To Your Project Directory
 Now that we have met our command-line interface and know how to communicate with it, our next step will be navigating it. Luckily, it only takes two commands to change directories and take a look at what is inside them. These commands are ls (or dir, for Windows) to list what is in a directory and cd to change directories.
 
 > I suggest that you spend some time playing with these commands. Get used to your file system and be aware of where everything lives. Don’t rush through this - it will save you a lot of headache later!
@@ -92,7 +92,7 @@ Dependencies help us organize which packages are needed in our development and p
 
 Now that gulp is installed, the next step is setting up our gulpfile. We’re almost done!
 
-##Step Five - Setting Up Our Gulpfile & Running Gulp
+## Step Five - Setting Up Our Gulpfile & Running Gulp
 
 Once gulp is installed we have to give it some instruction so it knows what tasks for perform for us. But, first, we need to figure out exactly what tasks we need to run in our project. Time for... a SCENARIO.
 
@@ -105,7 +105,7 @@ In our Exciting Non-Generic Real World Scenario®, our boss has assigned us with
 
 I’m imagining our supervisor as the impatient, somewhat frightening type who eats interns when they don't do what the boss wants. So, let’s get right to it before our lunch companion gets eaten.
 
-##Install Required Plugins
+## Install Required Plugins
 
 	npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
 
@@ -113,14 +113,14 @@ This will install all of the plugins we will need and add them to our devDepende
 
 As a reminder, if you are getting permissions errors installing these plugins you may have to prepend those commands with sudo!
 
-##Create Our gulpfile
+## Create Our gulpfile
 Now that our plugins are available for us to use, we can start writing our gulpfile and instructing gulp to perform the tasks our boss assigned to us.
 
 Before we get right into the code I think it’s very important to mention that gulp only has 5 methods. These methods are as follows: task, run, watch, src, and dest. These are all you will need to write your tasks.
 
 In the root directory of your project create a new file and name it gulpfile.js and paste the following code inside.
 
-##gulpfile.js
+## gulpfile.js
 
 	// Include gulp
 	var gulp = require('gulp');
@@ -167,7 +167,7 @@ In the root directory of your project create a new file and name it gulpfile.js 
 
 Now, let’s break this down and review what each part does.
 
-##Core & Plugins
+## Core & Plugins
 	// Include gulp
 	var gulp = require('gulp');
 
@@ -180,7 +180,7 @@ Now, let’s break this down and review what each part does.
 
 This includes the gulp core and plugins associated with the tasks that we will be performing. Next, we setup each of our separate tasks. These tasks are lint, sass, scripts and default.
 
-##Lint Task
+## Lint Task
 
 	// Lint Task
 	gulp.task('lint', function() {
@@ -191,7 +191,7 @@ This includes the gulp core and plugins associated with the tasks that we will b
 
 Our lint task checks any JavaScript file in our js/ directory and makes sure there are no errors in our code.
 
-##Sass Task
+## Sass Task
 
 	// Compile Our Sass
 	gulp.task('sass', function() {
@@ -202,7 +202,7 @@ Our lint task checks any JavaScript file in our js/ directory and makes sure the
 
 The sass task compiles any of our Sass files in our scss/ directory into .css and saves the compiled .css file in our css/ directory.
 
-##Scripts Task
+## Scripts Task
 	// Concatenate & Minify JS
 	gulp.task('scripts', function() {
 	    return gulp.src('js/*.js')
@@ -215,7 +215,7 @@ The sass task compiles any of our Sass files in our scss/ directory into .css an
 
 The scripts task concatenates all JavaScript files in our js/ directory and saves the ouput to our dist/ directory. Then gulp takes that concatenated file, minifies it, renames it and saves it to the dist/ directory alongside the concatenated file.
 
-##Watch Task
+## Watch Task
 
 	// Watch Files For Changes
 	gulp.task('watch', function() {

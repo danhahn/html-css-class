@@ -5,7 +5,7 @@ date: 9/28/2015 18:00
 template: article.jade
 ---
 
-#CSS Size Units
+# CSS Size Units
 
 * [Font Properites]()
 * [Text Properties](text.html)
@@ -43,11 +43,11 @@ vmax    | Relative | 1/100th of the viewport’s larger dimension (height or wid
 
 You can see an exhaustive list of units here, but I will focus on what I think are the most relevant units - px, pt, %, em, rem, and vw.
 
-##what’s the difference?
+## what’s the difference?
 
 The difference between these units can be difficult to understand conceptually, so it is best to demonstrate their differences with practical examples.
 
-###example 1 - default settings
+### example 1 - default settings
 
 In a blank HTML document, without you declaring any font sizing, there are default settings used. In most browsers, the default font size for the html and body tags is 100%. This equates to the following -
 
@@ -55,17 +55,17 @@ In a blank HTML document, without you declaring any font sizing, there are defau
 
 This means that if you set the font size of one p to 100% and another p to 16px, they will render as the same size on screen. You can see this demonstrated here -
 
-##Default Font Settings
+## Default Font Settings
 
-###example 2 - absolute vs relative units
+### example 2 - absolute vs relative units
 
 The difference between absolute and relative units can be highlighted by altering the html font size. If we set html { font-size: 200% }, this will affects only the ps with relative font size units.
 
-##Absolute vs relative Units
+## Absolute vs relative Units
 
 This is a key advantage of using relative units. With the ability to scale the font sizes so easily, you can create a truly responsive site, just by altering the html font size. Max Luster has a great example of this here.
 
-###example 3 - rem vs em (and %)
+### example 3 - rem vs em (and %)
 
 The Em (and %) unit works by calculating the current font size based on the parent element’s font size. For example -
 
@@ -82,7 +82,7 @@ The Em (and %) unit works by calculating the current font size based on the pare
 
 Because p inherits from body, which inherits from html, the paragraphs set in em and % units turn out twice the size we may have intended.
 
-##Rem vs Em
+## Rem vs Em
 
 When you use em units for an element, you have to take into account the font size of all the parent elements. As you can see, this can get complicated and messy pretty quickly.
 
@@ -100,13 +100,13 @@ The solution to this problem is rem. rem is calculated based on the html font si
 
 Using rem allows you to have the scaling abilities of em and %, but without having to deal with nesting issues.
 
-###example 4 - viewport width sizing
+### example 4 - viewport width sizing
 
 The vw unit, a new CSS3 unit uses the viewport width to calculate the font size. This allows for a more fluid responsive font sizing.
 
 Although this seems like a great unit for responsive design, I personally am not a fan of it. It doesn’t give me enough control over the size of the font, which almost always works out to be too big or too small.
 
-##my method
+## my method
 
 Until I did this research, I was just using pixels to set my font sizes. This is because, nowadays, most browsers allow the user to zoom in if the text is too small for them, and so there is no accessibility issue.
 

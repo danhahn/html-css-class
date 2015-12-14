@@ -31,16 +31,6 @@ block content
             span.month= moment(article.date).format('MMMM')
             span.day= moment(article.date).format('D') + ","
             span.year= moment(article.date).format('YYYY')
-        section.content
-          !{ typogr(article.intro).typogrify() }
+        section.content !{ typogr(article.intro).typogrify() }
           if article.hasMore
             a(href=article.url).more.btn View Lesson
-
-block prepend footer
-  div.nav
-    if prevPage
-      a(href=prevPage.url) « Newer
-    else
-      a(href='/archive.html') « Archives
-    if nextPage
-      a(href=nextPage.url) Next page »

@@ -29,31 +29,31 @@ Add style block within the <head>.  Remember to add type=”text/css” to the o
 
 Add a tag name selector for each item listed below.
 
-SELECTOR|PROPERTY|VALUE
--|-|-
-h1|color|#df0024
-h2|color|#009f3d
-a|color|#0085c7
-table|border-collapse|collapse
-|width|700px
-th|background-color|#000000
-|color|#ffffff
+SELECTOR | PROPERTY         | VALUE
+---------|------------------|---------
+h1       | color            | #df0024
+h2       | color            | #009f3d
+a        | color            | #0085c7
+table    | border-collapse  | collapse
+         | width            | 700px
+th       | background-color | #000000
+         | color            | #ffffff
 
 ---
 
-##ID Name Selectors
+## ID Name Selectors
 
 Add an id to the <div> with an id name of site.
 
 ### Add a ID name selector with the style below.
 
-SELECTOR|PROPERTY|VALUE
--|-|-
-site|width|800px
+SELECTOR | PROPERTY | VALUE
+---------|----------|------
+site     | width    | 800px
 
 ---
 
-##Class Name Selector
+## Class Name Selector
 
 Add class of odd to the first <tr>, add class of even to the second <tr>.
 
@@ -61,9 +61,9 @@ Alternate odd and even for remaining `<tr>`.
 
 Add a class name selector each item below.
 
-SELECTOR|PROPERTY|VALUE
--|-|-
-odd|background-color|#f4c300
-even|background-color|#eceae1
+SELECTOR | PROPERTY         | VALUE
+---------|------------------|--------
+odd      | background-color | #f4c300
+even     | background-color | #eceae1
 
 <div class="homework-view" data-lesson="lesson1"></div>

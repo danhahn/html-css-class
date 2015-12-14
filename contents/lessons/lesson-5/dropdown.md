@@ -78,7 +78,7 @@ In other examples we have created a single level navigation by floating the `<li
 #### Floating the `<li>`
 We need to float the `<li>` to the left to stack them.
 
-	#globalNav li {
+	# globalNav li {
 	 	float: left;
 	}
 
@@ -95,7 +95,7 @@ At this point we have an issue.  We do not have a dropdown.  The way the dropdow
 	 	position: absolute;
 	}
 
-####Hiding the sub lists
+#### Hiding the sub lists
 Now we Need to hide the sub list from view.  This can be done by adding the `display: none;` property.
 
 	#globalNav ul {

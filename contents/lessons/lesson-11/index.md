@@ -9,7 +9,7 @@ This week we will talk about GIT, wintersmith, and parallax
 
 <span class="more"></span>
 
-#Setting up Git
+# Setting up Git
 
 * [GIT]()
 * [Wintersmith](wintersmith.html)
@@ -17,11 +17,11 @@ This week we will talk about GIT, wintersmith, and parallax
 
 [Download Starter File  <i class="icon-download-alt icon-white"></i>](week11.zip)
 
-##Step One: Sign Up for GitHub
+## Step One: Sign Up for GitHub
 
 Here comes the easy part: make yourself a GitHub account signing up on the front page. After completing the form, GitHub will sign you in and take you to your empty news feed. In the middle of the page, you'll see the boot camp (pictured to the right). We're going to go through it to set up your account and, later, create your first repository. Click on "Set Up Git" to get started.
 
-##Step Two: Install Git
+## Step Two: Install Git
 
 <a href="http://git-scm.com/downloads" class="btn">Download Git</a>
 
@@ -31,7 +31,7 @@ Git works by reading a local code repository (just a folder containing code for 
 
 Git makes this all happen, so you need to download the latest version and install it. On OS X, you'll just install the command line app. On Windows, you'll get a few more items. We'll discuss how they work in the next step.
 
-##Step Three: Set Up Git
+## Step Three: Set Up Git
 
 To set up git, you need to make your way into the command line. On OS X, that means launching the Terminal app (Hard Drive -> Applications -> Utilities -> Terminal) and on Windows that means launching the Git Bash app you just installed—not the Windows command prompt. When you're ready, tell git your name like this:
 
@@ -47,7 +47,7 @@ You can put in any name you like, but afterwards you'll need to input your email
 
 If, for whatever reason, you signed up for GitHub with the wrong email address, you'll need to change it.
 
-##Step Four: Create Your First Repository
+## Step Four: Create Your First Repository
 
 Now that you've made it this far, you can actually use GitHub! As a first order of business, we're going to create a repository (or "repo" for short). Head on over to GitHub and click the "New Repository" button on the top right of your account page. (Note: If you're still displaying the GitHub bootcamp section, it'll show up underneath it.)
 
@@ -57,7 +57,7 @@ If you're creating an open-source project, you want a public repository. If you 
 
 When you're all done, you can click the "Create repository" button but you might want to do one other thing first: check the "Initialize this repository with a README" checkbox. Why? All repositories require a README file. Ideally that file would contain a little information about your project, but you might not want to deal with that right now. By initializing the repository with a README, you'll get an empty README file that you can just deal with later. For the purposes of this tutorial, we're going to leave the box unchecked because, in the next section, we're going to create a README file from scratch to practice committing (sending) it to GitHub.
 
-##Step Five: Make Your First Commit
+## Step Five: Make Your First Commit
 
 
 When you send files to GitHub, you commit them. To practice, we're going to initialize your local repository and create a README file to commit as practice. Before you start, you need to know where your local code repository is on your computer and how to access it via the command line. In this tutorial, we're going to assume there's a directory called "Hello-World" in your computer's home folder. If you need to create one, just run this command (same for Git Bash on Windows and OS X's terminal):

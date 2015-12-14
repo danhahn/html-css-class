@@ -5,7 +5,7 @@ date: 2013-11-04 18:00
 template: article.jade
 ---
 
-#LESS (stylesheet language)
+# LESS (stylesheet language)
 
 * [Media Querie]()
 * [LESS](less.html)
@@ -31,7 +31,7 @@ The above code in LESS would compile to the following CSS code.
 	  color: #4D926F;
 	}
 
-##Mixins
+## Mixins
 
 Mixins allow embedding all the properties of a class into another class by including the class name as one of its properties, thus behaving as a sort of constant or variable. They can also behave like functions, and take arguments. CSS does not support Mixins. Any repeated code must be repeated in each location. Mixins allow for more efficient and clean code repetitions, as well as easier alteration of code.
 
@@ -63,7 +63,7 @@ The above code in LESS would compile to the following CSS code:
 
 LESS has a special type of ruleset called parametric mixins which can be mixed in like classes, but accepts parameters.
 
-##Nesting
+## Nesting
 
 CSS supports logical nesting, but the code blocks themselves are not nested. LESS allows nesting of selectors inside other selectors. This makes inheritance clear and style sheets shorter.[4]
 
@@ -99,7 +99,7 @@ The above code in LESS would compile to the following CSS code:
 	  border-width: 1px;
 	}
 
-##Functions and operations
+## Functions and operations
 
 LESS allows operations and functions. Operations allow addition, subtraction, division and multiplication of property values and colors, which can be used to create complex relationships between properties. Functions map one-to-one with JavaScript code, allowing manipulation of values.
 
@@ -127,9 +127,9 @@ LESS allows operations and functions. Operations allow addition, subtraction, di
 	  border-color: #7d2717;
 	}
 
-##Comparison
+## Comparison
 
-###SASS
+### SASS
 Both Sass and LESS are CSS preprocessors, which allow writing clean CSS in a programming construct instead of static rules.
 As of LESS 1.4, LESS supports nested, inherited rules via the &:extends and @extends pseudo-selector. Prior to this, a main difference between LESS and other preprocessors like SASS was the lack of an @extends directive, which would extend an already-existing class to include more rules, leading to clean CSS without duplicated rules.
 

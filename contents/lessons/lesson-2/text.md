@@ -5,7 +5,7 @@ date: 9/28/2015 18:00
 template: article.jade
 ---
 
-#Text Properties
+# Text Properties
 
 * [Font Properites]()
 * [Text Properties](text.html)
@@ -20,7 +20,7 @@ template: article.jade
 
 Text Properties like font properties alter the way fonts display but have more to do with spacing or alignment than the way the font itself displays.
 
-##Text Properties
+## Text Properties
 
 Property         | Possible Values
 -----------------|-----------------------------------------
@@ -39,7 +39,7 @@ text-shaow:      | offset, offset, spread, color
 
 `color` - defines the color of any element that can take a color like text, bullets or borders.
 
-###Colors
+### Colors
 
 Unit            | Description
 ----------------|-----------------------------------------

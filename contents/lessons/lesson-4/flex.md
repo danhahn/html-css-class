@@ -23,9 +23,9 @@ Most importantly, the flexbox layout is direction-agnostic as opposed to the reg
 
 **Note:**: Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the Grid layout is intended for larger scale layouts.
 
-##Properties for the Parent (flex container)
+## Properties for the Parent (flex container)
 
-###display
+### display
 
 This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.
 
@@ -38,7 +38,7 @@ This defines a flex container; inline or block depending on the given value. It 
 <p data-height="266" data-theme-id="16874" data-slug-hash="VvzQwP" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/VvzQwP/'>Flex Intro</a> by Dan Hahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-###flex-direction
+### flex-direction
 
 This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns.
 
@@ -69,13 +69,13 @@ By default, flex items will all try to fit onto one line. You can change that an
 <p data-height="266" data-theme-id="16874" data-slug-hash="YyxePZ" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/YyxePZ/'>Flex Intro</a> by Dan Hahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-###flex-flow (Applies to: parent flex container element)
+### flex-flow (Applies to: parent flex container element)
 
 This is a shorthand flex-direction and flex-wrap properties, which together define the flex container's main and cross axes. Default is row nowrap.
 
     flex-flow: <‘flex-direction’> || <‘flex-wrap’>
 
-###justify-content
+### justify-content
 
 This defines the alignment along the main axis. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
 
@@ -94,7 +94,7 @@ This defines the alignment along the main axis. It helps distribute extra free s
 <p data-height="266" data-theme-id="16874" data-slug-hash="vNJdOZ" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/vNJdOZ/'>Flex Intro</a> by Dan Hahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-###align-items
+### align-items
 
 This defines the default behaviour for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).
 
@@ -111,9 +111,9 @@ This defines the default behaviour for how flex items are laid out along the cro
 <p data-height="266" data-theme-id="16874" data-slug-hash="MavQwd" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/MavQwd/'>Flex Intro</a> by Dan Hahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-##Properties for the Children (flex items)
+## Properties for the Children (flex items)
 
-###order
+### order
 
 By default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container.
 
@@ -121,7 +121,7 @@ By default, flex items are laid out in the source order. However, the order prop
       order: <integer>;
     }
 
-###flex-grow
+### flex-grow
 
 This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.
 
@@ -136,7 +136,7 @@ If all items have flex-grow set to 1, every child will set to an equal size insi
 <p data-height="266" data-theme-id="16874" data-slug-hash="gaxvge" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/gaxvge/'>Flex Intro</a> by Dan Hahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-###flex-shrink
+### flex-shrink
 
 This defines the ability for a flex item to shrink if necessary.
 
@@ -146,7 +146,7 @@ This defines the ability for a flex item to shrink if necessary.
 
 **Note:** Negative numbers are invalid.
 
-###flex-basis
+### flex-basis
 This defines the default size of an element before the remaining space is distributed.
 
     .item {
@@ -156,7 +156,7 @@ This defines the default size of an element before the remaining space is distri
 <p data-height="266" data-theme-id="16874" data-slug-hash="NGvydE" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/NGvydE/'>Flex Intro</a> by Dan Hahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-###flex
+### flex
 
 This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto.
 
@@ -164,7 +164,7 @@ This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The se
       flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
     }
 
-###align-self
+### align-self
 
 This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.
 

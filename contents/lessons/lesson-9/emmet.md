@@ -16,9 +16,9 @@ This week we will talk about advaced CSS slectors.  We will also talk about CSS 
 
 Emmet is a code hint that can be installed in most text editor.  It allows for quick and easy writing of HTML. To use it just type the emmet code and hit the tab key.
 
-##Syntax
+## Syntax
 
-###Child: >
+### Child: >
 
 `nav>ul>li`
 
@@ -36,7 +36,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 	<p></p>
 	<blockquote></blockquote>
 
-###Climb-up: ^
+### Climb-up: ^
 
 `div+div>p>span+em^bq`
 
@@ -52,7 +52,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 	</div>
 	<blockquote></blockquote>
 
-###Grouping: ()
+### Grouping: ()
 `div>(header>ul>li*2>a)+footer>p`
 
 	<div>
@@ -83,7 +83,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 	    <p></p>
 	</footer>
 
-###Multiplication: *
+### Multiplication: *
 `ul>li*5`
 
 	<ul>
@@ -94,7 +94,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 	    <li></li>
 	</ul>
 
-###Item numbering: $
+### Item numbering: $
 
 `ul>li.item$*5`
 
@@ -142,7 +142,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 	    <li class="item7"></li>
 	</ul>
 
-##ID and CLASS attributes
+## ID and CLASS attributes
 `#header`
 
 	<div id="header"></div>
@@ -159,7 +159,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 
 	<p class="class1 class2 class3"></p>
 
-###Custom attributes
+### Custom attributes
 `p[title="Hello world"]`
 
 	<p title="Hello world"></p>
@@ -172,7 +172,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 
 	<div a="value1" b="value2"></div>
 
-##Text: {}
+## Text: {}
 `a{Click me}`
 
 	<a href="">Click me</a>
@@ -181,7 +181,7 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 
 	<p>Click <a href="">here</a> to continue</p>
 
-##Implicit tag names
+## Implicit tag names
 `.class`
 
 	<div class="class"></div>
@@ -203,4 +203,3 @@ Emmet is a code hint that can be installed in most text editor.  It allows for q
 	        <td class="col"></td>
 	    </tr>
 	</table>
-

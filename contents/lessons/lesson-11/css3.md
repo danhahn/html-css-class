@@ -15,7 +15,7 @@ template: article.jade
 
 border-radius will add a rounded corner to any element.
 
-###Example
+### Example
 
     border-radius: 10px;
 
@@ -27,23 +27,23 @@ border-radius will add a rounded corner to any element.
 
 box-shadow add a drop shadow on an element.
 
-###Example
+### Example
 
 Standard
 
     box-shadow: 1px 2px 10px black;
 
-###Inside shadow
+### Inside shadow
 
     box-shadow: 1px 2px 10px black inset;
 
-###Multiple shadows
+### Multiple shadows
 
     box-shadow: 1px 1px 5px black, -1px -1px 5px red;
 
 Notice the comma and negative numbers.
 
-####Values
+#### Values
 
 * 1st value - offset left/right
 * 2nd value - offset top/bottom
@@ -53,23 +53,23 @@ Notice the comma and negative numbers.
 
 Browser support: FF3.5+, Chrome 8+, Safari 5+, IE9+
 
-##text-shadow:
+## text-shadow:
 
 text-shadow add a drop shadow to text elements.
 
-###Example
+### Example
 
-###Standard
+### Standard
 
     text-shadow: 1px 2px 10px blue;
 
-###Multiple shadows
+### Multiple shadows
 
     text-shadow: 1px 1px 10px red, -2px -2px 3px green;
 
 Notice the comma and negative numbers.
 
-####Values
+#### Values
 
 * 1st value - offset left/right
 * 2nd value - offset top/bottom
@@ -82,11 +82,11 @@ Notice the comma and negative numbers.
 
 Browser support: FF3.5+, Chrome 8+, Safari 5+, IE9+
 
-##opacity:
+## opacity:
 
 Opacity defines opacity of an element.  Opacity is defined for all content within the element
 
-###Example
+### Example
 
     opacity: .5;
 
@@ -95,7 +95,7 @@ Opacity defines opacity of an element.  Opacity is defined for all content withi
 Browser support: FF2.0+, Chrome 2+, Safari 3+, IE7+
 
 
-##Rotate
+## Rotate
 CSS3 can rotate elements.
 
 Saf3.1+, Chrome
@@ -115,7 +115,7 @@ Final Spec
 
     transform: rotate(7.5deg);
 
-##Background Size
+## Background Size
 Background size will stretch the background to fit the container
 
 -webkit-background-size: 100% 100%; /* Saf3-4 */
@@ -209,7 +209,7 @@ display:-webkit-box;
 -webkit-box-pack:center;
 -webkit-box-align:center;
 
-##Box Sizing
+## Box Sizing
 The box-sizing property allows you to define certain elements to fit an area in a certain way.
 
 For example, if you’d like two bordered boxes side by side, it can be achieved through setting box-sizing to "border-box". This forces the browser to render the box with the specified width and height, and place the border and padding inside the box.

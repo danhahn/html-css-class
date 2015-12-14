@@ -17,7 +17,7 @@ This week we will talk about advanced CSS selectors.  We will also be talking ab
 [Download Notes  <i class="icon-download-alt icon-white"></i>](week9-notes.zip)
 [Download Starter File  <i class="icon-download-alt icon-white"></i>](week9.zip)
 
-##Attribute selectors
+## Attribute selectors
 
 `[attr]`
 Represents an element with an attribute name of attr.

@@ -8,7 +8,7 @@ localjs: highlight-table.js
 localcss: highlight-table.css
 ---
 
-#CSS Selectors
+# CSS Selectors
 
 * [Introduction]()
 * [Editors](editors.html)
@@ -345,7 +345,7 @@ Selectors are the way that the HTML and CSS connect to each other.   There are 3
 
 <table><tr class="active"><td>\* rows with this color have an example on this page</td></tr></table>
 
-##Tag Name Selector
+## Tag Name Selector
 
 Tag name selectors use HTML tags as the connection.  Any HTML element can be used as a selector. Although not all HTML elements can be styled.
 
@@ -359,11 +359,11 @@ Tag name selectors use HTML tags as the connection.  Any HTML element can be use
 
     <h1>Example Text</h1>
 
-##Class Name selector
+## Class Name selector
 
 Class name selectors require an attribute of `class=""` to be added to an HTML element.  A class name must be given and that name will be used to connect the HTML and CSS.  Many elements on a page may use the same class name.
 
-###Example
+### Example
 
 #### CSS
     .className {
@@ -374,10 +374,10 @@ Class name selectors require an attribute of `class=""` to be added to an HTML e
 
     <h1 class="className">Example Text</h1>
 
-##ID Name selector
+## ID Name selector
 An ID name selectors require an attribute of `id=""` to be added to an HTML element.  An ID name must be given and that name will be used to connect the HTML and CSS.  Only one element per page can use an ID name although there can be many different ID names on the same page.
 
-###Example
+### Example
 
 #### CSS
     #idName {
@@ -387,7 +387,7 @@ An ID name selectors require an attribute of `id=""` to be added to an HTML elem
 #### HTML
     <h1 id="idName">Example Text</h1>
 
-##Limiting the scope
+## Limiting the scope
 
 Because classes can be applied to many elements on a page there could be a case where the same class name is used on two or more different elements.  One way to ensure that styles are applied only to the elements intended is limit the scope.  For example you may have a class name of "firstLine" that is applied to both a P tag and an LI tag.  The style you create would apply to both at the same time.
 
@@ -395,7 +395,7 @@ Since they are not the same it may be the case that you want to style each diffe
 
 When two selectors are combined without a space, as with the example above, the class will only applied to the HTML tag that has the class name.
 
-###Example
+### Example
 #### CSS
     p.firstLine {
         color: red;
@@ -428,7 +428,7 @@ There are cases where you may want to apply the same styles to two or more selec
 
 In this case we are applying the same property to three different selectors at the same time.  `<h1>`, `.className` and `<div> <p>`.  Each selector is independent of the others and are sperated by comma.  
 
-##Context Selectors
+## Context Selectors
 
 You can use the context of the HTML to limit the css selectors.  You may want select all `<li>` tags but only if they are a child of `<ol>`.
 

@@ -5,7 +5,7 @@ date: 11/30/2015
 template: article.jade
 ---
 
-#Using LESS
+# Using LESS
 
 * [Gulp]()
 * [LESS](less.html)
@@ -34,10 +34,10 @@ Now, we only need to link the CSS file to our HTML document, as follows;
 
 	<link rel="stylesheet/css" type="text/css" href="style.css">
 
-##LESS Syntax
+## LESS Syntax
 Unlike regular CSS as we know it, LESS works much more like a programming language. It’s dynamic, so you’ll expect to find some terminologies like Variables, Operation and Scope along the way.
 
-##Variables
+## Variables
 First of all, let’s take a look at the Variables.
 
 If you’ve been working quite long with CSS, you probably often written something like this, where we have repetitive values assigned in some declaration blocks in the entire stylesheet.
@@ -83,7 +83,7 @@ You can also put other values in the variables like the examples below:
 	@transition: linear
 	@opacity: 0.5
 
-##Mixins
+## Mixins
 In LESS, we can use Mixins to reuse whole declarations in a CSS rule set to another rule set. Here is an example;
 
 
@@ -133,7 +133,7 @@ We can now reuse all the classes provided from the elements.less, for example, t
 
 For further usage, please refer to the official documentation.
 
-##Nested Rules
+## Nested Rules
 When you write styles in plain CSS, you may also have come through these typical code structures.
 
 
@@ -186,7 +186,8 @@ You can also assign pseudo-classes, like the :hover, to the selector using amper
 	        color: #fff;
 	    }
 	}
-##Operation
+
+## Operation
 We can also perform Operation in LESS, we can do something like addition, subtraction, multiplication and division to number, color and variable in the style sheet.
 
 Let’s say we want the element B two times higher than element A, in that case, we can write it this way;
