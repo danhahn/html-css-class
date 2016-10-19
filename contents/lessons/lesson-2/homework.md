@@ -1,7 +1,7 @@
 ---
 title: Homework 2
 author: Dan Hahn
-date: 9/28/2015 18:00
+date: 6/20/2016 18:00
 template: article.jade
 ---
 

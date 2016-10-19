@@ -1,7 +1,7 @@
 ---
 title: Syllabus
 author: Dan Hahn
-date: 9/21/2015 18:00
+date: 6/14/2016 18:00
 template: single.jade
 subject: TEST
 ---

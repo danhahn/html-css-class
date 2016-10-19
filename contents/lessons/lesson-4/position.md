@@ -1,15 +1,15 @@
 ---
 title: Lesson 4
 author: Dan Hahn
-date: 10/12/2015 18:00
+date: 7/11/2016 18:00
 template: article.jade
 ---
 
 # Position
 
 * [Basic Layouts]()
-* [Flexible Width](flexable.html)
-* [Variable Width](varable.html)
+* [Setting up preprocessor](less.html)
+* [Using Less](using-less.html)
 * [Flex Box](flex.html)
 * [Position](position.html)
 * [Homework](homework.html)

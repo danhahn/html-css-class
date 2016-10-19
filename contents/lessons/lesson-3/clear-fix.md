@@ -1,18 +1,17 @@
 ---
 title: Clear Fix
 author: Dan Hahn
-date: 10/5/2015 18:00
+date: 6/27/2016 18:00
 template: article.jade
 ---
 
 # Clear fix
 
-* [Center thing]()
-* [Using Emmet](emmet.html)
-* [Box Model](box-model.html)
+* [Box Model]()
+* [Overflow](overflow.html)
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
-* [Homework](homework.html)
+* [Flex Box](flex-box.html)
 
 There are a number of way to fix the issue when all the content within a element are floated.
 

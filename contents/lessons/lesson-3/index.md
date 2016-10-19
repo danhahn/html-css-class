@@ -1,98 +1,77 @@
 ---
 title: Lesson 3
 author: Dan Hahn
-date: 10/5/2015 18:00
+date: 6/27/2016 18:00
 template: article.jade
 ---
 
-This week we will talk about the **CSS Box Model** and how to float elements.
+This week we will talk about the **CSS Box Model**,floating elements and **Flex Box**.
 
 <span class="more"></span>
 
-# How to center elements
+# CSS Box Model
 
-* [Center thing]()
-* [Using Emmet](emmet.html)
-* [Box Model](box-model.html)
+* [Box Model]()
+* [Overflow](overflow.html)
 * [Floats](floats.html)
 * [Clear Fix](clear-fix.html)
-* [Homework](homework.html)
+* [Flex Box](flex-box.html)
 
 [Download Notes  <i class="icon-download-alt icon-white"></i>](week3-notes.zip)
 [Download Starter File  <i class="icon-download-alt icon-white"></i>](week3.zip)
 
-It can be a little hard to center elements on a page using CSS.  The issue is that CSS do not have a *center* this property.  
+Since Everything on in web design is a rectangular box we need to know how to size that box.  The way that CSS calculates the size of a box is not what you expect.  Rather than set the size of the box based on the outer most elements `border` or `padding` the width is set baed on the content.
 
-While there is is `text-align: center;` this will only center the **text** within an element but not the element its self.  
+## Setting a Width
 
-Even if you do this.
+To set the width of an element you take the desired width and subtract the `padding-left`, `padding-right`, `border-left-width` and `border-right-width`.  If you need to maintain the `margin` you will need to subtract the `margin-left` and `margin-right`.
 
-    body {
-        text-align: center;
-    }
+### Example
 
-It will center all the text on the page but not the elements them selfs.
+If we have an element that needs to fit in to a space that is `400px` and it has `padding: 20px` and `border: 5px solid black` the calculation to find the size would look like this.
 
-<p data-height="266" data-theme-id="16874" data-slug-hash="jbmPNN" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/jbmPNN/'>Center Text</a> by danhahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    400px - 20px -20px - 5px - 5px = 350px
 
-## Using Margin to Center
+### Example
 
-Remember that **margin** is the amount of space from the border out to the next element.  If that is the case we can use set the space on the side of an element.  Keep in mind that we need to have a `width` set on the element.
+<button id="fixWidth" class="btn" style="float: right;">Fix Width</button>
 
-### HTML
+<ul id="cntrBoxModel" class="btn-group">
+    <li class="btn" data-total="400" id="total">width: 400px;</li>
+    <li class="btn" data-size="20">padding: 20px;</li>
+    <li class="btn" data-size="10">border: 10px solid #1abc9c;</li>
+    <li class="btn" data-size="30">margin: 30px;</li>
+</ul>
 
-    <div class="wrapper">
-        <section>
-            Item to be centered.
-        </section>
+<div id="displayBoxModel" class="box-container">
+    <div class="box-model">
+        Box Model Element.
     </div>
+</div>
 
-When you have a fixed width wrapper the math is easy.  The wrapper is 300px and the section should be 100px.  That leaves 100px on the left and 100px right.
+## CSS3 Box Sizing
 
-### CSS
+In CSS3 they fixed this issue with the introduction of a new CSS property called `box-sizing`.
 
-    .wrapper {
-        width: 600px;
+| Value | Description |
+|---|---|
+| content-box | Default. The width and height properties (and min/max properties) includes only the content. Border, padding, or margin are not included |
+| border-box | The width and height properties (and min/max properties) includes content, padding and border, but not the margin |
+| initial | Sets this property to its default value. |
+| inherit | Inherits this property from its parent element. |
+
+Now we can change an element to define its size based on the way we would expect it too.
+
+### Setting standard box-sizing
+
+You can set all elements to use the `*` selector.
+
+    * {
+        box-sizing: border-box;d
     }
 
-    section {
-        width: 200px;
-        margin: 0 200px;
-    }
+<style>
+table tr td:nth-child(1){width:40%}
+</style>
 
-What happens when the wrapper width changes the math is all off.  To get around this we need a new value we can add to `margin` to allow for the flexibility to display same size on the left and right even if we don't know what that value is.
-
-<p data-height="266" data-theme-id="16874" data-slug-hash="OymPda" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/OymPda/'>Simple Center</a> by danhahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-## Using auto value
-
-CSS allows for a variable size to be set on some properties.  `auto` is used in place of fixed value and in the case of setting the margin on the left and right if they are both set to `auto` it will take the remaining space and divide it by two and set left and right margin to that value.  
-
-This value is flexible so as the browser resizes the sizes are recalculated and updated.  Since they are the same the elements will be center on within the element.  What is cool about this is it will work for both the page level or at the child elements level.
-
-### HTML
-
-    <div class="wrapper">
-        <section>
-            Item to be centered.
-        </section>
-    </div>
-
-### CSS
-
-    .wrapper {
-        width: 600px;
-        margin: 0 auto;
-    }
-
-    section {
-        width: 60%;
-        margin: 0 auto;
-    }
-
-<p data-height="266" data-theme-id="16874" data-slug-hash="JYNoQJ" data-default-tab="result" data-user="danhahn" class='codepen'>See the Pen <a href='http://codepen.io/danhahn/pen/JYNoQJ/'>Complex Center</a> by danhahn (<a href='http://codepen.io/danhahn'>@danhahn</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-**Note:** This should not be used on the `body` tag.
+<script src="lesson-3.js"></script>

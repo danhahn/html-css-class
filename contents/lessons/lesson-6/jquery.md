@@ -1,13 +1,14 @@
 ---
 title: Lesson 6
 author: Dan Hahn
-date: 11/2/2015
+date: 7/25/2016
 template: article.jade
 ---
 
 # What is jQuery?
 
-* [Javascript]()
+* [Position]()
+* [Javascript](javascript.html)
 * [Jquery](jquery.html)
 
 jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.

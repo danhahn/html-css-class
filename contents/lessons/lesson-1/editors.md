@@ -1,7 +1,7 @@
 ---
 title: Lesson 1
 author: the-wintersmith
-date:  9/21/2015 15:00
+date:  6/14/2016 15:00
 template: article.jade
 ---
 
@@ -9,18 +9,30 @@ template: article.jade
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Homework](homework.html)
 
 When you are writing HTML you can use a simple text editor to write your HTML but this can be a git of a frustrating experience because it will not show any errors.
 
-Below are some options for better HTML editors.  In class we will be using **Brackets**.
+Below are some options for better HTML editors.  In class we will be using **Atom**.
+
+## [Atom](http://atom.io/)
+
+[![](images/Atom.png)](http://atom.io/)
+
+Atom is a free and open-source text and source code editor for OS X, Linux, and Windows with support for plug-ins written in Node.js, and embedded Git Control, developed by GitHub. Atom is a desktop application built on web technologies; in other words, it is not an online web application. Most of the extending packages have free software licenses and are community-built and maintained. Atom is based on Electron (formerly known as Atom Shell), a framework that enables cross-platform desktop applications using Chromium and io.js, which is also developed by GitHub. It is written in CoffeeScript and Less. It can also be used as an IDE. Atom was released from beta, as version 1.0, on June 25, 2015. The developers call Atom - 'A hackable text editor for the 21st Century'.
+
+Price: **Free** (open source)<br>
+Requires: OS X 10.8 or later<br>
+Developer: GitHub
+
+---
 
 ## [Brackets](http://brackets.io/)
 
 [![](images/Brackets.png)](http://brackets.io/)
-
 
 You may not have known this, but Adobe has a small open source markup editor project called Brackets. It’s available on both Mac and Windows for free and receives updates every 2.5 weeks, according to the developer. There are always new features being added to it, but the current ones include tabbed editing, a fullscreen mode, a very handy live preview, and even a bunch of debugging features if the app has problems. The best part about this free tool is that Adobe wants you to hack it. The company is very supportive of any customization efforts you may have and will even take suggestions for feature integrations in a later release.
 

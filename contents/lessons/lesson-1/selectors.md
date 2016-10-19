@@ -1,7 +1,7 @@
 ---
 title: Lesson
 author: Dan Hahn
-date: 9/21/2015 18:00
+date: 6/14/2016 18:00
 template: article.jade
 subject: TEST
 localjs: highlight-table.js
@@ -12,6 +12,7 @@ localcss: highlight-table.css
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Homework](homework.html)

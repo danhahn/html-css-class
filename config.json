@@ -3,11 +3,13 @@
         "url": "http://localhost:8080",
         "name": "SVA HTML and CSS",
         "owner": "Daniel Hahn",
-        "description": "Fall 2015",
+        "description": "Summer 2016",
         "date": "September 21, 2015 to December 14, 2014",
-        "totalItems" : 12,
-        "startDate": "September 21, 2015",
-        "endDate": "December 14, 2015"
+        "totalItems" : 8,
+        "startDate": "June 14, 2016",
+        "endDate": "August 1, 2016",
+        "classnote" : "Please enter your Name, Email and Phone Number here -> ",
+        "classaction" : null
     },
     "plugins": [
         "./plugins/paginator.coffee",
@@ -26,6 +28,6 @@
         "smartypants": true
     },
     "paginator": {
-        "perPage": 12
+        "perPage": 8
     }
 }

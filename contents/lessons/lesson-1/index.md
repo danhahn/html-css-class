@@ -1,7 +1,7 @@
 ---
 title: Lesson 1
 author: Dan Hahn
-date: 9/21/2015 18:00
+date: 6/14/2016 18:00
 template: article.jade
 subject: TEST
 ---
@@ -14,6 +14,7 @@ In this lesson we will talk about how CSS works, basic selectors and basic forma
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
 * [Homework](homework.html)
