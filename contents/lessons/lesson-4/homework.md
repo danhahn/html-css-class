@@ -1,7 +1,8 @@
 ---
 title: Lesson 4
+lesson: Homework 4
 author: Dan Hahn
-date: 7/11/2016 18:00
+date: 10/16/2017 18:00
 template: article.jade
 ---
 # Homework 4

@@ -1,8 +1,21 @@
 ---
 title: Lesson 9
+lesson: Selectors
 author: Dan Hahn
-date: 11/23/2020 18:00
+date: 11/20/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week9.zip
+    btn: primary
+  Download Notes:
+    file: week9-notes.zip
+    btn: null
+
+nav: 
+  Selectors: index.html
+  Emmet: emmet.html
 ---
 
 This week we will talk about advanced CSS selectors.  We will also be talking about how to better use emmet.

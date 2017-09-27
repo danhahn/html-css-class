@@ -1,8 +1,16 @@
 ---
 title: Lesson 4
+lesson: Grid System
 author: Dan Hahn
-date: 7/11/2016 18:00
+date: 10/16/2017 18:00
 template: article.jade
+nav:
+  Basic Layouts: index.html
+  Setting up preprocessor: less.html
+  Using Less: using-less.html
+  Flex Box: flex.html
+  Position: position.html
+  Homework: homework.html
 ---
 
 # Grid System

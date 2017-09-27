@@ -1,15 +1,26 @@
 ---
 title: Lesson 1
+lesson: Comments
 author: Dan Hahn
-date: 6/14/2016 18:00
+date: 9/18/2017 18:00
 template: article.jade
 subject: TEST
+
+nav:
+  Introduction: index.html
+  Editors: editors.html
+  Terminal and Git: git.html
+  Emmet: emmet.html
+  Selectors: selectors.html
+  Comments: comments.html
+  Homework: homework.html
 ---
 
 # Comments
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Terminal and Git](git.html)
 * [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
@@ -57,8 +68,9 @@ An HTML comment will make anything within the HTML block that is wrapped with th
  * `/*` - Start of the CSS Comment
  * `*/` - End of the CSS comment.
 
-###Example
-```html
+### Example
+
+```css
 /* CSS Comment */
 
 h1.class {

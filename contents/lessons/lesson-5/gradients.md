@@ -1,8 +1,14 @@
 ---
 title: Lesson 5
+lesson: Gradients
 author: Dan Hahn
-date: 7/18/2016 18:00
+date: 10/23/2017 18:00
 template: article.jade
+nav:
+  Backgrounds: index.html
+  Gradients: gradients.html
+  Drop Down: dropdown.html
+
 ---
 
 # Gradients

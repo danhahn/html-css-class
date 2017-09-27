@@ -1,8 +1,14 @@
 ---
 title: Lesson 8
+lesson: Understanding SVG
 author: Dan Hahn
-date: 8/8/2016 18:00
+date: 11/13/2017 18:00
 template: article.jade
+nav:
+  Reset: index.html
+  Sprites: sprites.html
+  HTML Emails: email.html
+  SVG: svg.html
 ---
 
 # Understanding SVG

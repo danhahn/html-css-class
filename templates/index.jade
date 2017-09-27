@@ -12,16 +12,16 @@ block notes
   if locals.note
     div.container
       div.alert.alert-danger= locals.note
-  if locals.classnote
+  if locals.classaction
     div.container
       div.alert.alert-danger
         p= locals.classnote + " "
-          a.btn.btn-xs(href=locals.classaction, target='_blank') Click Here
+          a.btn.btn-lg(href=locals.classaction, target='_blank') Click Here
 
 block content
   include author
   each article in articles
-    article.lesson-item.col-md-6
+    article.lesson-item.col-md-4
       .well
         header
           h2

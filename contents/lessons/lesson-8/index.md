@@ -1,8 +1,22 @@
 ---
 title: Lesson 8
 author: Dan Hahn
-date: 8/8/2016 18:00
+date: 11/13/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week8.zip
+    btn: primary
+  Download Notes:
+    file: week8-notes.zip
+    btn: null
+
+nav:
+  Reset: index.html
+  Sprites: sprites.html
+  HTML Emails: email.html
+  SVG: svg.html
 ---
 
 This week we will talk about CSS reset, Sprites, HTML Emails and SVG.

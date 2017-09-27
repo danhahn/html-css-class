@@ -1,8 +1,13 @@
 ---
 title: Lesson 6
+lesson: CSS3 Properties
 author: Dan Hahn
-date: 12/7/2015 18:00
+date: 12/04/2017 18:00
 template: article.jade
+nav:
+  GIT: index.html
+  Wintersmith: wintersmith.html
+  Parallax: parallax.html
 ---
 
 # CSS3 Properties

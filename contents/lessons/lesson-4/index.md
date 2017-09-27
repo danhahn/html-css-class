@@ -1,8 +1,25 @@
 ---
 title: Lesson 4
+lesson: Basic Layout
 author: Dan Hahn
-date: 7/11/2016 18:00
+date: 10/16/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week4.zip
+    btn: primary
+  Download Notes:
+    file: week4-notes.zip
+    btn: null
+
+nav:
+  Basic Layouts: index.html
+  Setting up preprocessor: less.html
+  Using Less: using-less.html
+  Flex Box: flex.html
+  Position: position.html
+  Homework: homework.html
 ---
 
 This week we will use the *floats* that we learned last week to build table-free layouts.

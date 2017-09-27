@@ -1,8 +1,12 @@
 ---
 title: Lesson 7
+lesson: CSS3 Animation
 author: Dan Hahn
-date: 8/1/2016 18:00
+date: 11/06/2017 18:00
 template: article.jade
+nav:
+  CSS3 Transitions: index.html
+  CSS3 Animations: animations.html
 ---
 
 # CSS3 Animation

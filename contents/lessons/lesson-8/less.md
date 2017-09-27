@@ -1,8 +1,14 @@
 ---
 title: Lesson 7
+lesson: Less
 author: Dan Hahn
 date: 2013-11-04 18:00
 template: article.jade
+nav:
+  Reset: index.html
+  Sprites: sprites.html
+  HTML Emails: email.html
+  SVG: svg.html
 ---
 
 # LESS (stylesheet language)

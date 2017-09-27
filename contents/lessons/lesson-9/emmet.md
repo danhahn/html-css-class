@@ -1,8 +1,13 @@
 ---
 title: Lesson 9
+lesson: Emmet
 author: Dan Hahn
-date: 11/23/2015 18:00
+date: 11/20/2017 18:00
 template: article.jade
+
+nav: 
+  Selectors: index.html
+  Emmet: emmet.html
 ---
 
 This week we will talk about advaced CSS slectors.  We will also talk about CSS sprites.

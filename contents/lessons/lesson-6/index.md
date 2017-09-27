@@ -1,8 +1,22 @@
 ---
 title: Lesson 6
+lesson: Position
 author: Dan Hahn
-date: 7/25/2016 18:00
+date: 10/30/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week6.zip
+    btn: primary
+  Download Notes:
+    file: week6-notes.zip
+    btn: null
+
+nav:
+  Position: index.html
+  Javascript: javascript.html
+  Jquery: jquery.html
 ---
 
 This week we will talk about Positioning and JavaScript

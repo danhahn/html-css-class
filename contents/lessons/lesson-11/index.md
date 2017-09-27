@@ -1,8 +1,22 @@
 ---
 title: Lesson 11
+lesson: Setting up Git
 author: Dan Hahn
-date: 12/7/2020 15:00
+date: 12/04/2017 15:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week11.zip
+    btn: primary
+  Download Notes:
+    file: week11-notes.zip
+    btn: null
+    
+nav:
+  GIT: index.html
+  Wintersmith: wintersmith.html
+  Parallax: parallax.html
 ---
 
 This week we will talk about GIT, wintersmith, and parallax

@@ -1,8 +1,13 @@
 ---
 title: Lesson 11
+lesson: Parallax Scrolling
 author: Dan Hahn
-date: 12/7/2015 15:00
+date: 12/04/2017 15:00
 template: article.jade
+nav:
+  GIT: index.html
+  Wintersmith: wintersmith.html
+  Parallax: parallax.html
 ---
 
 # Parallax Scrolling

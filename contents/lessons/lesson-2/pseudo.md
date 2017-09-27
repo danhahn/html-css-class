@@ -1,8 +1,21 @@
 ---
 title: Lesson 2
+lesson: Pseudo
 author: Dan Hahn
-date: 6/20/2016 18:00
+date: 09/25/2017 18:00
 template: article.jade
+nav:
+  Font Properites: index.html
+  Text Properties: text.html
+  Include File: include.html
+  Define a color: color.html
+  CSS Units: sizes.html
+  Borders: borders.html
+  Padding: padding.html
+  Margin: margin.html
+  Pseudo: pseudo.html
+  overflow: overflow.html
+  Homework: homework.html
 ---
 
 # Pesedo

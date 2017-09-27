@@ -1,8 +1,30 @@
 ---
 title: Lesson 2
+lesson: Font Properites
 author: Dan Hahn
-date: 6/20/2016 18:00
+date: 09/25/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week2.zip
+    btn: primary
+  Download Notes:
+    file: week2-notes.zip
+    btn: null
+
+nav:
+  Font Properites: index.html
+  Text Properties: text.html
+  Include File: include.html
+  Define a color: color.html
+  CSS Units: sizes.html
+  Borders: borders.html
+  Padding: padding.html
+  Margin: margin.html
+  Pseudo: pseudo.html
+  overflow: overflow.html
+  Homework: homework.html
 ---
 
 This week we will talk about font, text, border, padding and margins.  We will also talk about colors.

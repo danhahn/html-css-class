@@ -1,14 +1,25 @@
 ---
 title: Lesson 1
+lesson: Emmet
 author: Dan Hahn
-date: 6/14/2016 18:00
+date: 9/18/2017 18:00
 template: article.jade
+
+nav:
+  Introduction: index.html
+  Editors: editors.html
+  Terminal and Git: git.html
+  Emmet: emmet.html
+  Selectors: selectors.html
+  Comments: comments.html
+  Homework: homework.html
 ---
 
 # Emmet
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Terminal and Git](git.html)
 * [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)

@@ -1,8 +1,22 @@
 ---
 title: Lesson 10
+lesson: Getting Gulp installed
 author: Dan Hahn
-date: 11/30/2020 15:00
+date: 11/27/2017 15:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week10.zip
+    btn: primary
+  Download Notes:
+    file: week10-notes.zip
+    btn: null
+
+nav:
+  LESS: less.html
+  Gulp: index.html
+  GIT: git.html
 ---
 This week we will talk about how to use GULP, LESS/SCSS and GIT.
 

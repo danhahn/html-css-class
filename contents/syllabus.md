@@ -1,118 +1,124 @@
 ---
 title: Syllabus
 author: Dan Hahn
-date: 6/14/2016 18:00
+date: 9/18/2017 18:00
 template: single.jade
 subject: TEST
 ---
-#Continued Techniques with HTML and CSS
+# Continued Techniques with HTML and CSS
 
-* 12 weeks
-* Mondays 6:00-10:00 pm
-* September 21 - December 14 (12 Weeks)
+12 weeks<br>
+Mondays 6:30-9:30 pm<br>
+September 18, 2017 - December 11, 2017
 
-Daniel Hahn - [dan@svahtml.com](mailto:dan@svahtml.com)
+**No Class on October 9, 2017 -- Columbus Day**
 
-**Note:** SVA Continuing Education will be closed on Columbus Day 10/12 but we will have class that day.  Due a conference that I will be attending we will not have class on 10/26.  Please let me know if you will not be able to attend the class on 10/12.
+## Contact info
+Daniel Hahn - dan@svahtml.com
 
-##Class web site
+## Class web site
 http://css.svahtml.com
 
-All class work, materials, and assignments will be given though the class web site.  In addition any announcement may be made on the site.
-The site will also provide back lesson and class presentations will be found there for you to review.
+All class work, materials, and assignments will be given though the class web site. In
+addition any announcement may be made on the site.
+
+The site will also provide back lesson and class presentations will be found there for you
+to review.
+
+## Login for SVA Computer Lab
+User Name : **svanyc**<br/>
+Password : **svanyc**
 
 
-    Login for lab computers
-    User Name : smc2429a
-    Password : hahn
+Attendance: Every class is very important and will build off of the class before; therefore
+you must attend class every week. If you do miss a class, you are expected to make up
+the work before the next class. If you know in advance that you will miss a class, please
+contact me 24 hours before the class. Missing TWO or more classes will result in failure
+of the course.
 
+## Class Outline
 
-Attendance: Every class is very important and will build off of the class before; therefore you must attend class every week. If you do miss a class, you are expected to make up the work before the next class. If you know in advance that you will miss a class, please contact me 24 hours before the class. 
+### Week 1
+* Editor/Browsers
+* Emmet
+* CSS Selectors
+    * Tag, Cass
+    * No ID
+    * Context
+    * Advanced
 
----
+### Week 2
+* Intro to Git
+    * Create GitHub Account
+    * Commit
+    * Push
+    * Pull
+* Review CSS
+    * Font
+    * Text
+    * Sizing
+    * Pseudo classes
+    * Borders
+    * Overflow
+    * Margin
+    * Padding
 
-##Class Format
-The class will be broken up the following way.
+### Week 3
+* CSS Box Model
+* Intro to floats
+    * Clear Fix
+* Intro to Flex Box
+    * Build Simple Nav
 
-Time|Task
--|-
-6:00 - 6:45|Review
-6:45 - 7:45|Weeks lesson part 1
-7:45 - 8:00|Break
-8:00 - 10:00|Weeks lesson part 2
+### Week 4
+* More Flex Box
+* Page Layouts
+    * Table
+    * Float
+    * Flex Box
 
----
+### Week 5
+* Css Positions
+* Backgrounds
+* Gradients
+* Responsive
 
-##Syllabus
+### Week 6
+* Intro to CSS Grid
+    * More to come here
 
-###Lesson 1
+### Week 7
+* Markdown
+* CSS Preprocessor
+    * SCSS
+    * LESS
+    * Sylus
+* Intro to build tools
+    * Gulp
+    * Webpack?
 
-1. [What is CSS](/lessons/lesson-1/index.html)
-2. [CSS Syntax](/lessons/lesson-1/selectors.html)
-3. Type of Selectors
-4. Tag
-5. Class
-6. ID
+### Week 8
+* Introduction to Javascript
+    * Variable
+    * Data Types
+    * Functions
+* Intro to ReactJs
 
-###Lesson 2 - Borders, Padding, Margin
+### Week 9
+* SVG
+* CSS Animations
+* CSS Transitions
+* Javascript and Animations
 
-1. Quick review of Font and Text properties
-2. Overflow
-3. Parts of the border
-4. Padding and Margin
-5. Pseudo Class and elements
+### Week 10
+* Building a more complex React App
+    * React Router
 
+### Week 11
+* Static site generator
+    * Jade/Pug
+    * Markdown
+    * Wintersmith
 
-###Lesson 3 – Box Model and Floats
-
-1. Understand the CSS Box Model
-2. Floats
-3. Clear Fix
-
-###Lesson 4 – Layouts
-1. Basic Layouts
-2. Flexible Layout
-3. Variable Layout
-4. Grid Style
-5. Positions
-
-###Lesson 5 – Backgrounds and Dropdowns
-
-1. Backgrounds
-2. Graidents
-3. Dropdowns
-
-###Lesson 6 – CSS3 Selectors, Properties
-1. Sprites
-2. CSS3 Selectors
-3. CSS3 Properties
-
-###Lesson 7 – CSS Animations
-
-1. Parts of animations
-2. Examples
-
-###Lesson 8 – Media Queries
-
-1. Media Queries
-2. Intro To Less
-
-### Lesson 9 - Into to Javascripts
-
-1. Intro to Javascript
-2. Intro to Jquery
-
-### Lesson 10 - Development tools
-
-1. Zen Coding
-2. LESS vs SASS
-3. Other IDEs
-
-### Lesson 11 - Full Site Dev
-
-1.  How to build a full site
-2. Intro to Wordpress
-
-### Lesson 12 -  Final Project
-
-1. Final Project
+### Week 12
+* Final Project

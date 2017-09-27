@@ -1,14 +1,25 @@
 ---
 title: Lesson 1
+lesson: Editors
 author: the-wintersmith
-date:  6/14/2016 15:00
+date:  9/18/2017 15:00
 template: article.jade
+
+nav:
+  Introduction: index.html
+  Editors: editors.html
+  Terminal and Git: git.html
+  Emmet: emmet.html
+  Selectors: selectors.html
+  Comments: comments.html
+  Homework: homework.html
 ---
 
 # HTML Editors
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Terminal and Git](git.html)
 * [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
@@ -27,8 +38,6 @@ Atom is a free and open-source text and source code editor for OS X, Linux, and 
 Price: **Free** (open source)<br>
 Requires: OS X 10.8 or later<br>
 Developer: GitHub
-
----
 
 ## [Brackets](http://brackets.io/)
 

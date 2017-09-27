@@ -1,8 +1,13 @@
 ---
 title: Lesson 6
+lesson: jQwery
 author: Dan Hahn
-date: 7/25/2016
+date: 10/30/2017
 template: article.jade
+nav:
+  Position: index.html
+  Javascript: javascript.html
+  Jquery: jquery.html
 ---
 
 # What is jQuery?

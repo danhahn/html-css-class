@@ -1,8 +1,13 @@
 ---
 title: Lesson 10
+lesson: Setting up Git
 author: Dan Hahn
-date: 11/30/2015
+date: 11/27/2017
 template: article.jade
+nav:
+  LESS: less.html
+  Gulp: index.html
+  GIT: git.html
 ---
 
 # Setting up Git

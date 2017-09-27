@@ -1,17 +1,25 @@
 ---
 title: Lesson
+lesson: CSS Selectors
 author: Dan Hahn
-date: 6/14/2016 18:00
+date: 9/18/2017 18:00
 template: article.jade
-subject: TEST
-localjs: highlight-table.js
-localcss: highlight-table.css
+
+nav:
+  Introduction: index.html
+  Editors: editors.html
+  Terminal and Git: git.html
+  Emmet: emmet.html
+  Selectors: selectors.html
+  Comments: comments.html
+  Homework: homework.html
 ---
 
 # CSS Selectors
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Terminal and Git](git.html)
 * [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
@@ -351,15 +359,15 @@ Selectors are the way that the HTML and CSS connect to each other.   There are 3
 Tag name selectors use HTML tags as the connection.  Any HTML element can be used as a selector. Although not all HTML elements can be styled.
 
 #### CSS
-
-    h1 {
-        color: red;
-    }
-
+```css
+h1 {
+    color: red;
+}
+```
 #### HTML
-
-    <h1>Example Text</h1>
-
+```
+<h1>Example Text</h1>
+```
 ## Class Name selector
 
 Class name selectors require an attribute of `class=""` to be added to an HTML element.  A class name must be given and that name will be used to connect the HTML and CSS.  Many elements on a page may use the same class name.
@@ -367,27 +375,31 @@ Class name selectors require an attribute of `class=""` to be added to an HTML e
 ### Example
 
 #### CSS
-    .className {
-        color: red;
-    }
+```
+.className {
+    color: red;
+}
+```
 
 #### HTML
-
-    <h1 class="className">Example Text</h1>
-
+```
+<h1 class="className">Example Text</h1>
+```
 ## ID Name selector
 An ID name selectors require an attribute of `id=""` to be added to an HTML element.  An ID name must be given and that name will be used to connect the HTML and CSS.  Only one element per page can use an ID name although there can be many different ID names on the same page.
 
 ### Example
 
 #### CSS
-    #idName {
-        color: red;
-    }
-
+```
+#idName {
+    color: red;
+}
+```
 #### HTML
-    <h1 id="idName">Example Text</h1>
-
+```
+<h1 id="idName">Example Text</h1>
+```
 ## Limiting the scope
 
 Because classes can be applied to many elements on a page there could be a case where the same class name is used on two or more different elements.  One way to ensure that styles are applied only to the elements intended is limit the scope.  For example you may have a class name of "firstLine" that is applied to both a P tag and an LI tag.  The style you create would apply to both at the same time.
@@ -398,15 +410,19 @@ When two selectors are combined without a space, as with the example above, the 
 
 ### Example
 #### CSS
-    p.firstLine {
-        color: red;
-    }
+```
+p.firstLine {
+    color: red;
+}
+```
 #### HTML
 
-    <p class="firstLine">Example Text</p>
-    <ul>
-        <li class="firstLine">List Text</li>
-    </ul>
+```
+<p class="firstLine">Example Text</p>
+<ul>
+    <li class="firstLine">List Text</li>
+</ul>
+```
 
 In this example you can see there are two elements that have the class name of "firstLine".  To limit the class "firstLine" only to P tags, we start with a tag name selector and append the class name.
 
@@ -422,10 +438,11 @@ This idea will work with any combination of the three basic selectors
 There are cases where you may want to apply the same styles to two or more selector.  In that case you can group them together.  This is very useful so you dont have to repeat the same properties to two selectors.  
 
 #### CSS
-
-    h1, .className, div p {
-        color: pink;
-    }
+```
+h1, .className, div p {
+    color: pink;
+}
+```
 
 In this case we are applying the same property to three different selectors at the same time.  `<h1>`, `.className` and `<div> <p>`.  Each selector is independent of the others and are sperated by comma.  
 
@@ -434,48 +451,52 @@ In this case we are applying the same property to three different selectors at t
 You can use the context of the HTML to limit the css selectors.  You may want select all `<li>` tags but only if they are a child of `<ol>`.
 
 #### CSS
-
-    ol li {
-        color: blue;
-    }
+```
+ol li {
+    color: blue;
+}
+```
 
 #### HTML
-
-    <ol>
-        <li>List Item</li>
-    </ol>
+```
+<ol>
+    <li>List Item</li>
+</ol>
+```
 
 ## Direct Descendent
 
 In the last example we used context to select an element.  This is very useful but sometimes can select too many elements.  For example when you use this selector you will get all `<p>` that are descendents of `<div>`.  
 
 #### CSS
-    div p {
-        color: red;
-    }
-
+```
+div p {
+    color: red;
+}
+```
 This will select any `<p>` as along as it a descendent of `<div>` that might be one level or 100 levels.  
 
 There are times that we might want only select the top level `<p>` this is were the direct descendent select comes in.
 
 #### CSS
-
-    div > p {
-        color: oranage;
-    }
+```
+div > p {
+    color: oranage;
+}
+```
 
 #### HTML
+```
+<div>
+    <p>Direct descendent</p>
+</div>
 
-    <div>
-        <p>Direct descendent</p>
-    </div>
-
-    <div>
-        <header>
-            <p>descendent of the header tag</p>
-        </header>
-    </div>
-
+<div>
+    <header>
+        <p>descendent of the header tag</p>
+    </header>
+</div>
+```
 Here we will only select the first `<p>`  because it is a direct descendent of the `<div>`.  The second example the `<p>` is a descendent of `<header>`.
 
 ## Sibling Selector
@@ -483,17 +504,17 @@ Here we will only select the first `<p>`  because it is a direct descendent of t
 If you want to select and element only when it follows an other tag you can use the sibling selector.  
 
 #### CSS
-
-    h2 + p {
-        color: green;
-    }
-
+```
+h2 + p {
+    color: green;
+}
+```
 #### HTML
-
-    <h2>Header Text</h2>
-    <p>Intro Text</p>
-    <p>Second paragraph</p>
-
+```
+<h2>Header Text</h2>
+<p>Intro Text</p>
+<p>Second paragraph</p>
+```
 In this example only the first `<p>` will be selected because it comes right after the `<h2>`.  All other `<p>` would not be selected.
 
 ## First and Last child selector
@@ -501,25 +522,25 @@ In this example only the first `<p>` will be selected because it comes right aft
 Many times you may want to select the first or last child and apply a style to that element only.   In this case you need to use the psudo selector `:first-child` and `:last-child`.
 
 #### CSS
+```
+ul li:first-child {
+    color: orange;
+}
 
-    ul li:first-child {
-        color: orange;
-    }
-
-    ul li:last-child {
-        color: tan;
-    }
-
+ul li:last-child {
+    color: tan;
+}
+```
 #### HTML
-
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-    </ul>
-
+```
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+```
 In this example the first `<li>` will be orange and the last `<li>` will be tan.
 
 ## Select all
@@ -528,10 +549,11 @@ If you need to select all elements you can use the `*` selector.
 
 #### css
 
-    * {
-        font-weight: bold;
-    }
-
+```
+* {
+    font-weight: bold;
+}
+```
 This will select all elements and make the font weight bold.
 
 **Note:** you can combined any of these selectors to target a element.

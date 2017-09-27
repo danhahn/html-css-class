@@ -1,8 +1,15 @@
 ---
 title: Lesson 3
 author: Dan Hahn
-date: 6/27/2016 18:00
+lesson: Overflow
+date: 10/02/2017 18:00
 template: article.jade
+nav:
+  Box Model: index.html
+  Overflow: overflow.html
+  Floats: floats.html
+  Clear Fix: clear-fix.html
+  Flex Box: flex-box.html
 ---
 
 # Overflow

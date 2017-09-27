@@ -1,8 +1,24 @@
 ---
 title: Lesson 3
+lesson: CSS Box Model
 author: Dan Hahn
-date: 6/27/2016 18:00
+date: 10/02/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week3.zip
+    btn: primary
+  Download Notes:
+    file: week3-notes.zip
+    btn: null
+
+nav:
+  Box Model: index.html
+  Overflow: overflow.html
+  Floats: floats.html
+  Clear Fix: clear-fix.html
+  Flex Box: flex-box.html
 ---
 
 This week we will talk about the **CSS Box Model**,floating elements and **Flex Box**.

@@ -1,8 +1,22 @@
 ---
 title: Lesson 5
+lesson: Backgrounds
 author: Dan Hahn
-date: 7/18/2016 18:00
+date: 10/23/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week5.zip
+    btn: primary
+  Download Notes:
+    file: week5-notes.zip
+    btn: null
+
+nav:
+  Backgrounds: index.html
+  Gradients: gradients.html
+  Drop Down: dropdown.html
 ---
 
 This week we will be going over background and building a two level dropwdown.

@@ -1,8 +1,13 @@
 ---
-title: Lesson 6
+title: Lesson 11
+lesson: CSS Sprites
 author: Dan Hahn
-date: 7/11/20165 18:00
+date: 12/04/2017 18:00
 template: article.jade
+nav:
+  GIT: index.html
+  Wintersmith: wintersmith.html
+  Parallax: parallax.html
 ---
 
 # CSS Sprites

@@ -1,14 +1,24 @@
 ---
 title: Homework 1
+lesson: Homework 1
 author: Dan Hahn
-date: 6/14/2016 18:00
+date: 9/18/2017 18:00
 template: article.jade
+nav:
+  Introduction: index.html
+  Editors: editors.html
+  Terminal and Git: git.html
+  Emmet: emmet.html
+  Selectors: selectors.html
+  Comments: comments.html
+  Homework: homework.html
 ---
 
 # Homework 1
 
 * [Introduction]()
 * [Editors](editors.html)
+* [Terminal and Git](git.html)
 * [Emmet](emmet.html)
 * [Selectors](selectors.html)
 * [Comments](comments.html)
@@ -24,47 +34,34 @@ Download the starter files and rename it to **css_week1_yourname.html**
 
 ## Add Style Block
 
-Add style block within the <head>.  Remember to add type=”text/css” to the opening tag.
+Add style block within the `<head>`. 
 
 ### Tag Name Selectors
 
-Add a tag name selector for each item listed below.
+Selector | Property | Value
+---|---|---
+body | font | 16px arial
+&nbsp; | color | #666
 
-SELECTOR | PROPERTY         | VALUE
----------|------------------|---------
-h1       | color            | #df0024
-h2       | color            | #009f3d
-a        | color            | #0085c7
-table    | border-collapse  | collapse
-         | width            | 700px
-th       | background-color | #000000
-         | color            | #ffffff
+### Class Name selector
 
----
-
-## ID Name Selectors
-
-Add an id to the <div> with an id name of site.
-
-### Add a ID name selector with the style below.
-
-SELECTOR | PROPERTY | VALUE
----------|----------|------
-site     | width    | 800px
-
----
-
-## Class Name Selector
-
-Add class of odd to the first <tr>, add class of even to the second <tr>.
-
-Alternate odd and even for remaining `<tr>`.
-
-Add a class name selector each item below.
-
-SELECTOR | PROPERTY         | VALUE
----------|------------------|--------
-odd      | background-color | #f4c300
-even     | background-color | #eceae1
+Selector | Property | Value
+---|---|---
+.wrapper | width | 800px
+&nbsp; | margin | 0 auto
+.header-links | text-align | center
+&nbsp; | border-bottom | 1px solid #323460
+.header-links a | color | #E2557A
+&nbsp; | text-decoration | none
+&nbsp; | text-transform | uppercase
+&nbsp; | display | inline-block
+&nbsp; | padding | 10px
+.main-image | text-align | center
+.main | padding | 0 100px 100px
+.main p:first-of-type | color | #F2894D
+&nbsp; | font-size | 1.2em
+.footer-section | text-align | center
+&nbsp; | border-top | 1px solid #864C90
+&nbsp; | color | #FBC619;
 
 <div class="homework-view" data-lesson="lesson1"></div>

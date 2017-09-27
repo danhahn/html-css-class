@@ -1,8 +1,21 @@
 ---
 title: Lesson 7
+lesson: Transitions
 author: Dan Hahn
-date: 8/1/2016 18:00
+date: 11/06/2017 18:00
 template: article.jade
+
+downloads:
+  Download Stater File:
+    file: week7.zip
+    btn: primary
+  Download Notes:
+    file: week7-notes.zip
+    btn: null
+
+nav:
+  CSS3 Transitions: index.html
+  CSS3 Animations: animations.html
 ---
 
 This week we will talk about CSS Animation
