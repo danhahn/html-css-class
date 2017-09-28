@@ -1,0 +1,32 @@
+@import "../vars.less";
+.tags {
+  border: 1px solid silver;
+  padding: .5em 1em;
+  background-color: #FAFAFA;
+  border-radius: .4em;
+  @media only screen
+  and (max-width : 768px) {
+    display: none;
+  }
+  &__item {
+    padding: .3em 0;
+    &:not(:last-of-type) {
+      margin: .3em 0;
+      border-bottom: 1px solid silver;
+    }
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  &__list {
+    margin: .5em 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__list-item {
+    margin-right: .3em;
+    padding: .1em 0;
+  }
+}

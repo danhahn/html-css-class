@@ -1,0 +1,25 @@
+.downloads {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @media only screen
+  and (max-width : 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+  @media only screen
+  and (max-width : 425px) {
+    display: none;
+  }
+  &__item {
+    margin-bottom: 2px;
+    @media only screen
+    and (max-width : 768px) {
+      .btn {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  }
+}

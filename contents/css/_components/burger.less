@@ -1,0 +1,49 @@
+@import "../vars.less";
+
+.burger {
+  display: none;
+  @media only screen
+  and (max-width : 768px) {
+    display: inline-block;
+  }
+  &.active {
+    padding: 10px 4px;
+    .line {
+      margin: 0;
+      &:nth-of-type(1) {
+        transform: rotate(45deg) translate(-2px,0px);
+        width: 17px;
+        position: relative;
+        top: 2px;
+        left: 1px;
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        transform: rotate(-45deg) translate(1px,-4px);
+        width: 17px;
+        position: relative;
+        top: 2px;
+        left: 1px;
+      }
+    }
+  }
+  transition: all .2s;
+  border: 1px solid @white;
+  padding: 4px;
+  border-radius: 3px;
+  width: 25px;
+  box-sizing: border-box;
+  .display {
+    display: none;
+  }
+  .line {
+    transition: all .2s;
+    border-bottom: 1px solid @white;
+    margin-bottom: 3px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

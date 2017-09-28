@@ -1,0 +1,116 @@
+@import "../vars.less";
+.header-nav {
+  align-self: center;
+  @media only screen
+  and (max-width : 768px) {
+    align-self: stretch;
+    background-color: @primary5;
+    box-shadow:
+      0 5px 10px -6px rgba(0, 0, 0, 0.5) inset,
+      0 1px 1px rgba(0,0,0,.05) inset
+    ;
+    overflow: hidden;
+    max-height: 0;
+    transition: all .2s linear;
+  }
+  @media only screen
+  and (max-width : 768px) {
+
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    @media only screen
+    and (max-width : 768px) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    &:hover {
+      background-color: @primary20;
+      .header-nav__dropdown {
+        @media only screen
+        and (min-width : 769px) {
+          display: block;
+        }
+      }
+    }
+    @media only screen
+    and (max-width : 768px) {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid @primary;
+      }
+    }
+  }
+  &__link {
+    color: @white;
+    display: block;
+    text-decoration: none;
+    padding: .5em 1em;
+  }
+  &__dropdown {
+    @media only screen
+    and (min-width : 769px) {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      background-color: @primary20;
+      border: 1px solid @primary;
+      box-shadow: 0 5px 10px -3px rgba(0,0,0,.5);
+      display: none;
+    }
+    @media only screen
+    and (max-width : 768px) {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: @primary20;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      box-shadow: 0 5px 10px -3px rgba(0,0,0,.3) inset, 0 -5px 3px -3px rgba(0,0,0,.1) inset;
+    }
+  }
+  &__drop-item {
+    @media only screen
+    and (min-width : 769px) {
+      border-bottom: 2px solid @primary;
+      min-width: 170px;
+    }
+    a {
+      display: block;
+      color: @white;
+      text-decoration: none;
+      padding: .5em;
+      &:hover {
+        background-color: #fff;
+        color: @primary
+      }
+    }
+    @media only screen
+    and (max-width : 768px) {
+      border-bottom: none;
+      a {
+        padding: .5em 1em;
+      }
+    }
+  }
+  &__icon {
+    @media only screen
+    and (max-width : 768px) {
+      display: none;
+    }
+  }
+}
+
+.homepage {
+  .header-nav {
+    &__item{
+      &--home {
+        display: none;
+      }
+    }
+  }
+}

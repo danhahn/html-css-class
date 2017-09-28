@@ -1,12 +1,15 @@
 extends layout
 
+include mixins/_title
+
 block append vars
   - bodyclass = 'homepage'
 
 block header
-  div.well.small
-    h1= locals.description
-    h2= locals.startDate + " to " + locals.endDate
+  div.titlebar
+    h1.titlebar__main
+      +title(locals.description)
+    p.titlebar__date= locals.startDate + " to " + locals.endDate
 
 block notes
   if locals.note
@@ -19,18 +22,18 @@ block notes
           a.btn.btn-lg(href=locals.classaction, target='_blank') Click Here
 
 block content
-  include author
-  each article in articles
-    article.lesson-item.col-md-4
-      .well
-        header
-          h2
-            a(href=article.url)= article.title
-          div.date
-            i.fa.fa-calendar
-            span.month= moment(article.date).format('MMMM')
-            span.day= moment(article.date).format('D') + ","
-            span.year= moment(article.date).format('YYYY')
-        section.content !{ typogr(article.intro).typogrify() }
+  .grid.grid--homepage
+    each article in articles
+      article.lesson
+        .lesson__header
+          h2.lesson__title
+            a(href=article.url).lesson__link
+              +title(article.title)
+          ul.layout.layout--date.lesson__date
+            li.layout__item
+              i.fa.fa-calendar
+            li.layout__item 
+              span.date= moment(article.date).format('MMMM D, YYYY')          
+        section.lesson__content !{ typogr(article.intro).typogrify() }
           if article.hasMore
-            a(href=article.url).more.btn View Lesson
+            a(href=article.url).btn.btn--primary.lesson__button View Lesson

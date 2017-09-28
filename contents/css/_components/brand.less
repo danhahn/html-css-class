@@ -1,0 +1,32 @@
+@import "../vars.less";
+.brand {
+  &__svg {
+    width: 115px;
+    height: 35px;
+    .slash {
+      fill: @primary20;
+    }
+    .tag {
+      fill: @gray5;
+    }
+    .letter {
+      fill: @white;
+    }
+  }
+}
+
+.homepage {
+  .brand {
+    &__svg {
+      margin-top: 5px;
+      width: 108px;
+      height: 30px;
+      @media only screen
+      and (max-width : 1024px) {
+        margin-top: 5px;
+        width: 115px;
+        height: 35px;
+      }
+    }
+  }
+}

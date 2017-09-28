@@ -1,0 +1,4 @@
+mixin title(title = "Mixin Title For testing only")
+  - const [lessonFirst, ...lessonRest] = title.split(' ')
+    span.caps= lessonFirst
+    = ` ${lessonRest.join(' ')}`

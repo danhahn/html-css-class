@@ -1,0 +1,94 @@
+@import "../vars.less";
+
+.homework-view {
+  display: flex;
+  border-top: 1px solid @alt;
+  border-bottom: 1px solid @alt;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .img-circle {
+    border-radius: 50%;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  div {
+    margin-right: 20px;
+    &:first-child {
+      max-width: 150px;
+      img {
+        max-width: 100%;
+        border: 2px solid gray;
+      }
+    }
+  }
+}
+
+.hasSwatches {
+  margin: 0;
+  padding: 0 !important;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+  li {
+    background-color: #fff;
+    margin-left: .3em;
+    margin-bottom: .3em;
+
+    .swatchWrapper {
+      height: 140px;
+      .swatchColor{
+        width: 100px;
+        height: 100px;
+        border: 1px solid silver;
+      }
+      .swatchLabel {
+        transition: all .1s;
+        position: relative;
+        top: 0;
+        margin: 5px 0 0;
+        text-align: center;
+        font-family: Courier New;
+      }
+      &:hover {
+        .swatch {
+          transform: scale(1.1);
+          box-shadow: 0 5px 10px rgba(0,0,0,.1);
+          .swatchColor {
+            height: 128px;
+            margin-bottom: -34px;
+          }
+          .swatchLabel {
+            top: -2.8em;
+            font-size: 1.2em;
+            text-shadow: 0 1px 0 rgba(255,255,255,.3);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .swatch {
+      background-color: #fff;
+      border: 1px solid silver;
+      padding: .3em;
+      transition: all .2s;
+    }
+    .smSwatch {
+      .swatchColor {
+        font-family: Courier New;
+        padding: .2em;
+      }
+    }
+  }
+}

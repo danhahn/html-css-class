@@ -1,0 +1,40 @@
+@import "../vars.less";
+.titlebar {
+  padding: .3em 1em;
+  color: @white;
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow:
+    0 5px 10px -6px rgba(0, 0, 0, 0.5) inset,
+    0 1px 1px rgba(0,0,0,.05) inset
+  ;
+  @media only screen
+  and (max-width : 425px) {
+    padding-left: 30px;
+  }
+  @media only screen
+  and (max-width: 425px)  {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__main {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    @media only screen
+    and (min-width: 425px)  {
+      font-size: 2.2em;
+    }
+  }
+  &__date {
+    margin: 0;
+    @media only screen
+    and (min-width: 425px)  {
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+  }
+}

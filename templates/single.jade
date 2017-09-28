@@ -4,9 +4,17 @@ block append vars
 block prepend title
   | #{ page.title + " - "}
 block header
-  include author
-  div.well.small
-    h1= page.title
+  div.titlebar
+    - const [first, ...rest] = page.title.split(' ')
+    h1.titlebar__main
+      span.caps= first
+      = ` ${rest.join(' ')}`
 block content
-  article.article
-    section.content!= typogr(page.html).typogrify()
+  section.article.article--single
+    article.article__primary
+      if page.metadata.lesson
+        - const [lessonFirst, ...lessonRest] = page.metadata.lesson.split(' ')
+        h1
+          span.caps= lessonFirst
+          = ` ${lessonRest.join(' ')}`
+      != typogr(page.html).typogrify()

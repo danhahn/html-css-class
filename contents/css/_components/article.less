@@ -1,0 +1,55 @@
+.article {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "p p p p p p p p p s s s";
+  grid-column-gap: 1em;
+  &--single {
+    grid-template-areas:
+      "p p p p p p p p p p p p";
+  }
+  @media only screen
+  and (max-width : 768px) {
+    grid-template-areas:
+      "s s s s s s s s s s s s"
+      "p p p p p p p p p p p p";
+  }
+  h3 {
+    @media only screen
+    and (max-width : 768px) {
+      display: none;
+    }
+  }
+  &__primary {
+    padding: 2em 1em;
+    grid-area: p;
+    @media only screen
+    and (max-width : 768px) {
+      padding: 1em;
+    }
+    @media only screen
+    and (max-width : 425px) {
+      padding: 1em 1em 1em 30px;
+    }
+  }
+  &__secondary {
+    padding: 2em 0;
+    grid-area: s;    
+    @media only screen
+    and (min-width : 769px) {
+      position: relative;
+      .side-nav-inner.fixed {
+        position: fixed;
+        top: 1em;
+      }
+    }
+    @media only screen
+    and (max-width : 768px) {
+      padding: 1em 1em 0;
+    }
+    @media only screen
+    and (max-width : 425px) {
+      padding: 0;
+    }
+  }
+}
