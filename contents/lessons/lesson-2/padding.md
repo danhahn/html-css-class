@@ -18,20 +18,6 @@ nav:
   Homework: homework.html
 ---
 
-# Padding
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include File](include.html)
-* [Define a color](color.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
-
 Padding is the space from the `border` in to the content. Even if a border is not defined there is still an edge of the element, this is the `border`.
 
 Padding will define all four sides of the box one value is set. If you need to define the padding of just one side of the box you can use `padding-[top,right,bottom,left]`.

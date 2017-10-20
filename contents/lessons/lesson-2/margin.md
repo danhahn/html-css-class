@@ -16,21 +16,7 @@ nav:
   Pseudo: pseudo.html
   overflow: overflow.html
   Homework: homework.html
----
-
-# Margin
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include File](include.html)
-* [Define a color](color.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
+---å
 
 Margin is the space from one element `border` to another element `border`. What this means that that you are note setting the space from the edge of margin but the element itself.  Margins can overlap.
 

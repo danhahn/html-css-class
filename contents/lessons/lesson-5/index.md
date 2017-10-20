@@ -23,15 +23,6 @@ This week we will be going over background and building a two level dropwdown.
 
 <span class="more"></span>
 
-# Backgrounds
-
-* [Backgrounds]()
-* [Gradients](gradients.html)
-* [Drop Down](dropdown.html)
-
-[Download Notes  <i class="icon-download-alt icon-white"></i>](week5-notes.zip)
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week5.zip)
-
 Backgrounds are a way to add colors and images to elements on the page.
 
 ### Background Color

@@ -15,16 +15,6 @@ nav:
   Homework: homework.html
 ---
 
-# HTML Editors
-
-* [Introduction]()
-* [Editors](editors.html)
-* [Terminal and Git](git.html)
-* [Emmet](emmet.html)
-* [Selectors](selectors.html)
-* [Comments](comments.html)
-* [Homework](homework.html)
-
 When you are writing HTML you can use a simple text editor to write your HTML but this can be a git of a frustrating experience because it will not show any errors.
 
 Below are some options for better HTML editors.  In class we will be using **Atom**.

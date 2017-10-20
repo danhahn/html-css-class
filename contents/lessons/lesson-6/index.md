@@ -23,15 +23,6 @@ This week we will talk about Positioning and JavaScript
 
 <span class="more"></span>
 
-# Position
-
-* [Position]()
-* [Javascript](javascript.html)
-* [Jquery](jquery.html)
-
-[Download Notes  <i class="icon-download-alt icon-white"></i>](week6-notes.zip)
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week6.zip)
-
 ## Document flow
 
 To understand how to position we need to first understand the standard flow of a document.  When HTML is written out it the elements are displayed in the order they are written in the code.  This is known as the “normal flow” of the document.  While the flow is standard and might make sense it can be limiting because the elements must display in the order the are written.

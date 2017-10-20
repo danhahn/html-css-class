@@ -10,12 +10,6 @@ nav:
   GIT: git.html
 ---
 
-# Setting up Git
-
-* [Gulp]()
-* [LESS](less.html)
-* [GIT](git.html)
-
 ## Step One: Sign Up for GitHub
 
 Here comes the easy part: make yourself a GitHub account signing up on the front page. After completing the form, GitHub will sign you in and take you to your empty news feed. In the middle of the page, you'll see the boot camp (pictured to the right). We're going to go through it to set up your account and, later, create your first repository. Click on "Set Up Git" to get started.

@@ -15,16 +15,6 @@ nav:
   Homework: homework.html
 ---
 
-# Emmet
-
-* [Introduction]()
-* [Editors](editors.html)
-* [Terminal and Git](git.html)
-* [Emmet](emmet.html)
-* [Selectors](selectors.html)
-* [Comments](comments.html)
-* [Homework](homework.html)
-
 Emmet is a plugin that allows your to write short hand to produce HTML tags.  
 
 ## Installation

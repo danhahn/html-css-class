@@ -10,12 +10,6 @@ nav:
   Parallax: parallax.html
 ---
 
-# CSS3 Properties
-
-* [Selectors]()
-* [CSS3](css3.html)
-* [Sprites](sprites.html)
-
 ## border-radius:
 
 border-radius will add a rounded corner to any element.

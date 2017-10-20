@@ -22,14 +22,6 @@ This week we will talk about advanced CSS selectors.  We will also be talking ab
 
 <span class="more"></span>
 
-# Selectors
-
-* [Selectors]()
-* [Emmet](emmet.html)
-
-[Download Notes  <i class="icon-download-alt icon-white"></i>](week9-notes.zip)
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week9.zip)
-
 ## Attribute selectors
 
 `[attr]`

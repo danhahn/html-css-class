@@ -9,12 +9,6 @@ nav:
   CSS3 Animations: animations.html
 ---
 
-# CSS3 Animation
-
-* [CSS3 Transitions]()
-* [CSS3 Animations](animations.html)
-
-
 **CSS animations** make it possible to animate transitions from one CSS style configuration to another. Animations consist of two components, a style describing the CSS animation and a set of keyframes that indicate the start and end states of the animation's style, as well as possible intermediate waypoints along the way.
 
 There are three key advantages to CSS animations over traditional script-driven animation techniques:

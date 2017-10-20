@@ -18,20 +18,6 @@ nav:
   Homework: homework.html
 ---
 
-# CSS Size Units
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include File](include.html)
-* [Define a color](color.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
-
 There are several different ways you can declare the size of a font in CSS. Broadly speaking, the units fall into one of two categories - absolute and relative.
 
 Absolute units are fixed and (mostly) relate to some physical measurement. Once they are declared, their size cannot be altered by changing the font size of some other element.

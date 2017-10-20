@@ -11,12 +11,6 @@ nav:
 
 ---
 
-# Gradients
-
-* [Backgrounds]()
-* [Gradients](gradients.html)
-* [Drop Down](dropdown.html)
-
 New in CSS3 you can add a background that is a gradient.  Becasue this is still new browser support is limited.  Most modern browsers support backgrounds in one form but you may need to add a vender prefix to enable for each brwoser.
 
 Gradients are applied as a background to an element.  This means that we can not set a gradient on text.

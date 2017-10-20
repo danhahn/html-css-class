@@ -13,15 +13,6 @@ nav:
   Homework: homework.html
 ---
 
-# Grid System
-
-* [Basic Layouts]()
-* [Flexible Width](flexable.html)
-* [Variable Width](varable.html)
-* [Flex Box](flex.html)
-* [Position](position.html)
-* [Homework](homework.html)
-
 The idea behind a grid system is, well, a grid. With a grid system and there are many pre built ones out there is you are able to build a flexible layout fast.
 
 Since we are using a grid we need to understand what the grid is. In most cases a grid is based on 12 columns that are divided evenly across the width of the page. Most grids are based on a width that is 960, since that is the standard width of a page today.

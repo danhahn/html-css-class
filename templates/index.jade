@@ -27,7 +27,7 @@ block content
       article.lesson
         .lesson__header
           h2.lesson__title
-            a(href=article.url).lesson__link
+            a(href=article.url + 'index.html').lesson__link
               +title(article.title)
           ul.layout.layout--date.lesson__date
             li.layout__item
@@ -36,4 +36,4 @@ block content
               span.date= moment(article.date).format('MMMM D, YYYY')          
         section.lesson__content !{ typogr(article.intro).typogrify() }
           if article.hasMore
-            a(href=article.url).btn.btn--primary.lesson__button View Lesson
+            a(href=article.url + 'index.html').btn.btn--primary.lesson__button View Lesson

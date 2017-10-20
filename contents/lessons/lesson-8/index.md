@@ -1,5 +1,6 @@
 ---
 title: Lesson 8
+lesson: What Is A CSS Reset?
 author: Dan Hahn
 date: 11/13/2017 18:00
 template: article.jade
@@ -22,16 +23,6 @@ nav:
 This week we will talk about CSS reset, Sprites, HTML Emails and SVG.
 
 <span class="more"></span>
-
-# What Is A CSS Reset?
-
-* [Reset]()
-* [Sprites](sprites.html)
-* [HTML Emails](email.html)
-* [SVG](svg.html)
-
-[Download Notes  <i class="icon-download-alt icon-white"></i>](week8-notes.zip)
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week8.zip)
 
 <a href="http://www.cssreset.com/" class="btn">Get a Reset</a>
 

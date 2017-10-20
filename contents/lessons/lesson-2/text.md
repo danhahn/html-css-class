@@ -18,19 +18,6 @@ nav:
   Homework: homework.html
 ---
 
-# Text Properties
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include Files](include.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
-
 Text Properties like font properties alter the way fonts display but have more to do with spacing or alignment than the way the font itself displays.
 
 ## Text Properties

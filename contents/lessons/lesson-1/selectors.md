@@ -15,16 +15,6 @@ nav:
   Homework: homework.html
 ---
 
-# CSS Selectors
-
-* [Introduction]()
-* [Editors](editors.html)
-* [Terminal and Git](git.html)
-* [Emmet](emmet.html)
-* [Selectors](selectors.html)
-* [Comments](comments.html)
-* [Homework](homework.html)
-
 Selectors are the way that the HTML and CSS connect to each other.   There are 3 basic types of selectors, tag, class and id.
 
 <table>

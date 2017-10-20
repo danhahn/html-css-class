@@ -22,15 +22,6 @@ This week we will talk about how to use GULP, LESS/SCSS and GIT.
 
 <span class="more"></span>
 
-# Getting Gulp installed
-
-* [Gulp]()
-* [LESS](less.html)
-* [GIT](git.html)
-
-[Download Notes  <i class="icon-download-alt icon-white"></i>](week10-notes.zip)
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week10.zip)
-
 ## Step One - Install Node
 
 <a href="http://nodejs.org/" class="btn">Download Node</a>

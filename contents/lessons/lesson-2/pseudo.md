@@ -18,19 +18,6 @@ nav:
   Homework: homework.html
 ---
 
-# Pesedo
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include File](include.html)
-* [Define a color](color.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
 
 Pseudo class selectors are CSS selectors with a colon preceding them.
 

@@ -16,16 +16,6 @@ nav:
   Homework: homework.html
 ---
 
-# Comments
-
-* [Introduction]()
-* [Editors](editors.html)
-* [Terminal and Git](git.html)
-* [Emmet](emmet.html)
-* [Selectors](selectors.html)
-* [Comments](comments.html)
-* [Homework](homework.html)
-
 Comments are a way to give notes within the code that is not rendered by the broswer at thet time of load. Both HTML and CSS Have commetns.
 
 ## Usess

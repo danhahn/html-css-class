@@ -9,68 +9,170 @@ nav:
   Overflow: overflow.html
   Floats: floats.html
   Clear Fix: clear-fix.html
-  Flex Box: flex-box.html
+  Homework: homework.html
+homework:
+  lesson: lesson3
+downloads:
+  Starter File Lesson 3:
+    file: homework3.zip
+    btn: primary
 ---
 
-# Homework 3
+Please send a zip file to me before the start of next class.
 
-* [Center thing]()
-* [Using Emmet](emmet.html)
-* [Box Model](box-model.html)
-* [Floats](floats.html)
-* [Clear Fix](clear-fix.html)
-* [Homework](homework.html)
+## What we will be working on this week
+* Floating with text wrap
+* `clear` an element
+* "stacking" floats
+* Add "clear fix"
+* review margin/padding
 
-This weeks we will be using the homework from last week and adding a navigation to it.
+## Getting Started
 
-Use the starter zip file
+Download the starter files
 
-[Starter File <i class="icon-download-alt icon-white"></i>](homework3.zip)
+There are two files you will need to edit `index.html` and `css/style.css`.  In each file there are comments that outline what needs to be done.
 
-## Add HTML
+## Adding styles
 
-Update the header to say
+1. Add global (*) box size 
+2. "reset" elements `h1, h2, h3, ul, p`
+3. center `.container`
+4. add clear fix to `.global-nav`
+5. float `.global-nav li`
+6. move content from the edge top/bottom 2em left/right 1em
+7. add spacing for paragraph
+8. clear the h2
+9. add class for photo on the right
+10. move the "photo" to the right and have text wrap around it.
+11. add clear fix for `.promos`
+12. "stack the `.promo`
+13. on the last `.promo` remove the margin on the right
 
-    Homework 3
+<pre class="text-content">
+/* add global (*) box size */
 
-In the html file add the correct markup for a navigation
+body {
+  font: 16px arial;
+  background-color: #c0c0c0;
+  margin: 0;
+  color: #222222
+}
 
-the links should be
+h1, h2, h3, ul, p {
+  /* add reset */
+}
 
-    Home -> index.html
-    News -> news.html
-    Weather -> weather.html
-    Sports -> sports.html
-    Entertainment -> entertainment.html
+.container {
+  width: 1000px;
+  /* center container */
+  background-color: #fff;  
+}
 
-Remember that we are creating a list of links.
+.global-header {
+  background-color: #222222;
+  color: #F3F3F3;
+  padding: 1em;
+}
 
-## Add CSS
+.global-nav {
+  background-color: #E67E39;
+}
 
-Add to the css file the correct styles to make the markup look like a nav.
+/* add clear fix for `.global-nav` */
 
-[![](homework3-example.png)](homework3-example.png)
+.global-nav li {
+  /* float to the left */
+}
 
-Nav Bar
+.global-nav a {
+  display: block;
+  color: #F3F3F3;
+  text-decoration: none;
+  padding: 1em;
+}
 
-    bg color - #208764
+.global-nav a:hover {
+  background-color: #F3F3F3;
+  color: #E67E39;
+}
 
-Nav Item
+.content-area {
+  /* move content from the edge top/bottom 2em left/right 1em */
+}
 
-    border - 2px on rigth (black)
-    Last item should not have a border
-    spacing - top and bottom 5px and left and right 10px;
+.content-area h2 {
+  text-transform: uppercase;
+  color: #E67E39;
+}
 
-nav links
+.content-area > p {
+  /* add spacing for paragraph */
+}
 
-    color - white
-    not underlined
+/* clear the h2 */
 
-Hover Color
+.photo {
+  border: 3px solid #E67E39;
+  padding: 1em;
+  margin-bottom: 1em;
+}
 
-    bg color - #20E8A5
-    text color - black
+.photo > img {
+  display: block;
+}
 
-## Coded Page
+.photo > p {
+  margin-top: .5em;
+  text-align: center;
+}
 
-[View Final Example](homework3/homework3.html)
+/* add class for photo on the right {
+  margin-left: 2em;
+  [push to the right]
+} */
+
+.promos {
+  background-color: #E67E39;
+  padding: 1em;
+}
+
+/* add clear fix for `.promos` */
+
+.promos h3 {
+  margin-bottom: .5em;
+  text-transform: uppercase;
+}
+
+.promo {
+  /* add missing code */
+  width: 32.533%;
+  margin-right: 1%;
+  text-align: center;
+}
+
+.promo:last-of-type {
+  /* remove the margin on the right */
+}
+
+.promo > img {
+  max-width: 100%;
+}
+
+.promo p {
+  margin: 1em;
+  font-size: .7em;
+  color: white;
+  line-height: 1.3em;
+}
+
+.global-footer {
+  background-color: #222222;
+  color: white;
+  padding: 1em;
+}
+
+.global-footer a {
+  color: white;
+}
+</pre>

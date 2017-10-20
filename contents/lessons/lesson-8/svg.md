@@ -11,13 +11,6 @@ nav:
   SVG: svg.html
 ---
 
-# Understanding SVG
-
-* [Reset]()
-* [Sprites](sprites.html)
-* [HTML Emails](email.html)
-* [SVG](svg.html)
-
 ## What is SVG?
 
 - SVG stands for Scalable Vector Graphics

@@ -11,10 +11,6 @@ nav:
   SVG: svg.html
 ---
 
-# LESS (stylesheet language)
-
-* [Media Querie]()
-* [LESS](less.html)
 
 LESS allows variables to be defined. LESS variables are defined with an at sign`(@)`. Variable assignment is done with a colon `(:)`.
 During translation, the values of the variables are inserted into the output CSS document.

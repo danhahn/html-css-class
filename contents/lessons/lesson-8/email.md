@@ -11,12 +11,6 @@ nav:
   SVG: svg.html
 ---
 
-# HTML Emails
-
-* [Reset]()
-* [Sprites](sprites.html)
-* [HTML Emails](email.html)
-* [SVG](svg.html)
 
 Email is an awesome medium. It goes straight into the inbox and its ROI is widely reported as being through the roof at 4000%. It’s also perpetually misunderstood and too often it’s done badly. With the recent explosion of smartphones, we’re more often reading our mail on our iPhone or Galaxy, but unfortunately a lot of email marketing has failed to keep up. I see this as a huge missed opportunity because a well executed email can be enjoyable to open and hugely successful.
 

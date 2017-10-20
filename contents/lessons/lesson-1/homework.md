@@ -14,16 +14,6 @@ nav:
   Homework: homework.html
 ---
 
-# Homework 1
-
-* [Introduction]()
-* [Editors](editors.html)
-* [Terminal and Git](git.html)
-* [Emmet](emmet.html)
-* [Selectors](selectors.html)
-* [Comments](comments.html)
-* [Homework](homework.html)
-
 ## Starter File
 
 Download the starter files and rename it to **css_week1_yourname.html**

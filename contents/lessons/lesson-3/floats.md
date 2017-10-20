@@ -9,16 +9,8 @@ nav:
   Overflow: overflow.html
   Floats: floats.html
   Clear Fix: clear-fix.html
-  Flex Box: flex-box.html
+  Homework: homework.html
 ---
-
-# CSS Floats
-
-* [Box Model]()
-* [Overflow](overflow.html)
-* [Floats](floats.html)
-* [Clear Fix](clear-fix.html)
-* [Flex Box](flex-box.html)
 
 Float is CSS property that is used to display content.  Floats where originally intended to get the magazine feel on the web by allowing images or other content to wrap around text within an article.  Over time floats have been used for other reason like layouts. CSS floats can be applied to any elements, both *inline* and *block*.
 
@@ -33,8 +25,8 @@ When an element is floated they go into a state that is not inline or block.  A 
 | float | left  | float an item to the left and content will wrap around it  | `float: left;`  |
 | float | right | float an item to the right and content will wrap around it | `float: right;` |
 
-<p data-height="700" data-theme-id="light" data-slug-hash="beqpdV" data-default-tab="result" data-user="danhahn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/danhahn/pen/beqpdV/">Floating Elements</a> by Dan Hahn (<a href="http://codepen.io/danhahn">@danhahn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="745" data-theme-id="light" data-slug-hash="NgyEJG" data-default-tab="result" data-user="danhahn" data-embed-version="2" data-pen-title="Floats Explained" class="codepen">See the Pen <a href="https://codepen.io/danhahn/pen/NgyEJG/">Floats Explained</a> by Dan Hahn (<a href="https://codepen.io/danhahn">@danhahn</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 **Note:** Elements that are floated will move to the far left or right of the container and the content will wrap around the floated element.
 
@@ -67,20 +59,20 @@ When two or more consecutive elements are floated in the same direction they wil
 **Note:** when all the content with in an element is floated that element will seem to have no height.
 
 ### Example
-
-    <style>
-        li {
-            float: left;
-            list-style:none;
-        }
-    </style>
-    <ul>
-        <li>Nav Item 1</li>
-        <li>Nav Item 2</li>
-        <li>Nav Item 3</li>
-        <li>Nav Item 4</li>
-    </ul>
-
+```html
+<style>
+  li {
+      float: left;
+      list-style:none;
+  }
+</style>
+<ul>
+  <li>Nav Item 1</li>
+  <li>Nav Item 2</li>
+  <li>Nav Item 3</li>
+  <li>Nav Item 4</li>
+</ul>
+```
 <div id="stacking_content"></div>
 
 

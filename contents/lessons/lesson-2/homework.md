@@ -18,19 +18,6 @@ nav:
   Homework: homework.html
 ---
 
-# Homework 2
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
-
-
 **Note:** the design has the page centered on the page but we have not covered this yet.  We will do it next class.
 
 Use the starter files below.  Be sure to save the image into an `images` folder or it will not display.  When done email a zip file with all the files needed to view your final work.

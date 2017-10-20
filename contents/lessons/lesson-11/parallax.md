@@ -10,12 +10,6 @@ nav:
   Parallax: parallax.html
 ---
 
-# Parallax Scrolling
-
-* [GIT]()
-* [Wintersmith](wintersmith.html)
-* [Parallax](parallax.html)
-
 ## Installation
 
 <a href="https://github.com/pixelcog/parallax.js/archive/v1.2.zip" class="btn">Download</a>

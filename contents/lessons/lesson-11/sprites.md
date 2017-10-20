@@ -10,11 +10,6 @@ nav:
   Parallax: parallax.html
 ---
 
-# CSS Sprites
-
-* [Selectors]()
-* [CSS3](css3.html)
-* [Sprites](sprites.html)
 
 CSS Sprites are an idea of using one image as a background for many elements on the page.  
 

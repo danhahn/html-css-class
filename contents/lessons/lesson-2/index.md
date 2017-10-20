@@ -23,7 +23,6 @@ nav:
   Padding: padding.html
   Margin: margin.html
   Pseudo: pseudo.html
-  overflow: overflow.html
   Homework: homework.html
 ---
 
@@ -32,26 +31,9 @@ This week we will talk about font, text, border, padding and margins.  We will a
 
 <span class="more"></span>
 
-# Font Properties
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include File](include.html)
-* [Define a color](color.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
-
-[Download Notes  <i class="icon-download-alt icon-white"></i>](week2-notes.zip)
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week2.zip)
-
 
 Property            | Values                                                                                                                 
---------------------|------------------------------------------------------------------------------------------------------------------------
+--------------------|-------------------------------------------------
 font:* <br>required | style variant weight size */line-height  family *<br>example: font:bold 10px/12px verdana,"Lithos Regular",sans-serif;*
 font-style:         | normal, italic                                                                                                         
 font-variant:       | normal, small-caps                                                                                                     

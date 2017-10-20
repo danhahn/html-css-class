@@ -13,15 +13,6 @@ nav:
   Homework: homework.html
 ---
 
-# Using LESS
-
-* [Basic Layouts]()
-* [Setting up preprocessor](less.html)
-* [Using Less](using-less.html)
-* [Flex Box](flex.html)
-* [Position](position.html)
-* [Homework](homework.html)
-
 ## Overview
 As an extension to CSS, Less is not only backwards compatible with CSS, but the extra features it adds use existing CSS syntax. This makes learning Less a breeze, and if in doubt, lets you fall back to vanilla CSS.
 

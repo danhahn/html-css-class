@@ -10,12 +10,6 @@ nav:
   GIT: git.html
 ---
 
-# Using LESS
-
-* [Gulp]()
-* [LESS](less.html)
-* [GIT](git.html)
-
 Using LESS is really easy. We only need this two lines inside the head tag of your HTML document. First, the .less file then the less.js library at the bottom (which you can download it from the official site).
 
 	<link rel="stylesheet/less" type="text/css" href="style.less">

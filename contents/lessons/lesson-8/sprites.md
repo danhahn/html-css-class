@@ -11,13 +11,6 @@ nav:
   SVG: svg.html
 ---
 
-# CSS Sprites
-
-* [Reset]()
-* [Sprites](sprites.html)
-* [Flexbox](flexbox.html)
-* [Media Query](media.html)
-
 CSS Sprites are an idea of using one image as a background for many elements on the page.
 
 This cuts down on the load time for and the number of assent need for a site.

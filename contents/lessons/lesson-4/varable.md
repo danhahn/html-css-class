@@ -13,15 +13,6 @@ nav:
   Homework: homework.html
 ---
 
-# Variable Width
-
-* [Basic Layouts]()
-* [Flexible Width](flexable.html)
-* [Variable Width](varable.html)
-* [Flex Box](flex.html)
-* [Position](position.html)
-* [Homework](homework.html)
-
 In the examples above we had a fixed width of the container. In one example it was `800px` the other fit the width of the screen. In this example we will limit the width to be variable width of anything from `700px` to `1200px`.
 
     <style>

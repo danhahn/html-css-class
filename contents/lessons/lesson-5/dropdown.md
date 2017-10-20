@@ -11,12 +11,6 @@ nav:
 
 ---
 
-# Dropdowns
-
-* [Backgrounds]()
-* [Gradients](gradients.html)
-* [Drop Down](dropdown.html)
-
 One of the most requested things in web design is to have a navigation with any layers. Often we need to have sub items under a main item within our navigation. When this happens we will want to display the content only when a the users mouse moves over the nav item.
 
 In the past this would need to be done with Javascript but JS can be hard to work with and adds a layer of complexity that may not be needed.

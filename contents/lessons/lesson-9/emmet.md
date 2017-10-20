@@ -14,11 +14,6 @@ This week we will talk about advaced CSS slectors.  We will also talk about CSS 
 
 <span class="more"></span>
 
-# Emmet
-
-* [Selectors]()
-* [Emmet](emmet.html)
-
 Emmet is a code hint that can be installed in most text editor.  It allows for quick and easy writing of HTML. To use it just type the emmet code and hit the tab key.
 
 ## Syntax

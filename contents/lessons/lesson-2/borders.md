@@ -19,20 +19,6 @@ nav:
   Homework: homework.html
 ---
 
-# Border
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include File](include.html)
-* [Define a color](color.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
-
 Borders can be added to most every element and are made up of three parts.
 
 * `border-width:` defines the width of the border, If no border is defined the default size is 3px.

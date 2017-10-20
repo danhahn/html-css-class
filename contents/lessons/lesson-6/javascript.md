@@ -14,15 +14,6 @@ This week we will be talking about Javascript and Jquery.
 
 <span class="more"></span>
 
-
-# What is JavaScript?
-
-* [Position]()
-* [Javascript](javascript.html)
-* [Jquery](jquery.html)
-
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week6.zip)
-
 [Slide Show](lesson/index.html)
 
 <blockquote class="fragment" cite="http://en.wikipedia.org/wiki/JavaScript#CITEREFFlanaganFerguson2006">

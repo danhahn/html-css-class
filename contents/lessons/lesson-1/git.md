@@ -15,16 +15,6 @@ nav:
   Homework: homework.html
 ---
 
-# Git
-
-* [Introduction]()
-* [Editors](editors.html)
-* [Terminal and Git](git.html)
-* [Emmet](emmet.html)
-* [Selectors](selectors.html)
-* [Comments](comments.html)
-* [Homework](homework.html)
-
 Git requres you use the command line to type some simple commands.  You will need to open a console to work with git.  On the Mac there is a built in termainal application that you can use.  
 
 `Applicaitons > Utilities > Terminal`

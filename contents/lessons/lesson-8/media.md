@@ -16,13 +16,6 @@ This week we will be talking about responsive design and media queries.  We will
 
 <span class="more"></span>
 
-# Media Queries
-
-* [Reset]()
-* [Sprites](sprites.html)
-* [Flexbox](flexbox.html)
-* [Media Query](media.html)
-
 A *media query* consists of a media type and at least one expression that limits the style sheets' scope by using media features, such as width, height, and color. Media queries, added in CSS3, let the presentation of content be tailored to a specific range of output devices without having to change the content itself.
 
 ### Syntax

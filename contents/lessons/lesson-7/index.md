@@ -22,10 +22,6 @@ This week we will talk about CSS Animation
 
 <span class="more"></span>
 
-# Transitions
-
-* [CSS3 Transitions]()
-* [CSS3 Animations](animations.html)
 
 [Download Notes  <i class="icon-download-alt icon-white"></i>](week7-notes.zip)
 [Download Starter File  <i class="icon-download-alt icon-white"></i>](week7.zip)

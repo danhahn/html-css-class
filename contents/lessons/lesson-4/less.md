@@ -13,15 +13,6 @@ nav:
   Homework: homework.html
 ---
 
-# Working with CSS Preprocessor
-
-* [Basic Layouts]()
-* [Setting up preprocessor](less.html)
-* [Using Less](using-less.html)
-* [Flex Box](flex.html)
-* [Position](position.html)
-* [Homework](homework.html)
-
 A preprocessor is a program that will take one file and turn it into another.  This allows your add logic to something that did not have it.  
 
 CSS is very powerful it has changed the way that we display things on the web today but it is not with out its limits.   Where css allows you to select many element using a selector it does not have variables in in.  So you might want to set a color pallet for your site.  If you have 5 colors you want to use they need to be defined every time you use them.  If you want to change them to an other color you need to find every time that color is used and change them.  A preprocessor takes the CSS code you know and enhances it allowing you to do things like setting up variables or change a lighten or darken a color.  You can also nest your selectors to allow for better organization of the files.
@@ -44,7 +35,7 @@ On the Mac you will need to open the terminal form the applications folder.  Whe
 
 To install less you will need to type the following command in the terminal.
 
-```
+```bash
 $ sudo npm install -g less
 ```
 
@@ -67,13 +58,13 @@ To create a `less` you need to create a new file and save it as `.less`  for exa
 
 After we create the `less` code we need to turn it in to the css file.  Form the command line you need to navigate to the folder where the the `less` file is saved.  
 
-```
+```bash
 $ cd Documents/HTML_and_CSS/week4/
 ```
 
 Now we need to turn the `less` file in to a `css` file.
 
-```
+```bash
 $ lessc global.less global.css
 ```
 This will take the less file and turn it in to a css file.   You will then take that `css` file and use it in your HTML file.
@@ -95,7 +86,7 @@ Open `file>preferences` then select `install` and search for `atom-less` and ins
 
 Install a package.json file.  
 
-```
+```bash
 $ npm init
 ```
 
@@ -103,13 +94,13 @@ Then follow the steps.  This will create a `package.json` file.  This file conti
 
 Next we need to add the packages to the `.json` file.
 
-```
+```bash
 $ npm install --save-dev gulp gulp-less gulp-watch
 ```
 
 We need to install `gulp` globally
 
-```
+```bash
 $ sudo npm install -g gulp
 ```
 
@@ -143,7 +134,7 @@ We need to create a new folder called `less`.
 
 Now we just need to run the gulp file
 
-```
+```bash
 $ gulp watch
 ```
 

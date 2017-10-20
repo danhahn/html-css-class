@@ -18,20 +18,6 @@ nav:
   Homework: homework.html
 ---
 
-# CSS Colors
-
-* [Font Properites]()
-* [Text Properties](text.html)
-* [Include File](include.html)
-* [Define a color](color.html)
-* [CSS Units](sizes.html)
-* [Borders](borders.html)
-* [Padding](padding.html)
-* [Margin](margin.html)
-* [Pseudo](pseudo.html)
-* [overflow](overflow.html)
-* [Homework](homework.html)
-
 ## Hexadecimal Colors
 
 Hexadecimal color values are supported in all major browsers.

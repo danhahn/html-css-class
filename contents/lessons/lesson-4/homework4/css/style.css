@@ -1,0 +1,86 @@
+* {
+  /* box sizing */
+}
+
+body {
+  font: 16px arial;
+  background-color: lightgray;
+  margin: 0;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.container {
+  /* set width to 1000 */
+  /* center block in the window  */
+}
+
+.global-header {
+  background-color: #5187B2;
+  padding: 1em;
+  color: white;
+  /* add margin of 1 em at the bottom */
+}
+
+.global-nav {
+  background-color: #FFDDA7;
+}
+
+.global-nav a {
+  display: block;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: black;
+}
+
+.content-area {
+  padding: 1em;
+  background-color: #fff;
+}
+
+.content-area p {
+  /* let margin top and bottom to 1em */
+  /* set line height to 1.5 em */
+}
+
+.side-bar {
+  background-color: #A7D7FF;
+  padding: 1em;
+}
+
+.global-footer {
+  /* add margin top of 1em */
+  background-color: #B2B0AD;
+  /* add padding of 1em */
+  /* align the test to the right */
+}
+
+.row::after {
+  /* add clear fix */
+}
+
+.global-nav, .content-area, .side-bar {
+  /* float: left */
+}
+
+.global-nav {
+  /* set width to 200 */
+}
+
+.content-area {
+  /* set width to 600 */
+  /* add margin on left and right of 1em */
+  /* note you will need to calculate the size using `calc()` */
+}
+
+.side-bar {
+  /* set width to 200 */
+}
+
+.side-bar img {
+  /* fix width of img to only be as wide as the side bar */
+}

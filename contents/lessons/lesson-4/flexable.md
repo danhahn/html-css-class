@@ -5,22 +5,13 @@ author: Dan Hahn
 date: 10/16/2017 18:00
 template: article.jade
 nav:
-  Basic Layouts: index.html
-  Setting up preprocessor: less.html
-  Using Less: using-less.html
-  Flex Box: flex.html
+  Layout Types: index.html
+  Table Layout: table.html
   Position: position.html
+  Float Layout: float.html
+  Flexbox Layout: flex.html
   Homework: homework.html
 ---
-
-# Flex Width
-
-* [Basic Layouts]()
-* [Setting up preprocessor](less.html)
-* [Using Less](using-less.html)
-* [Flex Box](flex.html)
-* [Position](position.html)
-* [Homework](homework.html)
 
 There are times where we want the display to be flexible. In this example we will keep the `#globalNav` a fixed width of `width: 200px;`.
 

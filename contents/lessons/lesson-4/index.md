@@ -14,103 +14,52 @@ downloads:
     btn: null
 
 nav:
-  Basic Layouts: index.html
-  Setting up preprocessor: less.html
-  Using Less: using-less.html
-  Flex Box: flex.html
+  Layout Types: index.html
+  Table Layout: table.html
   Position: position.html
+  Float Layout: float.html
+  Flexbox Layout: flex.html
   Homework: homework.html
 ---
 
-This week we will use the *floats* that we learned last week to build table-free layouts.
+This week we will explore ways to build page layouts include tables, position, floats, and flexbox.  
 
 <span class="more"></span>
 
-# Basic Layouts
+As we move to building more complex pages layouts we need to talk about different ways we can do this with HTML and CSS. 
 
-* [Basic Layouts]()
-* [Setting up preprocessor](less.html)
-* [Using Less](using-less.html)
-* [Flex Box](flex.html)
-* [Position](position.html)
-* [Homework](homework.html)
+## Holy grail Layout
 
-[Download Notes  <i class="icon-download-alt icon-white"></i>](week4-notes.zip)
-[Download Starter File  <i class="icon-download-alt icon-white"></i>](week4.zip)
+The <a href="https://en.wikipedia.org/wiki/Holy_Grail_(web_design)" target="_blank">holy grail layout</a> is a page design that has a header, three columns with equal height, and a footer.  This historicly has been something that has been very hard to acceve with HTML and CSS thus its like looking for the "Holy Grail"
 
-CSS layouts have changed the way that we are able to design websites. At one time all layouts were done with the `<table>`. This was both slow and hard to manage.
+![](https://upload.wikimedia.org/wikipedia/commons/a/ad/HolyGrail.svg)
 
-*Table free* layouts have been used for almost a decade now while they are an improvement over the `<table>` they have flaws.
+We are going explore a  few different ways solve this problem.  Some will be outdated and no longer used and some with have limitations that we will have to work through.
 
-## Structure
+1. [Table Layout](table.html)
+2. [Position](position.html)
+3. [Float Layout](float.html)
+4. [Flexbox Layout](flexbox)
 
-In this example we are looking the the most basic layout. Assume that this page is a standard content page that has a `header`, `navigation`, `content` area and `footer`.
+There is also a new CSS grid layout that we will talk about in a lesson all on its own later in the semester.  
 
-    <header></header>
+## Setting up the HTML 
+
+With with all but the `<table>` layout we can use the same html structure to achieve our goal.
+
+```html
+<main>
+  <header></header>
+  <section>
     <nav></nav>
     <article></article>
-    <footer></footer>
+    <aside></aside>
+  </section>
+  <footer></footer>
+</main>
+```
 
-The issue now is that we have no way to limit the width of the elements. One option would be with set the width on each element there are some issue that come along with that. The box model kicks in when a width is set.
+We use the `<main>` to create a wrapper around the content.  The `<header>` and `<footer>` are their won rows.  Last we add a `<section>` to create a "row" that has our `<nav>`, `<article>` and `<aside>`. 
 
----
+**Note**: This is a very basic example you can swap any HTML element for another and all elements should have `class` names to better define them.  
 
-## Add Wrapper
-
-The other option is to wrap all the element with an other element like a `<div>`. This will allow you to define a `width` on it.
-
-    <div>
-        <header></header>
-        <nav></nav>
-        <article></article>
-        <footer></footer>
-    </div>
-
----
-
-## Adding IDs
-
-While the structure is correct at this point we want to add an id or class to help identify this `<header>` from any other `<header>` that may be on the page.
-
-There are some who say you should never use an id because they are too specific. I disagree with this. I feel that a well place id can help identify which element you are targeting.
-
-    <div id="container">
-        <header id="globalHeader"></header>
-        <nav id="globalNav"></nav>
-        <article id="contentArea"></article>
-        <footer id="gloablFooter"></footer>
-    </div>
-
----
-
-## Styles
-
-Now that we have the structure in place we need to write the `css` to support the markup.
-
-### Fixed width
-
-In this example we are setting up a page that is a fixed width of `800px`.
-
-    <style>
-        #container {
-            width: 800px;
-        }
-
-        #gloablNav, #contentArea {
-             float: left;
-        }
-
-        #gloablNav {
-            width: 200px;
-        }
-
-        #contentArea {
-             width: 600px;
-        }
-
-        #footer {
-             clear: both;
-        }
-    </style>
-
-This will create a fixed two column layout. The width can be adjusted any value just note that the `#globalNav` and `#contentArea` must add up to the width of the `#container`.
