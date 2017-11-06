@@ -1,131 +1,249 @@
 ---
 title: Lesson 6
-lesson: Position
+lesson: Javascript
 author: Dan Hahn
-date: 10/30/2017 18:00
+date: 10/30/2017
 template: article.jade
 
 downloads:
   Download Stater File:
     file: week6.zip
     btn: primary
-  Download Notes:
-    file: week6-notes.zip
-    btn: null
+
 
 nav:
-  Position: index.html
-  Javascript: javascript.html
+  Javascript: index.html
+  JS Data Type: js-examples.html
+  JS DOM Select: js-dom-select.html
   Jquery: jquery.html
 ---
 
-This week we will talk about Positioning and JavaScript
+This week we will be talking about Javascript and Jquery.
 
 <span class="more"></span>
 
-## Document flow
+[Slide Show](lesson/index.html)
 
-To understand how to position we need to first understand the standard flow of a document.  When HTML is written out it the elements are displayed in the order they are written in the code.  This is known as the “normal flow” of the document.  While the flow is standard and might make sense it can be limiting because the elements must display in the order the are written.
-
-### Property Values
-
-Value    | Description
----------|----------------------------------------------------------------------------------------------------------------------
-`static`   | Elements renders in order, as they appear in the document flow. This is default.
-`absolute` | The element is positioned relative to its first positioned (not static) ancestor element
-`fixed`    | The element is positioned relative to the browser window
-`relative` | The element is positioned relative to its normal position, so "left:20" adds 20 pixels to the element's LEFT position
-`inherit`  | The value of the position property is inherited from the parent element
-
-### Positioning Properties
-
-Property | Description
----------|------------------------------------------------------
-`bottom`   | Specifies the bottom position of a positioned element
-`left`     | Specifies the left position of a positioned element
-`right`    | Specifies the right position of a positioned element
-`top`      | Specifies the top position of a positioned element
-
-## Static
-`position: static;` is the normal or default style for all elements.  Since this is implied on all elements the only time it needs to be set is when an element needs to override a style and set it back to static.
-
-<p data-height="265" data-theme-id="light" data-slug-hash="rLvoNX" data-default-tab="css,result" data-user="danhahn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/danhahn/pen/rLvoNX/">position: static</a> by Dan Hahn (<a href="http://codepen.io/danhahn">@danhahn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-
-## Absolute
-`position: absolute;` will pull the element out of the “normal flow” and layer it on top of the document.  That element than can be moved to a position on the page with the addition of TOP, RIGHT, BOTTOM or LEFT properties.
-
-The nav element was pulled out of the flow of the document and positioned in the top right corner of the document.  Since the nav was pulled out of the normal flow of the document its space is not saved and the elements below move up and fill in the available space.
-
-<p data-height="265" data-theme-id="light" data-slug-hash="dXZwPW" data-default-tab="css,result" data-user="danhahn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/danhahn/pen/dXZwPW/">position: absolute</a> by Dan Hahn (<a href="http://codepen.io/danhahn">@danhahn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-
-## Fixed
-`position: fixed;` is similar to absolute.  Both pull the element out of the flow of the document and moves to the location set by top, right, bottom or left.  But with fixed the element is locked to the browser window and not the document content.  When and element is fixed and the browser window scrolls that element will stay in the same location.  
-
-Notice the nav goes across the bottom of the window.  Since we can’t put a width of 100% on the element if it has padding because of the box model we need to do this in a different way.  If we put both a left and right value the element will stick to both sides of the window. This will make the element fill the whole space.
+<blockquote class="fragment" cite="http://en.wikipedia.org/wiki/JavaScript#CITEREFFlanaganFerguson2006">
+&ldquo;JavaScript (JS) is an interpreted computer programming language.  It was originally implemented as part of web browsers so that client-side scripts could interact with the user, control the browser, communicate asynchronously, and alter the document content that was displayed. More recently, however, it has become common in both game development and the creation of desktop applications.&rdquo;
+</blockquote>
+(From Wikipedia)
 
 
-<p data-height="265" data-theme-id="light" data-slug-hash="xOjmwE" data-default-tab="css,result" data-user="danhahn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/danhahn/pen/xOjmwE/">position: flexed</a> by Dan Hahn (<a href="http://codepen.io/danhahn">@danhahn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+## What does that mean?
 
-
-##Relative
-
-`position: relative;` will move the element when a top, right bottom or left is applied but unlike absolute the element will not be removed from the normal flow of the document.  Since the element is still in the flow of the document a space will be kept for it and you may see some white space around the element.
-
-Notice how the nav element moves but the space is left where it was.  
+JavaScript gives life to web pages by way of the interpreter in a web browser.  The JavaScript interpreter translates a given script in order to manipulate elements within the page.
+Without it web sites would be fairly static.
 
 
-<p data-height="265" data-theme-id="light" data-slug-hash="bZrOVQ" data-default-tab="css,result" data-user="danhahn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/danhahn/pen/bZrOVQ/">position: relative</a> by Dan Hahn (<a href="http://codepen.io/danhahn">@danhahn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+### History of JavaScript
 
-While this may not seem like it is that useful of a property it has a very valuable side effect.
-
-###Relative + Absolute
-When relative and absolute work together something magical happens.  When an element has a position absolute it will go to the extremes of the document.  This is not always the most useful behavior but if its parent element has a position of relative it is like creating a new document with in the main document. When any child element has a position absolute it will define its position based on the parent element with relative position rather than the document.
+* Created by Brendan Eich (Mozilla CTO)
+* Shipped in Netscape Navigator 2.0 in 1995
+* Originally Called <i>LiveScript</i>
+* Partially inspired by and shares superficial similarities to Java, but intended to appeal to non-programmers, similar to Microsoft's Visual Basic
+* Microsoft quickly adopted to gain footing with IE 3 in 1996
+* Netscape submitted it to to The European Computer Manufacturers Association (ECMA) in 1996 for standardization. The standardized spec for this language is ECMAscript
+* Now the working language of the web, for better or worse
 
-<p data-height="265" data-theme-id="light" data-slug-hash="GqdPox" data-default-tab="css,result" data-user="danhahn" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/danhahn/pen/GqdPox/">position: relative-nested</a> by Dan Hahn (<a href="http://codepen.io/danhahn">@danhahn</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
+### What is it used for?
 
-## Stacking Elements
-There may be times when two or more elements may take up the same space when they are positioned absolutely.  When this happens the elements will stack on top of each other.  The order depends on the “flow order”, meaning the first element written to the page will be the lowest.  The later the element written the higher it is in the stack.
+* Adding dynamic behavior to web pages
+* Manipulating and scripting elements on web pages
+* Requesting data from a different source (we won't cover this)
+* Processing data outside of the web with frameworks like Node.js (we won't cover this)
 
-Z-index controls the stacking order of an element. All elements have a default `z-index` of 1, since they are the same the flow is the tiebreaker and the first element is lower.
-
-To get around this and have the first or lower element stack on top of the other elements you need to add a `z-index`. In this example element1 will stack on top of element2 because it has a higher `z-index`.
-
-```
-.element1 {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 5;
+## What does it look like?
+```javascript
+<head>
+<script>
+function sayHello(name) {
+  alert("Hello " + name + "!");
 }
-.element2 {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 4;
-}
+</script>
+</head>
 ```
 
-## Visibility
 
-Visibility is like setting display: none on an element with one major difference. With visibility set to hidden the element will not appear but the space in the document where the element was is maintained. With `display: none;` the element is removed from the flow of the document and the space will collapse.
+Similar to stylesheets, to keep your code clean & organized, best practice is to include external script
+```javascript
+<head>
+<link href="path/to/mystylesheet.css" rel="stylesheet" type="text/css"></link>
+<script src="path/to/myjavascript.js"></script>
+</head>
+```
+In most cases stylesheets should precede script tags so that the browser can immediately render layout as intended, whereas scripts adding interactive behavior can take considerable time to load
 
-### Property Values
 
-Value    | Description
----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-visible  | The element is visible. This is default
-hidden   | The element is invisible (but still takes up space)
-collapse | Only for table elements. collapse removes a row or column, but it does not affect the table layout. The space taken up by the row or column will be available for other content.
+## Lets dive in
+Variable assignment: numbers, booleans, strings
+```javascript
+var myNumber = 5;
+var myBoolean = true;
+var myString = "Hello World!";
+```
+Variable assignment: arrays, objects
+```javascript
+var myNumberArray = [1,2,3];
+var myCircleObject = { color: "red", radius: 2};
+```
+Take note how variable declarations begin with the <b>var</b> keyword
 
-If collapse is used on other elements, it renders as "hidden"
 
-## inherit
-Specifies that the value of the visibility property should be inherited from the parent element
+
+## Control Flow
+
+<b>if</b> statements are used to control the flow of logic in your script. The expression within the parenthesis following the <b>if</b> keyword must evaluate to a boolean value: <b>true</b> or <b>false</b> in order to evaluate
+
+```javascript
+var myGrade = 92;
+
+if (myGrade >= 85) {
+  alert('You are doing really well in this class!');
+} else {
+  alert('You might want to study up.');
+}
+```
+The expression in the parenthesis is checking that <b>myGrade</b> is greater than or equal to 85.  &gt, &gt=, &lt, &lt=, == are all logical operators used to compare values.
+
+
+
+
+## Arithmetic Expressions
+
+We can perform arithmetic operations on numbers in JavaScript.  +, -, /, * are standard operators.  Take note on the 8th line that when we add a number to a string (a series of characters), JavaScript coerces the number to a string & appends it.
+
+```javascript
+var exam1 = 92;
+var exam2 = 85;
+var exam3 = 90;
+
+var average = (exam1 + exam2 + exam3) / 3;
+
+if (average >= 85) {
+  alert('You are doing really well in this class!');
+} else {
+  alert('You might want to study up. Your average is ' + average + '.');
+}
+```
+JavaScript also features a <b>Math</b> namespace of advanced operations including sqrt(), pow() and abs().
+
+
+
+
+## Objects
+
+Objects are a structured set of primitive values.  Let's declare an object named circle with
+a color and radius property.  Then we'll calculate the circumference and update the object with a new property that we can access later.
+```javascript
+var pi = 3.14;
+
+var circle = {
+  color: "red",
+  radius: 5
+};
+
+circle.circumference = 2 * pi * circle.radius;
+```
+Note that we've declared a variable called pi for convenience and readability.
+
+
+## Arrays & Iteration
+An array is a collection of things.  They could be basic values, such as numbers, or more complex data structures such as objects.
+
+Let's declare an array of objects representing report cards. We can access the length of the array. The first element of an array starts at 0 and the last one is at the position of length - 1
+```javascript
+var ReportCards = [
+  { name: "Dan", Exam1: 85, Exam2: 90, Exam3: 75 },
+  { name: "Elijah", Exam1: 65, Exam2: 80, Exam3: 75 },
+  { name: "Jennifer", Exam1: 95, Exam2: 80, Exam3: 100 }
+];
+
+//Access the 1st element
+ReportCards[0];
+
+//Access the name of the 2nd element
+ReportCards[1].name;
+```
+
+
+
+Now Let's iterate over our ReportCards array and calculate the average final score for each student.
+A <b>for</b> loop is composed of multiple statements: the initial position of the iterator (in this case we are using the variable i), the terminating position & finally the incrementor.  In most for loops it is only needed to increment by one using the operator i++.  This is equivalent to i = i + 1.
+```javascript
+for (var i = 0; i < ReportCards.length; i++) {
+  var card = ReportCards[i];
+  card.final = (card.Exam1 + card.Exam2 + card.Exam3) / 3;
+}
+```
+
+
+
+
+## Functions
+
+Functions encapsulate a series of statements to represent a particular behavior. Functions become a critical mechanism when working with a large code base because they allow behaviors to be reusable.
+```javascript
+function calculateAverage(numbers) {
+  var aggregate = 0;
+
+  for (var i = 0; i < numbers.length; i++) {
+    aggregate = aggregate + numbers[i];
+  }
+
+  return aggregate / numbers.length;
+}
+
+var set_of_numbers = [5, 10, 15];
+
+calculateAverage(set_of_numbers);
+
+var another_set_of_numbers = [100, 130, 150, 170, 200];
+
+calculateAverage(another_set_of_numbers);
+```
+
+### jQuery
+
+## What is jQuery?
+jQuery is a cross-browser JavaScript library originally developed by John Resig.  It simplifies DOM (Document Object Model) manipulation and standardizes the API between different browser environments. jQuery has gained incredible popularity for its ease of use and expressive syntax.
+
+Note: The DOM just means HTML accessible by JavaScript. Its effectively a snooty way of saying HTML when its live and programmable in a web browser. An API just stands for Application Programming Interface.  It means 'The way something can be programmatically accessed.'
+
+
+
+## Selectors
+jQuery offers an especially convenient way to select HTML elements by way of CSS selectors, as well as creating HTML fragments on the fly.
+```javascript
+//select all divs with the class button
+$('div.button');
+
+//select all table data cells whose parents are a table row with class even
+$('tr.even > td');
+
+//select by id (should only return one element)
+$('#reportcards');
+```
+$() is jQuery's magic function.  jQuery sacrifices verbose syntax in favor of short, expressive statements.  One of the jQuery framework's design decisions is to have a magic $() function that is context aware to the arguments being passed in.  In this case we are passing in a string representing a CSS selector, so jQuery knows to look for elements in our web page.
+
+
+
+## DOM Fragments
+Let's create a document fragment composed of an HTML string.  We will then use
+jQuery's append() method to add it to our document body.
+```javascript
+var paragraph_fragment = $('Hello World!');
+
+$('#paragraph-container').append(paragraph_fragment);
+```
+jQuery's magic $() function recognized that our string represents HTML instead of a CSS selector, so it knows to create a document object which we can further manipulate.
+```javascript
+paragraph_fragment.addClass('red-border');
+```
+We added the class 'red-border' to our paragraph tag.
+
+
+## Expand your knowledge
+* Code Academy: <a href="http://www.codecademy.com/tracks/javascript">http://www.codecademy.com/tracks/javascript</a>
+* JavaScript the Good Parts: <a href="http://shop.oreilly.com/product/9780596517748.do">http://shop.oreilly.com/product/9780596517748.do</a>
+* jQuery Documentation: <a href="http://api.jquery.com/">http://api.jquery.com/</a>

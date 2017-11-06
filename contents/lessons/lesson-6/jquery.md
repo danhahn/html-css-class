@@ -5,8 +5,9 @@ author: Dan Hahn
 date: 10/30/2017
 template: article.jade
 nav:
-  Position: index.html
-  Javascript: javascript.html
+  Javascript: index.html
+  JS Data Type: js-examples.html
+  JS DOM Select: js-dom-select.html
   Jquery: jquery.html
 ---
 
@@ -17,28 +18,29 @@ jQuery is a fast, small, and feature-rich JavaScript library. It makes things li
 ### DOM Traversal and Manipulation
 
 Get the `<button>` element with the class 'continue' and change its HTML to 'Next Step...'
-
-	$( "button.continue" ).html( "Next Step..." )
-
+```javascript
+$( "button.continue" ).html( "Next Step..." )
+```
 ### Event Handling
 
 Show the #banner-message element that is hidden with  display:none in its CSS when any button in #button-container is clicked.
-
-	var hiddenBox = $( "#banner-message" );
-	$( "#button-container button" ).on( "click", function( event ) {
-	  hiddenBox.show();
-	});
-
+```javascript
+var hiddenBox = $( "#banner-message" );
+$( "#button-container button" ).on( "click", function( event ) {
+  hiddenBox.show();
+});
+```
 ### Ajax
 
 Call a local script on the server /api/getWeather with the query parameter zipcode=97201 and replace the element #weather-temp's html with the returned text.
-
-	$.ajax({
-	  url: "/api/getWeather",
-	  data: {
-	    zipcode: 97201
-	  },
-	  success: function( data ) {
-	    $( "#weather-temp" ).html( "<strong>" + data + "</strong> degrees" );
-	  }
-	});
+```javascript
+$.ajax({
+  url: "/api/getWeather",
+  data: {
+    zipcode: 97201
+  },
+  success: function( data ) {
+    $( "#weather-temp" ).html( "<strong>" + data + "</strong> degrees" );
+  }
+});
+```

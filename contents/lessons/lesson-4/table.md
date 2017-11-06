@@ -10,7 +10,6 @@ nav:
   Table Layout: table.html
   Position: position.html
   Float Layout: float.html
-  Flexbox Layout: flex.html
   Homework: homework.html
 ---
 

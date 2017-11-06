@@ -25,7 +25,7 @@ The sub-properties of the animation property are:
 
 
 Prop                                           | Value
------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------|-------------------------------------------------------
 [animation-delay](notes/delay.html)            | Configures the delay between the time the element is loaded and the beginning of the animation sequence.
 [animation-direction](notes/direction.html)    | Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
 [animation-duration](notes/duration.html)      | Configures the length of time that an animation should take to complete one cycle.
@@ -50,23 +50,24 @@ You can optionally include additional keyframes that describe intermediate steps
 Making text slide across the browser window
 
 This simple example styles the `<h1>` element so that the text slides in from off the right edge of the browser window.
+```css
+h1 {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
 
-	h1 {
-	  animation-duration: 3s;
-	  animation-name: slidein;
-	}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
 
-	@keyframes slidein {
-	  from {
-	    margin-left: 100%;
-	    width: 300%
-	  }
-
-	  to {
-	    margin-left: 0%;
-	    width: 100%;
-	  }
-	}
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+```
 
 The style for the `<h1>` element here specifies that the animation should take 3 seconds to execute from start to finish, using the animation-duration property, and that the name of the `@keyframes` at-rule defining the keyframes for the animation sequence is named "slidein".
 
@@ -77,17 +78,16 @@ The keyframes are defined using the `@keyframes` at-rule. In this case, we have 
 The second (and final) keyframe occurs at 100% (using the alias to). The left margin is set to 0% and the width of the element is set to 100%. This causes the header to finish its animation flush against the left edge of the content area.
 
 
-
 ## Adding another keyframe
 
 Let's add another keyframe to the previous example's animation. Let's say we want the header's font size to increase as it moves from right to left for a while, then to decrease back to its original size. That's as simple as adding this keyframe:
-
-	75% {
-	  font-size: 300%;
-	  margin-left: 25%;
-	  width: 150%;
-	}
-
+```css
+75% {
+  font-size: 300%;
+  margin-left: 25%;
+  width: 150%;
+}
+```
 This tells the browser that 75% of the way through the animation sequence, the header should have its left margin at 25% and the width should be 150%.
 
 
@@ -95,26 +95,26 @@ This tells the browser that 75% of the way through the animation sequence, the h
 ## Making it repeat
 
 To make the animation repeat itself, simply use the animation-iteration-count property to indicate how many times to repeat the animation. In this case, let's use infinite to have the animation repeat indefinitely:
-
-	h1 {
-	  animation-duration: 3s;
-	  animation-name: slidein;
-	  animation-iteration-count: infinite;
-	}
-
+```css
+h1 {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+```
 
 
 ## Making it move back and forth
 
 That made it repeat, but it's very odd having it jump back to the start each time it begins animating. What we really want is for it to move back and forth across the screen. That's easily accomplished by setting animation-direction to alternate:
-
-	h1 {
-	  animation-duration: 3s;
-	  animation-name: slidein;
-	  animation-iteration-count: infinite;
-	  animation-direction: alternate;
-	}
-
+```css
+h1 {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+```
 
 
 ## Using animation events
@@ -126,17 +126,17 @@ We'll modify the sliding text example to output some information about each anim
 ## Adding the animation event listeners
 
 We'll use JavaScript code to listen for all three possible animation events. The setup() function configures our event listeners; we call it when the document is first loaded in order to set things up.
+```javascript
+function setup() {
+  var e = document.getElementById("watchme");
+  e.addEventListener("animationstart", listener, false);
+  e.addEventListener("animationend", listener, false);
+  e.addEventListener("animationiteration", listener, false);
 
-	function setup() {
-	  var e = document.getElementById("watchme");
-	  e.addEventListener("animationstart", listener, false);
-	  e.addEventListener("animationend", listener, false);
-	  e.addEventListener("animationiteration", listener, false);
-
-	  var e = document.getElementById("watchme");
-	  e.className = "slidein";
-	}
-
+  var e = document.getElementById("watchme");
+  e.className = "slidein";
+}
+```
 This is pretty standard code; you can get details on how it works in the documentation for element.addEventListener(). The last thing the setup() function here does is set the class on the element we'll be animating to "slidein"; we do this to start the animation.
 
 Why? Because the animationstart event fires as soon as the animation starts, and in our case, that happens before our code runs. So we'll start the animation ourselves by setting the class of the element to the style that gets animated after the fact.
@@ -144,23 +144,23 @@ Why? Because the animationstart event fires as soon as the animation starts, and
 Receiving the events
 
 The events get delivered to the listener() function, which is shown below.
-
-	function listener(e) {
-	  var l = document.createElement("li");
-	  switch(e.type) {
-	    case "animationstart":
-	      l.innerHTML = "Started: elapsed time is " + e.elapsedTime;
-	      break;
-	    case "animationend":
-	      l.innerHTML = "Ended: elapsed time is " + e.elapsedTime;
-	      break;
-	    case "animationiteration":
-	      l.innerHTML = "New loop started at time " + e.elapsedTime;
-	      break;
-	  }
-	  document.getElementById("output").appendChild(l);
-	}
-
+```javascript
+function listener(e) {
+  var l = document.createElement("li");
+  switch(e.type) {
+    case "animationstart":
+      l.innerHTML = "Started: elapsed time is " + e.elapsedTime;
+      break;
+    case "animationend":
+      l.innerHTML = "Ended: elapsed time is " + e.elapsedTime;
+      break;
+    case "animationiteration":
+      l.innerHTML = "New loop started at time " + e.elapsedTime;
+      break;
+  }
+  document.getElementById("output").appendChild(l);
+}
+```
 This code, too, is very simple. It simply looks at the event.type to determine which kind of animation event occurred, then adds an appropriate note the `<ul>` (unordered list) we're using to log these events.
 
 The output, when all is said and done, looks something like this:
@@ -175,16 +175,16 @@ Ended: elapsed time is 9.234000205993652
 ## The HTML
 
 Just for the sake of completeness, here's the HTML that displays the page content, including the list into which the script inserts information about the received events:
-
-	<body onload="setup()">
-	  <h1 id="watchme">Watch me move</h1>
-	  <p>This example shows how to use CSS animations to make <code>H1</code> elements
-	  move across the page.</p>
-	  <p>In addition, we output some text each time an animation event fires, so you can see them in action.</p>
-	  <ul id="output">
-	  </ul>
-	</body>
-
+```html
+<body onload="setup()">
+  <h1 id="watchme">Watch me move</h1>
+  <p>This example shows how to use CSS animations to make <code>H1</code> elements
+  move across the page.</p>
+  <p>In addition, we output some text each time an animation event fires, so you can see them in action.</p>
+  <ul id="output">
+  </ul>
+</body>
+```
 
 
 
