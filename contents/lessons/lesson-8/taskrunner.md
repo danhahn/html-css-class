@@ -5,19 +5,13 @@ author: Dan Hahn
 date: 11/13/2017 18:00
 template: article.jade
 
-downloads:
-  Download Stater File:
-    file: week8.zip
-    btn: primary
-  Download Notes:
-    file: week8-notes.zip
-    btn: null
-
 nav:
   What is a CSS preprocessor: index.html
   Task Runner: taskrunner.html
-  HTML Emails: email.html
-  SVG: svg.html
+  SASS: sass.html
+  Using SASS: using-sass.html
+  Reset: reset.html
+
 ---
 
 ## What is a task runner?
