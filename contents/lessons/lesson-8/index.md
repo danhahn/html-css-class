@@ -1,6 +1,6 @@
 ---
 title: Lesson 8
-lesson: What Is A CSS Reset?
+lesson: What is a CSS preprocessor?
 author: Dan Hahn
 date: 11/13/2017 18:00
 template: article.jade
@@ -14,47 +14,83 @@ downloads:
     btn: null
 
 nav:
-  Reset: index.html
-  Sprites: sprites.html
-  HTML Emails: email.html
-  SVG: svg.html
+  What is a CSS preprocessor: index.html
+  Task Runner: taskrunner.html
+  SASS: sass.html
+  Using SASS: using-sass.html
+  Reset: reset.html
 ---
 
-This week we will talk about CSS reset, Sprites, HTML Emails and SVG.
+This week we are going to talk about CSS preprocessor (SASS), Task Runners (Gulp), Node Package Manager (NPM) and CSS Resets.  
 
 <span class="more"></span>
 
-<a href="http://www.cssreset.com/" class="btn">Get a Reset</a>
+## Why Pre-Processing CSS?
+CSS is primitive and incomplete. Building a function, reusing a definition or inheritance are hard to achieve. For bigger projects, or complex systems, maintenance is a very big problem. On the other hand, web is evolving, new specs are being introduced to HTML as well as CSS. Browsers apply these specs while they are in proposal state with their special vendor prefixes. In some cases (as in background gradient), coding with vendor specific properties become a burden. You have to add all different vendor versions for a single result.
 
-A CSS Reset (or “Reset CSS”) is a short, often compressed (minified) set of CSS rules that resets the styling of all HTML elements to a consistent baseline.
+In order to write better CSS, there were different approaches such as separating definitions into smaller files and importing them in to one main file. This approach helped to deal with components but, did not solved code repetitions and maintainability problems. Another approach was early implementations of object oriented CSS. In this case, applying two or more class definition to an element. Each class adds one type of style to the element. Having multiple classes increased re-usability but decreased the maintainability.
 
-In case you didn’t know, every browser has its own default ‘user agent’ stylesheet, that it uses to make unstyled websites appear more legible. For example, most browsers by default make links blue and visited links purple, give tables a certain amount of border and padding, apply variable font-sizes to H1, H2, H3 etc. and a certain amount of padding to almost everything. Ever wondered why Submit buttons look different in every browser?
+Pre-processors, with their advanced features, helped to achieve writing reusable, maintainable and extensible codes in CSS. By using a pre-processor, you can easily increase your productivity, and decrease the amount of code you are writing in a project.
 
-Obviously this creates a certain amount of headaches for CSS authors, who can’t work out how to make their websites look the same in every browser.
+There are three popular types of pre-processing SASS, LESS and Stylus.  At their core they have the same idea.  You talk a file that is not CSS and convert it to CSS when the file is saved.  This will allow us to do non traditional things to our CSS like variables, nesting or Mixins plus much more.  
 
-Using a CSS Reset, CSS authors can force every browser to have all its styles reset to null, thus avoiding cross-browser differences as much as possible.
+Lets use SASS as an example since SASS is the most popular. 
 
-## Why Use A CSS Reset?
+Here we have a variable of `$font-size` and the value is `16px`.
 
-You might wonder what this is all for – well, it’s simple. From the consistent base that you’ve set up via your reset, you can then go on to re-style your document, safe in the knowledge that the browsers’ differences in their default rendering of HTML can’t touch you!
+```css
+$font-size: 16px;
 
-## CSS Reset Issues
+div {
+  font-size: $font-size;
+}
+``` 
 
-Some people claim that this is unnecessary – that there’s no sense resetting an element’s style, only to un-reset it afterwards. If you did a close up on one element, with a CSS Reset and then further styling, the issue becomes clear:
+After going through the pre-processor it will out put a new file that is a standard CSS file. 
 
-	/* CSS Reset */
-	#element { margin:0; padding:0; font-size:100%; line-height:1; }
+```css
+div {
+  font-size: 16px;
+}
+```
 
-	/* #element rules: */
-	#element { margin:5px 0 10px; font-size:13px; line-height:1.5; }
-	In many ways, they’re right – it duplicates effort and processing time, when a single declaration would have sufficed – many developers and designers feel that this violates the ‘DRY’ (Don’t Repeat Yourself) principle.
+One of the things I like the best is you can nest your selector to make maintenance easy.
 
-However, there are multiple benefits of this technique that outweigh any drawbacks, not least the more logical development progression that it afford: paste in your CSS Reset, paste in your base styles (if needed), then define everything else from there. It’s also nice to know that you’ve got your bases covered.
+```css
+$link-color: #999;
+$link-hover: #229ed3;
 
-Another issue is to do with the Cascading part of ‘Cascading Style Sheets’. If your CSS Reset isn’t carefully written, you might find that your CSS rules are being themselves overwritten by the code that was supposed to be their baseline! This is often a problem when using the Universal Selector Reset, but won’t generally be an issue if working with well-written code such as the HTML5 Doctor CSS Reset.
+ul {
+  margin: 0;
 
-Hopefully this article has helped answer the whole What is a CSS Reset question with a little clarity… if you’re still left scratching your head, check out the companion article, Which CSS Reset Should I Use?
+  li {
+    float: left;
+  }
 
-Please shoot me a message if there’s anything you think needs to be added to this article and I’ll be happy to add it with credit and a link back!
+  a {
+    color: $link-color;
 
-**Note:** this page is a copy of this http://www.cssreset.com/what-is-a-css-reset/
+    &:hover {
+      color: $link-hover;
+    }
+  }
+}
+```
+Will output this
+
+```css
+ul {
+  margin: 0;
+}
+ul li {
+  float: left;
+}
+ul a {
+  color: #999;
+}
+ul a:hover {
+  color: #229ed3;
+}
+```
+
+Notice how everything is nested under the `ul`.  If we needed to change that part of the selector we would have just update one part of the CSS and it would update the final css rather than needing to update each place where it is defined.  

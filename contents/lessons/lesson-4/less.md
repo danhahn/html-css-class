@@ -35,7 +35,7 @@ On the Mac you will need to open the terminal form the applications folder.  Whe
 
 To install less you will need to type the following command in the terminal.
 
-```bash
+```powershell
 $ sudo npm install -g less
 ```
 
@@ -58,7 +58,7 @@ To create a `less` you need to create a new file and save it as `.less`  for exa
 
 After we create the `less` code we need to turn it in to the css file.  Form the command line you need to navigate to the folder where the the `less` file is saved.  
 
-```bash
+```powershell
 $ cd Documents/HTML_and_CSS/week4/
 ```
 
