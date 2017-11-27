@@ -1,296 +1,205 @@
 ---
 title: Lesson 9
-lesson: Selectors
+lesson: CSS Grid
 author: Dan Hahn
 date: 11/20/2017 18:00
 template: article.jade
+localcss: css/index.css
 
 downloads:
   Download Stater File:
     file: week9.zip
     btn: primary
-  Download Notes:
-    file: week9-notes.zip
-    btn: null
 
-nav: 
-  Selectors: index.html
-  Emmet: emmet.html
+nav:
+  CSS Grid: index.html
+  Grid Layout: grid-layout.html
 ---
 
-This week we will talk about advanced CSS selectors.  We will also be talking about how to better use emmet.
+This week we will talk about new CSS Grid Layout.
 
 <span class="more"></span>
 
-## Attribute selectors
+<a href="https://css-tricks.com/snippets/css/complete-guide-grid/" class="btn">CSS Grid Guild</a>
+<a href="https://gridbyexample.com/" class="btn">Grids by example</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" class="btn">MDN - grid</a>
 
-`[attr]`
-Represents an element with an attribute name of attr.
+## What is grid layout
 
-`[attr=value]`
-Represents an element with an attribute name of attr and whose value is **exactly** "value".
+# Grid Basics
 
-`[attr^=value]`
-Represents an element with an attribute name of attr and whose value is **prefixed** by "value".
+## Simple Grid
 
-`[attr$=value]`
-Represents an element with an attribute name of attr and whose value is **suffixed** by "value".
+Defines the columns and rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
 
-`[attr*=value]`
-Represents an element with an attribute name of attr and whose value **contains** at least one occurrence of string "value" as substring.
 
-<table class="selectorsReview">
-<thead>
-<tr>
-	<th class="pattern">Pattern</th>
-	<th class="meaning">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td class="pattern">\*</td>
-	<td class="meaning">any element</td>
-</tr>
-<tr>
-	<td class="pattern">E:nth-child(n)
+* `grid-template-columns`
+* `grid-template-rows`
 
-	</td>
-	<td class="meaning">an E element, the n-th child of its parent
+Defines the columns and rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:nth-last-child(n)
+```css
+grid-template-columns: 100px 100px 100px;
+grid-template-rows: 100px 100px 100px;
+```
 
-	</td>
-	<td class="meaning">an E element, the n-th child of its parent, counting
-		from the last one
+<div class="grid">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:nth-of-type(n)
+## grid-column-gap, grid-row-gap
 
-	</td>
-	<td class="meaning">an E element, the n-th sibling of its type
+* `grid-column-gap`
+* `grid-row-gap`
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:nth-last-of-type(n)
+Specifies the size of the grid lines. You can think of it like setting the width of the gutters between the columns/rows.
 
-	</td>
-	<td class="meaning">an E element, the n-th sibling of its type, counting
-		from the last one
+### Values:
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:first-child
+* `<line-size>` - a length value
 
-	</td>
-	<td class="meaning">an E element, first child of its parent
+```css
+grid-column-gap: 1em;
+grid-row-gap: 2em;
+```
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:last-child
+<div class="grid grid-gap-x">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
 
-	</td>
-	<td class="meaning">an E element, last child of its parent
+# grid-gap
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:first-of-type
+A shorthand for grid-row-gap and grid-column-gap
 
-	</td>
-	<td class="meaning">an E element, first sibling of its type
+Values:
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:last-of-type
+* `<grid-row-gap>` `<grid-column-gap>` - length values
 
-	</td>
-	<td class="meaning">an E element, last sibling of its type
+```css
+grid-gap: 1em;
+```
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:only-child
+<div class="grid grid-gap">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
 
-	</td>
-	<td class="meaning">an E element, only child of its parent
+## fr - fractal remains
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:only-of-type
+The `fr` unit is the like `flex-grow` in flexbox.  It takes the remainder fo the space and devides it cross all tracks that has a unit.  
 
-	</td>
-	<td class="meaning">an E element, only sibling of its type
+```css
+grid-template-columns: 100px 1fr 100px;
+```
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:empty
+<div class="grid grid-gap grid-fr">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
 
-	</td>
-	<td class="meaning">an E element that has no children (including text
-		nodes)
+## repeat
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:link<br>
-		E:visited
+`repeat()` allows your to defind a tack that repeat in one simple function.  It takes two parts first the number of repeats.  Second the width.
 
-	</td>
-	<td class="meaning">an E element being the source anchor of a hyperlink of
-		which the target is not yet visited (:link) or already visited
-		(:visited)
+```css
+grid-template-columns: repeat(3, 1fr);
+```
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:active<br>
-		E:hover<br>
-		E:focus
+<div class="grid grid-gap grid-repeat">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
 
-	</td>
-	<td class="meaning">an E element during certain user actions
+## minmax()
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:target
+The `minmax()` CSS function defines a size range greater than or equal to min and less than or equal to max. It is used with CSS Grids.
 
-	</td>
-	<td class="meaning">an E element being the target of the referring URI
+```css
+minmax(200px, 1fr)
+minmax(400px, 50%)
+minmax(30%, 300px)
+minmax(100px, max-content)
+minmax(min-content, 400px)
+minmax(max-content, auto)
+minmax(auto, 300px)
+minmax(min-content, auto)
+```
 
-	</td>
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:lang(fr)
+```css
+grid-template-columns: minmax(200px, 300px) minmax(100px, 1fr) minmax(200px, 300px);
+```
 
-	</td>
-	<td class="meaning">an element of type E in language "fr" (the document
-		language specifies how language is determined)
+<div class="grid grid-gap grid-minmax">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:enabled<br>
-		E:disabled
+## justify-content
 
-	</td>
-	<td class="meaning">a user interface element E which is enabled or
-		disabled
+Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px. In this case you can set the alignment of the grid within the grid container. This property aligns the grid along the row axis (as opposed to align-content which aligns the grid along the column axis).
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:checked<!--<br>E:indeterminate-->
+Values:
 
-	</td>
-	<td class="meaning">a user interface element E which is
-		checked<!-- or in an
-indeterminate state--> (for instance a
-		radio-button or checkbox)
+* start - aligns the grid to the left end of the grid container
+* end - aligns the grid to the right end of the grid container
+* center - aligns the grid in the center of the grid container
+* stretch - resizes the grid items to allow the grid to fill the full width of the grid container
+* space-around - places an even amount of space between each grid item, with half-sized spaces on the far ends
+* space-between - places an even amount of space between each grid item, with no space at the far ends
+* space-evenly - places an even amount of space between each grid item, including the far ends
 
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E::first-line
-
-	</td>
-	<td class="meaning">the first formatted line of an E element
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E::first-letter
-
-	</td>
-	<td class="meaning">the first formatted letter of an E element
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E::before
-
-	</td>
-	<td class="meaning">generated content before an E element
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E::after
-
-	</td>
-	<td class="meaning">generated content after an E element
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E.warning
-
-	</td>
-	<td class="meaning">an E element whose class is "warning" (the document
-		language specifies how class is determined).
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E#myid
-
-	</td>
-	<td class="meaning">an E element with ID equal to "myid".
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E:not(s)
-
-	</td>
-	<td class="meaning">an E element that does not match simple selector s
-
-	</td>
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E F
-
-	</td>
-	<td class="meaning">an F element descendant of an E element
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E &gt; F
-
-	</td>
-	<td class="meaning">an F element child of an E element
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E + F
-
-	</td>
-	<td class="meaning">an F element immediately preceded by an E element
-
-	</td>
-</tr>
-<tr>
-	<td class="pattern">E ~ F
-
-	</td>
-	<td class="meaning">an F element preceded by an E element
-
-	</td>
-</tr>
-</tbody>
-</table>
+<div class="grid grid-gap grid-justify">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>

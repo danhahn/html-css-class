@@ -9,9 +9,6 @@ downloads:
   Download Stater File:
     file: week8.zip
     btn: primary
-  Download Notes:
-    file: week8-notes.zip
-    btn: null
 
 nav:
   What is a CSS preprocessor: index.html
