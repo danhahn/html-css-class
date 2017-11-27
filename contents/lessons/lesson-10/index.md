@@ -1,6 +1,6 @@
 ---
 title: Lesson 10
-lesson: Getting Gulp installed
+lesson: Static Site Generators
 author: Dan Hahn
 date: 11/27/2017 15:00
 template: article.jade
@@ -9,255 +9,278 @@ downloads:
   Download Stater File:
     file: week10.zip
     btn: primary
-  Download Notes:
-    file: week10-notes.zip
-    btn: null
 
 nav:
-  LESS: less.html
-  Gulp: index.html
-  GIT: git.html
+  Static Site Generators: index.html
+  Create React App: react.html
 ---
-This week we will talk about how to use GULP, LESS/SCSS and GIT.
+This week we are talking about Static Site Generators and Create React App
 
 <span class="more"></span>
 
-## Step One - Install Node
+## What is a Static Site Generator?
+An SSG is a compromise between using a hand-coded static site and a full CMS, while retaining the benefits of both. In essence, you generate a static HTML-only website using CMS-like concepts such as templates. The content can be extracted from a database but, more typically, Markdown files are used.
 
-<a href="http://nodejs.org/" class="btn">Download Node</a>
+The site generation can occur on your development machine or staging server. The resulting HTML files are then deployed to a live web server. Users will never know the difference.
 
-First - we need our most important requirement, Node. To install Node - simply visit http://nodejs.org and then click that big green “Install” button. Once your download completes, run that application and you should be all ready to go. The Node installer also includes npm, which we will come back to a little later.
+A related concept is a “Headless” or “Decoupled” CMS. These use an interface such as WordPress to handle content administration but allow other systems to access the data via a REST API. Therefore, an SSG could build a static website using WordPress page content extracted from an internal server. The resulting HTML files can be uploaded to a web server — but the WordPress installation need never be accessible from outside the organization.
 
-## Step Two - Get To Know Your Command Line
-Now, you may not be very familiar with your command-line interface (Terminal for OSX, Command Prompt for Windows) but you should be! It may seem intimidating at first, but once you get the hang of it you will have the ability to run many different command line applications such as Sass, Yeoman and Git. All of which are very useful tools that your workflow could benefit from!
+Popular static site generators include Jekyll, Pelican, Hugo and Metalsmith — see StaticGen for many more. 
 
-> If you are familiar with your command-line interface, then feel free to skip to step four.
+In class we are going to use a node based generator called [https://github.com/jnordberg/wintersmith](Wintersmith)
 
-As a quick example, open up your command line and we will throw a couple commands at it to ensure that Node is properly installed.
+While this is not the most popular SSG out there I like it because it is simple and use node/javascript.
 
-	node -v
+## Things we need to understand to use this SSG.
 
-Type that and then hit enter and you should get a response on the next line with the version number of Node that you have installed.
+1. CLI (command line interface) 
+2. Pug/Jade - template 
+3. Markdown - content creation.
 
-Now, let’s do the same for npm.
+### Install
 
-	npm -v
+We need to install it like we did for Gulp.  It needs to be able to be run for the command line.  To install you need to run this command form your terminal. 
+
+```bash
+$ npm install wintersmith -g
+```
 
-Again, this should return the version number on the next line.
+### Make 
 
-If you didn’t get a response, then it may mean that Node didn’t install correctly or you may need to restart your command line application. If this still isn’t working after restarting, then simply jump back up the top and try the first step again.
+Now we need to create our project.  Change to the directly were you want to create the project.  In our case we are will be in our week10 folder
+
+```bash
+$wintersmith new <path>
+```
+
+Replace `<path>` with the folder you want use.  In our case we will use `blog`
+
+### Open the project
+
+```bash
+$ cd blog
+$ wintersmith preview
+```
+
+this will start the server and allow us to do develop the site
+
+```bash
+$ wintersmith preview
+  starting preview server
+  using config file: /Users/dev/blog/config.json
+  server running on: http://localhost:8080/
+```
+
+Now load `http://localhost:8080/` in your browser.
+
+### Build final site
 
-## Step Three - Navigate To Your Project Directory
-Now that we have met our command-line interface and know how to communicate with it, our next step will be navigating it. Luckily, it only takes two commands to change directories and take a look at what is inside them. These commands are ls (or dir, for Windows) to list what is in a directory and cd to change directories.
+Once you are are all done we need to run the raw files in in to flat HTML files.  We do this running this command 
 
-> I suggest that you spend some time playing with these commands. Get used to your file system and be aware of where everything lives. Don’t rush through this - it will save you a lot of headache later!
+```bash
+$ wintersmith build
+```
 
-Once you are comfortable with the ls and cd commands, we need to navigate to our project folder. This will likely be different for each person, but as an example this is what I would type to navigate to my local project:
+This creates a folder `build` in your project.  There are the files that you will put on your remove web server. 
 
-	cd /Applications/XAMPP/xamppfiles/htdocs/my-project
-
-It is important to note that I am working on OS X. The file system on Windows is much different so, while this example may be similar, it wont translate directly to Windows.
-
-Once you have made it to your project directory - let's run a quick npm command to initialize our package.json file.
-
-	npm init
-
-This will create a file in the root directory of your project called package.json which will provide information about our project and help manage our dependencies. Now we’re ready to install gulp!
-
-Step Four - Installing gulp
-You’ve met your command-line and you know how to talk to it - you even know your way around your file system. Now, it’s time to get to the good stuff. Let’s meet npm and install gulp!
-
-NPM stands for Node Package Manager and it is a command line tool that will allow you to install additional Node packages to your projects. It even comes with a nifty site that allows you to browse and search through all of the available packages.
-
-In your command-line application, type:
-
-	sudo npm install -g gulp
-
-Let’s quickly break this down.
-
-1. sudo is the command to grant you administrator access so you can properly install files. It will simply ask you for your computer password. (This may or may not be needed - but it wont hurt. I’ve included it to avoid permissions issues that some folks may run into.)
-2. npm is the application we are using to install our package.
-3. We are running the install command on that application.
-4. The -g is an optional flag used to signify that we want to install this package globally so that any project can use it.
-5. And finally, gulp is the name of the package we would like to install.
-
-Once that has run it’s course check your command-line to ensure that there are no error messages. If there are none to be seen, then congratulations! You just installed gulp! Just to double check, let’s refer back to our versioning commands we used above for Node and npm.
-
-	gulp -v
-
-Like before, this should return the version number on the next line of your command-line.
-
-Next, we also need to install gulp locally.
-
-	npm install --save-dev gulp
-
-The only thing different here is we used the `--save-dev` flag which instructs npm to add the dependency to our devDependencies list in our package.json file that we created earlier.
-
-Dependencies help us organize which packages are needed in our development and production environments as others contribute to or use our project. If you would like to read more about dependencies be sure to check out the package.json documentation.
-
-Now that gulp is installed, the next step is setting up our gulpfile. We’re almost done!
-
-## Step Five - Setting Up Our Gulpfile & Running Gulp
-
-Once gulp is installed we have to give it some instruction so it knows what tasks for perform for us. But, first, we need to figure out exactly what tasks we need to run in our project. Time for... a SCENARIO.
-
-In our Exciting Non-Generic Real World Scenario®, our boss has assigned us with the following tasks:
-
-* Lint our JavaScript. (Seriously. Do it.)
-* Compile our Sass files. (Browsers can’t read that stuff...)
-* Concatenate our JavaScript. (Reduce HTTP Requests!)
-* Minify and rename said concatenated files. (Every little bit counts!)
-
-I’m imagining our supervisor as the impatient, somewhat frightening type who eats interns when they don't do what the boss wants. So, let’s get right to it before our lunch companion gets eaten.
-
-## Install Required Plugins
-
-	npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
-
-This will install all of the plugins we will need and add them to our devDependencies in our package.json file like we did when we installed gulp.
-
-As a reminder, if you are getting permissions errors installing these plugins you may have to prepend those commands with sudo!
-
-## Create Our gulpfile
-Now that our plugins are available for us to use, we can start writing our gulpfile and instructing gulp to perform the tasks our boss assigned to us.
-
-Before we get right into the code I think it’s very important to mention that gulp only has 5 methods. These methods are as follows: task, run, watch, src, and dest. These are all you will need to write your tasks.
-
-In the root directory of your project create a new file and name it gulpfile.js and paste the following code inside.
-
-## gulpfile.js
-
-	// Include gulp
-	var gulp = require('gulp');
-
-	// Include Our Plugins
-	var jshint = require('gulp-jshint');
-	var sass = require('gulp-sass');
-	var concat = require('gulp-concat');
-	var uglify = require('gulp-uglify');
-	var rename = require('gulp-rename');
-
-	// Lint Task
-	gulp.task('lint', function() {
-	    return gulp.src('js/*.js')
-	        .pipe(jshint())
-	        .pipe(jshint.reporter('default'));
-	});
-
-	// Compile Our Sass
-	gulp.task('sass', function() {
-	    return gulp.src('scss/*.scss')
-	        .pipe(sass())
-	        .pipe(gulp.dest('css'));
-	});
-
-	// Concatenate & Minify JS
-	gulp.task('scripts', function() {
-	    return gulp.src('js/*.js')
-	        .pipe(concat('all.js'))
-	        .pipe(gulp.dest('dist'))
-	        .pipe(rename('all.min.js'))
-	        .pipe(uglify())
-	        .pipe(gulp.dest('dist'));
-	});
-
-	// Watch Files For Changes
-	gulp.task('watch', function() {
-	    gulp.watch('js/*.js', ['lint', 'scripts']);
-	    gulp.watch('scss/*.scss', ['sass']);
-	});
-
-	// Default Task
-	gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
-
-Now, let’s break this down and review what each part does.
-
-## Core & Plugins
-	// Include gulp
-	var gulp = require('gulp');
-
-	// Include Our Plugins
-	var jshint = require('gulp-jshint');
-	var sass = require('gulp-sass');
-	var concat = require('gulp-concat');
-	var uglify = require('gulp-uglify');
-	var rename = require('gulp-rename');
-
-This includes the gulp core and plugins associated with the tasks that we will be performing. Next, we setup each of our separate tasks. These tasks are lint, sass, scripts and default.
-
-## Lint Task
-
-	// Lint Task
-	gulp.task('lint', function() {
-	    return gulp.src('js/*.js')
-	        .pipe(jshint())
-	        .pipe(jshint.reporter('default'));
-	});
-
-Our lint task checks any JavaScript file in our js/ directory and makes sure there are no errors in our code.
-
-## Sass Task
-
-	// Compile Our Sass
-	gulp.task('sass', function() {
-	    return gulp.src('scss/*.scss')
-	        .pipe(sass())
-	        .pipe(gulp.dest('css'));
-	});
-
-The sass task compiles any of our Sass files in our scss/ directory into .css and saves the compiled .css file in our css/ directory.
-
-## Scripts Task
-	// Concatenate & Minify JS
-	gulp.task('scripts', function() {
-	    return gulp.src('js/*.js')
-	        .pipe(concat('all.js'))
-	        .pipe(gulp.dest('dist'))
-	        .pipe(rename('all.min.js'))
-	        .pipe(uglify())
-	        .pipe(gulp.dest('dist'));
-	});
-
-The scripts task concatenates all JavaScript files in our js/ directory and saves the ouput to our dist/ directory. Then gulp takes that concatenated file, minifies it, renames it and saves it to the dist/ directory alongside the concatenated file.
-
-## Watch Task
-
-	// Watch Files For Changes
-	gulp.task('watch', function() {
-	    gulp.watch('js/*.js', ['lint', 'scripts']);
-	    gulp.watch('scss/*.scss', ['sass']);
-	});
-
-The watch task is used to run tasks as we make changes to our files. As you write code and modify your files, the gulp.watch() method will listen for changes and automatically run our tasks again so we don't have to continuously jump back to our command-line and run the gulp command each time.
-
-Default Task
-// Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
-Finally, we have our default task which is basically a wrapper to our other tasks. This will be the task that is ran upon entering gulp into the command line without any additional parameters.
-
-Now, all we have left to do is run gulp. Switch back over to your command-line and type:
-
-	gulp
-
-This will call gulp and run everything we have defined in our default task. So, in other words It’s the same thing as running:
-
-	gulp default
-
-Additionally, we don’t have to run the default task. We could run any of the tasks we defined at any time. Simply call gulp and then specify the task you would like to run directly afterward. For example, we can run our sass task manually at any time like so:
-
-	gulp sass
-
-Pretty cool, eh?
-
-Wrapping Up
-
-Well, you’ve made it. We have survived our tempermental, intern-eating boss and you have heroically saved your lunch buddy. Take a moment to pat yourself on the back. As a quick recap, let’s review what we have learned.
-
-* We learned how to install Node.
-* We got to know our command-line.
-* We learned how to navigate our command-line.
-* We learned how to use npm and install gulp.
-* We learned how to write a gulpfile and run it.
-* It is my hope that this introduction has made understanding task runners much easier and that you can see the real value that gulp adds to your project and your development workflow. If you have any further questions be sure to post them in the comments!
-
-**Note:** http://travismaynard.com/writing/getting-started-with-gulp
+## Pug/Jade
+
+Pug/Jade is template that will build the HTML files.  In our project it is still know as `jade` but never versions are know as `pug` it needed to be change for some legal reason.  
+
+[Pug Docs](https://pugjs.org/api/getting-started.html)
+
+In our project our jade files will be in a template folder
+
+```bash
+templates
+  ├── archive.jade
+  ├── article.jade
+  ├── author.jade
+  ├── feed.jade
+  ├── index.jade
+  └── layout.jade
+```
+
+Our base template is `layout.jade` 
+
+```javascript
+doctype html
+block vars
+  - var bodyclass = null;
+html(lang='en')
+  head
+    block head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+      meta(name='viewport', content='width=device-width')
+      title
+        block title
+          = locals.name
+      link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
+      link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300')
+      link(rel='stylesheet', href=contents.css['main.css'].url)
+  body(class=bodyclass)
+    header.header
+      div.content-wrap
+        block header
+          div.logo
+            h1
+              a(href=locals.url)= locals.name
+            p.description= locals.description
+    div#content
+      div.content-wrap
+        block content
+          h2 Welcome to zombocom!
+    footer
+      div.content-wrap
+        block footer
+          section.about
+            !=contents['about.md'].html
+          section.copy
+            p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
+              a(href='https://github.com/jnordberg/wintersmith') Wintersmith
+              //- please leave the "powered by" if you use the design
+```
+
+Jade creates html files but it tries to make it easy to work with.  All HTML tags are just there name with out the `<>`.  So `header` will be come `<header>`.  Since we can wrap elements like with HTML Jade uses an indent to define that an element is a child. 
+
+so 
+```js
+header.global-header
+  h1 Jade is Cood
+```
+
+becomes
+```html
+<header class="global-header">
+  <h1>Jade is Cool</h1>
+</header>
+```
+The thing I like is that you can add javascript right in your template. 
+
+### blocks
+
+When you see the key word `block` this mean the content can be swapped out by an other template.
+
+```js
+block header
+  div.logo
+    h1
+      a(href=locals.url)= locals.name
+    p.description= locals.description
+```
+
+An other template can over write this "block" of code with content that is relative to that page. 
+
+### Extending a template
+
+One jade file and extend an other like this one that `index.jade`
+
+```js
+extends layout
+
+block content
+  include author
+  each article in articles
+    article.article.intro
+      header
+        p.date
+          span= moment.utc(article.date).format('DD. MMMM YYYY')
+        h2
+          a(href=article.url)= article.title
+      section.content
+        if article.intro.length > 0
+          != typogr(article.intro).typogrify()
+        if article.hasMore
+          p.more
+            a(href=article.url) more
+
+```
+
+Here were we add `extends layout` tell it bring all the parts of `layout.jade` this this template but replace the `content` block with this data.  
+
+Since you can use Javascript you do things like this
+
+```js
+if article.intro.length > 0
+  != typogr(article.intro).typogrify()
+if article.hasMore
+  p.more
+    a(href=article.url) more
+```
+
+We are checking if `article.intro.length` an array has a more than one item.  If it does than it runs this command `!= typogr(article.intro).typogrify()` that convert the content from the Markdown file to HTML and puts in this spot. 
+
+## Markdown
+
+The last part of is the content.  It is created by using Markdown.  Markdown is HTML with out the Tags.
+
+In our project the Markdown files are in the `contents` folder.  And the articles are in an `articles` folder.
+
+```bash
+├── contents
+│   ├── about.md
+│   ├── articles
+│   │   ├── another-test
+│   │   │   └── index.md
+│   │   ├── bamboo-cutter
+│   │   │   ├── index.md
+│   │   │   └── taketori_monogatari.jpg
+│   │   ├── hello-world
+│   │   │   └── index.md
+│   │   ├── markdown-syntax
+│   │   │   └── index.md
+│   │   └── red-herring
+│   │       ├── banana.png
+│   │       └── index.md
+```
+
+Notice the files are `.md` this is markdown. 
+
+* [CheatSheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* [Video How to](https://www.youtube.com/watch?v=Je5w18nn-e8&list=PLu8EoSxDXHP7v7K5nZSMo9XWidbJ_Bns3)
+
+The basic idea behind this is you just write your content and don't have to worry about the html.
+
+```markdown
+---
+title: Hear me blog
+author: johndoe
+date: 2012-12-12 12:12
+---
+
+This will be shown as the article excerpt.
+
+## A h2, hr or <span class="more"> marks where the intro cuts off
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+* list
+* item 
+
+[Google](http://www.google.com)
+
+## Headline 2
+
+### Headline 3
+
+```
+
+## Meta Data 
+
+the first few lines of of this file are is not Markdown but [YAML](http://yaml.org/) that is used to define the data about this file.
+
+```javascript
+---
+title: Hear me blog
+author: johndoe
+date: 2012-12-12 12:12
+---
+```
+
+This tells us the title, author and date.  We can add any other 
