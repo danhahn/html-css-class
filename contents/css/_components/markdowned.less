@@ -89,4 +89,20 @@
       color: @primary;
     }
   }
+  blockquote {
+    border-left: 3px solid @primary;
+    margin: 0;
+    padding: 1em;
+    font-size: .9em;
+    font-family: sans-serif;
+    font-style: italic;
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }

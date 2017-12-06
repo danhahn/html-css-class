@@ -1,6 +1,6 @@
 ---
 title: Lesson 11
-lesson: Setting up Git
+lesson: React Gallery
 author: Dan Hahn
 date: 12/04/2017 15:00
 template: article.jade
@@ -9,107 +9,356 @@ downloads:
   Download Stater File:
     file: week11.zip
     btn: primary
-  Download Notes:
-    file: week11-notes.zip
-    btn: null
-    
+
 nav:
-  GIT: index.html
-  Wintersmith: wintersmith.html
-  Parallax: parallax.html
+  React Gallery: index.html
+  Example: example/index.html
 ---
 
-This week we will talk about GIT, wintersmith, and parallax
+This week we will use ReactJs to build a photo gallery.
 
 <span class="more"></span>
 
-## Step One: Sign Up for GitHub
+## Getting Started
 
-Here comes the easy part: make yourself a GitHub account signing up on the front page. After completing the form, GitHub will sign you in and take you to your empty news feed. In the middle of the page, you'll see the boot camp (pictured to the right). We're going to go through it to set up your account and, later, create your first repository. Click on "Set Up Git" to get started.
+We need to create a new react app by running `create-react-app gallery` the cd in to the new `gallery` directory.
 
-## Step Two: Install Git
+## Getting data for our Gallery
 
-<a href="http://git-scm.com/downloads" class="btn">Download Git</a>
+We are going to pull our data from an API.  An API is a way to get data in to one application from an other.  In our case we are going to use a static API that will return the same data every time.  Sometimes it will take data from a user and return a different response.
 
-GitHub exists because of a version control application called git. The site is based around how git works, and git is pretty old. It runs via the command line and has no fancy graphical user interface. Since it's made to manage code you wrote, this shouldn't sound too scary. (Of course, as previously mentioned, GitHub did make wonderful software to allow you to use their service without the command line but that won't help you too much unless you know the basics.)
+We can use this API to get back a list of photos.  
 
-Git works by reading a local code repository (just a folder containing code for your project) on your computer and the mirroring that code elsewhere (in this case, GitHub's servers). Initially we'll commit (i.e. send) your entire local repository to GitHub, but that's just a one-time affair. As you continue to work on your code, you'll simply commit changes. GitHub will then keep track of the changes you made, creating different versions of files so you can revert back to old ones if you want (or just keep track of those changes for other reasons). This is primarily why you'd want to use a version control system like git on your own, but additional benefits surface when using git to manage code with other people working on your project. When multiple developers commit code with git, GitHub becomes a central repository where all the code that everyone's working on can stay in sync. You'll commit your changes, and other developers will pull them (i.e. sync them to their local repository). You'll do the same with their code.
+https://jsonplaceholder.typicode.com/photos
 
-Git makes this all happen, so you need to download the latest version and install it. On OS X, you'll just install the command line app. On Windows, you'll get a few more items. We'll discuss how they work in the next step.
+```javascript
+[
+  {
+    albumId: 1,
+    id: 1,
+    title: "accusamus beatae ad facilis cum similique qui sunt",
+    url: "http://placehold.it/600/92c952",
+    thumbnailUrl: "http://placehold.it/150/92c952"
+  },
+  {
+    albumId: 1,
+    id: 2,
+    title: "reprehenderit est deserunt velit ipsam",
+    url: "http://placehold.it/600/771796",
+    thumbnailUrl: "http://placehold.it/150/771796"
+  },
+  {
+    albumId: 1,
+    id: 3,
+    title: "officia porro iure quia iusto qui ipsa ut modi",
+    url: "http://placehold.it/600/24f355",
+    thumbnailUrl: "http://placehold.it/150/24f355"
+  },
+  ...
+]
+```
 
-## Step Three: Set Up Git
+We can see this is an array of objects that have  `albumId` `id` `title` `url` `thumbnailUrl`.  We can loop over the array and display the contents in our application.  
 
-To set up git, you need to make your way into the command line. On OS X, that means launching the Terminal app (Hard Drive -> Applications -> Utilities -> Terminal) and on Windows that means launching the Git Bash app you just installed—not the Windows command prompt. When you're ready, tell git your name like this:
+Notice that we just have a path to the image not the image.
 
-	git config --global user.name "Your Name Here"
+## Using the API in ReactJs
 
-For example, mine would look like this because I'm using a test account for this example:
+We need to get the value of API in to our application we will do this with a [React Lifecycle Method](https://reactjs.org/docs/react-component.html).   
 
-	git config --global user.name "Adam Dachis"
+We are going to use `componentWillMount()`.  From the Docs.
 
-You can put in any name you like, but afterwards you'll need to input your email and that email must be the email you used when signing up for GitHub:
+> `componentWillMount()` is invoked immediately before mounting occurs. It is called before render(), therefore calling `setState()` synchronously in this method will not trigger an extra rendering. Generally, we recommend using the `constructor()` instead.
 
-	git config --global user.email "your_email@youremail.com"
+In `App.js` we need to add this to the `class App`.
 
-If, for whatever reason, you signed up for GitHub with the wrong email address, you'll need to change it.
+Before we can call the API we need to create a place in the state to hold the value of the API.
 
-## Step Four: Create Your First Repository
+This will create a state and have an empty array of photos.
 
-Now that you've made it this far, you can actually use GitHub! As a first order of business, we're going to create a repository (or "repo" for short). Head on over to GitHub and click the "New Repository" button on the top right of your account page. (Note: If you're still displaying the GitHub bootcamp section, it'll show up underneath it.)
+```javascript
+constructor(props) {
+  super(props);
+  this.width = 1000;
+  this.state= {
+    photos: [],
+  };
+}
+```
+After that we need to add this code.  This will call the API and when we get a value back it will add it the state.
 
-When creating a repository you have a few things to decide including it's name and whether it'll be publicly accessible or not. Choosing a name should be pretty simple because you likely already have a name for your project. If you're just following along for learning purposes, use "Hello-World." Why "Hello-World" and not "Hello World"? Because spaces and special characters will cause problems. Keep it simple and easy to type in the command line. If you want to include a more complex name, you can add it to the optional description field beneath the name field.
+```javascript
+componentWillMount() {
+  fetch('https://jsonplaceholder.typicode.com/photos')
+    .then(raw => raw.json())
+    .then(photos => {
+      const adjustedPhotos = photos.slice(100, 110).map(({albumId, id, title, url, thumbnailUrl}) => {
+        return {
+          albumId,
+          id,
+          title,
+          url: url.replace(/\/([0-9]{3})\//g, `/${this.width}x600/`),
+          thumbnailUrl
+        }
+      });
+      this.setState({ photos: adjustedPhotos });
+    })
+}
+```
 
-If you're creating an open-source project, you want a public repository. If you want to code by yourself or share only with specific people, a private repository will do. Make the choice that works best for you and your project.
+There is a little bit of magic happening here.  The first thing we are doing is using `fetch()` this takes the API you want.  Since we are getting back `JSON` we need to convert it with this line `.then(raw => raw.json())`.
 
-When you're all done, you can click the "Create repository" button but you might want to do one other thing first: check the "Initialize this repository with a README" checkbox. Why? All repositories require a README file. Ideally that file would contain a little information about your project, but you might not want to deal with that right now. By initializing the repository with a README, you'll get an empty README file that you can just deal with later. For the purposes of this tutorial, we're going to leave the box unchecked because, in the next section, we're going to create a README file from scratch to practice committing (sending) it to GitHub.
+Since we get back 5000 images we only want to work with 10 of them so we are cutting down the number from 5000 to 10 we do that with this `.slice(100, 110)`.
 
-## Step Five: Make Your First Commit
+Next we need to `map()` over the new array of 10 items.  A `map()` will return a new array so we can change something in our response.  In our case we want to change the size of the image from `600x600` to `1000x600` with this line of code `url.replace(/\/([0-9]{3})\//g, `/${this.width}x600/`)`.
 
+last we add the array to the state with `this.setState({ photos: adjustedPhotos });`
 
-When you send files to GitHub, you commit them. To practice, we're going to initialize your local repository and create a README file to commit as practice. Before you start, you need to know where your local code repository is on your computer and how to access it via the command line. In this tutorial, we're going to assume there's a directory called "Hello-World" in your computer's home folder. If you need to create one, just run this command (same for Git Bash on Windows and OS X's terminal):
+`this.state.photo` is this
 
-	mkdir ~/Hello-World
+```javascript
+[
+   {
+      "albumId":3,
+      "id":101,
+      "title":"incidunt alias vel enim",
+      "url":"http://placehold.it/1000x600/e743b",
+      "thumbnailUrl":"http://placehold.it/150/e743b"
+   },
+   {
+      "albumId":3,
+      "id":102,
+      "title":"eaque iste corporis tempora vero distinctio consequuntur nisi nesciunt",
+      "url":"http://placehold.it/1000x600/a393af",
+      "thumbnailUrl":"http://placehold.it/150/a393af"
+   },
+   {
+      "albumId":3,
+      "id":103,
+      "title":"et eius nisi in ut reprehenderit labore eum",
+      "url":"http://placehold.it/1000x600/35cedf",
+      "thumbnailUrl":"http://placehold.it/150/35cedf"
+   },
+   ...
+]
+```
 
-Now change to that directory using the cd (change directory) command:
+## New Gallery component
 
-	cd ~/Hello-World
+At this point we need to create a new component that will display our gallery.  
 
-In case you were wondering, the ~ represents your home directory in Git Bash and Terminal. It's simply shorthand so you don't have to type it all out (which would look more like /Users/yourusername/). Now that your repository is ready, type this:
+We can create a new component `src/components/Gallery/Gallery.jsx`.
 
-	git init
+```javascript
+import React, { Component } from 'react';
 
-If you already had a repository ready to go, you'd just need to cd to that directory and then run the git init command in there instead. Either way, your local repository is ready to go and you can start committing code. But wait, you don't have anything to commit! Run this command to create a README file:
+class Gallery extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h2>Gallery to come</h2>
+      </div>
+    );
+  }
+}
 
-	touch README
+export default Gallery;
 
-Let's take a break for a second and see what just happened. Go into the home folder on your computer and look at the Hello-World folder (or look at whatever folder you're using for a local repository). You'll notice a README file inside, thanks to the command you just ran. What you won't see is a .git folder, but that's because it's invisible. Git hides it in there, but because you ran the git init command you know it exists. If you're skeptical, just run the ls command in Git Bash/Terminal to display a list of everything in the current directory (which, if you're following along, is your local repository).
+```
 
-So how does git know we want to commit this README file we just created? It doesn't, and you have to tell it. This command will do the trick:
+We will loop over the photos and build a gallery that we slide through.
 
-	git add README
+## add Gallery to App
 
-If you want to add other files to commit, you'll use the same command but replace README with the name of a different file. Now, run this command to commit it:
+Now that we have our new component we need to add it to our `App` component
 
-	git commit -m 'first commit'
+```javascript
+import Gallery from './component/Gallery/Gallery';
 
-While the other commands were pretty straightforward, the commit command has a little more going on so let's break it down. When you type git, that's just telling the command line that you want to use the git program. When you type commit, you're telling git you want to use the commit command. Everything that follows those two thing count as options. The first, -m, is what's known as a flag. A flag specifies that you want to do something special rather than just run the commit command. In this case, the -m flag means "message" and what follows it is your commit message (in the example, 'first commit'). The message isn't absolutely necessary (although you'll usually need to provide one), but simply a reference to help you differentiate the various versions of a file (or files) you commit to your repository.
+...
+<Gallery />
+...
+```
 
-Your first commit should go by in a split second because you haven't actually uploaded anything yet. To get this empty README file to GitHub, you need to push it with a couple of commands. Here's the first:
+## Getting the data to the gallery
 
-	git remote add origin https://github.com/yourusername/Hello-World.git
+Now that we have the component in the `App.js` we now need to get the data in to the Gallery component
 
-You need to replace "yourusername" with—you guessed it—your GitHub username. For me, it'd look like this:
+`App.js`
 
-	git remote add origin https://github.com/gittest1040/Hello-World.git
+```javascript
+<Gallery photos={this.state.photos}/>
+```
 
-This command tells git where to send your Hello-World repository. Now all you need to do is send it:
+`Gallery.jsx`
 
-	git push origin master
+```javascript
+<div>
+  {this.props.photos.map(photo => (
+    <div key={photo.id}>{photo.id}</div>
+  ))}
+</div>
+```
 
-Once you run that command, everything (in this case, just your README file) will make it's way over to GitHub. Congratulations on your first commit!
+This loops over the items in the photos array and displays a `<div>` for each item in the array;
 
-Learning More
+## Display images
 
-Using GitHub requires more than just committing a README file, but these basics should give you a good grasp on how to interact with the git app and the service. Now that you know how GitHub works at its core, you can use the GitHub apps to manage your code instead if you prefer. If you want to learn more about GitHub, there are some great tutorials. For starters, take a look at how to fork a repository and LockerGnome's GitHub guide.
+Now lets format the photos to allow for the gallery to work.
 
-**Note:** http://lifehacker.com/5983680/how-the-heck-do-i-use-github
+```javascript
+return (
+  <div>
+    <div className="photos">
+      <div className="photos__items">
+        {this.props.photos.map((photo, i) => (
+          <div key={photo.id} className="photos__item">
+            <img src={photo.url} alt="" className="photos__image" />
+            <p className="photos__captions">{photo.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+```
+
+## Adding Styles
+
+We need to add a new stylesheet for our Gallery component.
+
+`import './gallery.css';`
+
+```css
+.Gallery {
+  margin: 0 auto;
+}
+
+.Gallery__photos {
+  display: flex;
+}
+
+.Gallery__photo {
+  position: relative;
+}
+
+.Gallery__image {
+  display: block;
+}
+
+.Gallery__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1em;
+  color: white;
+  margin: 0;
+}
+```
+
+## Keeping Track of location
+
+Now that we have our basic styles we need to offset the image based on the item we are viewing.  
+
+We need to add two buttons.  One to move left and one to move right.  
+
+```js
+<button onClick={() => this.slidePhoto('right')}>pre</button>
+<button onClick={() => this.slidePhoto('left')}>next</button>
+```
+
+We also need to know the current item we are on so we can add this to state.
+
+```js
+constructor(props) {
+  super(props);
+  this.state= {
+    currentItem: 0
+  };
+}
+```
+
+now we need a script to change the current item.
+
+```js
+slidePhoto(dir) {
+  const { currentItem } = this.state;
+  console.log(dir);
+  const nextItem = currentItem + 1;
+  this.setState({ currentItem: nextItem });
+}
+```
+
+This will update the currentItem but does not change the display of the UI.  If we change the CSS of `.Gallery__photos` with a negative `margin-left` the whole block will shift to the left and expose the next image in the gallery.
+
+```js
+updatePhotoDisplay(offSet) {
+  const width = 1000;
+  this.photoBox.style.marginLeft = `-${width * offSet}px`;
+}
+```
+
+Now we need to call this from the `slidePhoto` like this `this.updatePhotoDisplay(nextItem)`.
+
+But we are going to get an error since when we try to update `this.photoBox` it is not defined.  We need to add a "ref" to the HTML element.
+
+```js
+<div className="Gallery__photos" ref={(div) => this.photoBox = div}>
+```
+
+`.style.marginLeft = `-${width * offSet}px`;` is just javascript to change the `margin-left` of that element.
+
+Lets add a css transition to make the change "slide".  Update this selector.
+
+```CSS
+.Gallery__photos {
+  display: flex;
+  transition: all .2s;
+}
+```
+
+## Limit the currentItem
+
+Right now we click next or prev it will move to the left and even when we run out of items it keeps moving to the left.  We want to limit it so when the max number of items is reached it returns to the 0 state.
+
+```js
+slideLeft(currentItem, photos) {
+  return  currentItem < photos.length -1 ? currentItem + 1 : 0;
+}
+slideRight(currentItem, photos) {
+  return currentItem > 0 ? currentItem - 1 : photos.length -1;
+}
+```
+
+Since photos is an array we can get the `length` of it and use that to get the next position.
+
+We have two cases. `slideLeft()` will look if we are over the currentItem is greater than the `photos.length -1` if we are than set back to zero other wise add one to the currentItem.  `slideRight()` will go the other way if the value is less than 0 set to the `photos.length -1` otherwise take one away.
+
+Now we need to change the `slidePhoto()` to call the right slide function based on the direction.
+
+```js
+const { photos } = this.props;
+const nextItem = dir === 'left'
+  ? this.slideLeft(currentItem, photos)
+  : this.slideRight(currentItem, photos);
+```
+Here we use an if statement if the direction is left call `slideLeft()` otherwise call `slideRight()`
+
+## Finish the styles
+
+Now that we have it working we need to finish a few styles.  We need to limit the width of the `.Gallery`
+
+update to
+
+```css
+.Gallery {
+  margin: 0 auto;
+  width: 1000px;
+  overflow: hidden;
+}
+```
